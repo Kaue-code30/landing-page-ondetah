@@ -1,14 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+
 import imagem from "@/app/pages/home/assets/capaHome/home.png"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { json } from "stream/consumers";
+
 
 export default function TransFormeSeuNegocio() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [prevIndex, setPrevIndex] = useState(0);
+
 
 
 
@@ -65,11 +65,11 @@ export default function TransFormeSeuNegocio() {
     }
 
     const handleNext = () => {
-        setPrevIndex(currentIndex)
+        
         setCurrentIndex((prevIndex) => (prevIndex + 1) % JsonList.length);
     };
     const handlePrevious = () => {
-        setPrevIndex(currentIndex)
+        
         setCurrentIndex((prevIndex) =>
             prevIndex === 0 ? JsonList.length - 1 : prevIndex - 1
         );

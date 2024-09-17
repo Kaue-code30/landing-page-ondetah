@@ -14,7 +14,6 @@ import whp from "@/app/pages/home/assets/logosOndetah/whp.png";
 import icone from "@/app/pages/home/assets/iconeOndetahLocalizarPedido.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { MdArrowLeft } from "react-icons/md";
 import { FaArrowLeft } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -60,7 +59,6 @@ export default function PedidoOndetah() {
   };
 
   const handleCodigoTransport = (codigo: { codigo: string, index: any }) => {
-    console.log(codigo.index);
 
     setCodigoTransport(codigo.codigo);
     setClicked(codigo.index);
@@ -70,9 +68,7 @@ export default function PedidoOndetah() {
     // primeiraEtapa ? setSegundaEtapa(false) : setSegundaEtapa(true);
   };
 
-  const handleOpenClick = () => {
-    setModalOpen(true);
-  };
+ 
 
   const handleVolta = () => {
     setPrimeiraEtapa(true);
@@ -158,7 +154,7 @@ export default function PedidoOndetah() {
     if (codigoPedido.length > 0) {
       setMessageError("");
     }
-  })
+  },[])
 
 
 
