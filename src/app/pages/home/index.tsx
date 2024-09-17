@@ -7,6 +7,9 @@ import Cta from "./components/cta";
 import AssitaNossaDemos from "./components/assistaNossasDemos";
 import TransFormeSeuNegocio from "./components/transformeSeuNegocio";
 import ExperienciaDoCliente from "./components/experienciaDoCliente";
+import ControleTotalDaSuaCadeia from "./components/controleTotalDaSuaCadeia";
+import Integracoes from "./components/intregracoes";
+import EscolhaOMelhorPlano from "./components/EscolhaOMelhorPlano";
 
 export function Home() {
     const [scrolled, setScrolled] = useState(false);
@@ -24,10 +27,13 @@ export function Home() {
         <div className="h-auto flex overflow-x-hidden flex-col items-center w-full">
             <Header onScroll={scrolled} />
             <FidelizeSeuCliente />
+            <ControleTotalDaSuaCadeia/>
             <TransFormeSeuNegocio/>
             <Cta />
             <AssitaNossaDemos/>
             <ExperienciaDoCliente/>
+            <Integracoes/>
+            <EscolhaOMelhorPlano/>
         </div>
 
 

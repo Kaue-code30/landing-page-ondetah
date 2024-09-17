@@ -92,7 +92,7 @@ export default function Header({ onScroll }: PropsComponent) {
                                     )
                                 })}
                             </ul>
-                            <li className="border list-none mx-4 cursor-pointer hover:bg-textSecondColor transition hover:text-textPrimaryColor text-white hover:scale-95 rounded-lg px-4 p-2">
+                            <li className="border list-none mx-4 cursor-pointer hover:scale-95 transition duration-300 hover:text-textPrimaryColor text-white  rounded-lg px-4 p-2">
                                 <button onClick={() => { setLocalizarPedido(!localizarPedido) }} className="w-full h-full">
                                     Rastrear pedido
                                 </button>

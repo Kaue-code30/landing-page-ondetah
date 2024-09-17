@@ -83,7 +83,7 @@ export default function ExperienciaDoCliente() {
     }
 
     return (
-        <section className="w-full lg:h-[120vh] h-auto overflow-hidden mt-0 bg-custom-linear flex items-center justify-center">
+        <section className="w-full lg:h-auto pb-[200px] h-auto overflow-hidden mt-0 bg-custom-linear flex items-center justify-center">
             <div className="w-[90%] lg:w-[75%] flex items-start gap-2 justify-center lg:justify-start pt-20 pb-20 lg:pt-[120px] lg:pb-[120px] flex-col h-full">
                 <h1 className="text-3xl lg:text-4xl text-left lg:w-1/2 leading-tight text-textSecondColor font-bold">
                     Uma solução completa focada na
@@ -99,11 +99,11 @@ export default function ExperienciaDoCliente() {
                         JsonList.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className={`w-full lg:w-[30%] ${openStates[index] ? "lg:h-[300px] h-[500px] bg-[#ffffff08] backdrop-blur-sm" : ""}  transition duration-500 flex ${openStates[index] ? "scale-[0.99]" : ""} shadow-xl backdrop-blur-3xl flex-col gap-5 border rounded-2xl p-5`}
+                                className={`w-full lg:w-[32%]  ${openStates[index] ? "lg:h-[300px] h-[500px] bg-[#ffffff08] backdrop-blur-sm" : ""}  transition duration-500 flex ${openStates[index] ? "scale-[0.99]" : ""} shadow-xl backdrop-blur-3xl flex-col  gap-5 border rounded-2xl p-5`}
                                 transition={{ duration: 0.3, ease: "linear" }}
-                                animate={{ height: openStates[index] ? "300px" : "200px" }}
+                                animate={{ height: openStates[index] ? "320px" : "200px" }}
                             >
-                                <Image className="w-12 h-12" src={item.icon} alt="icones representativos" width={100} height={100} />
+                                <Image className={`w-12 ${index === 0 ?"mt-5":"mt-2"} h-12 `} src={item.icon} alt="icones representativos" width={100} height={100} />
                                 <div className="flex w-full justify-between items-center">
                                     <h1 className="text-textSecondColor text-[22px] w-[60%] font-semibold">
                                         {item.title}
@@ -124,7 +124,7 @@ export default function ExperienciaDoCliente() {
                                     <p className="text-textSecondColor">
                                         {item.text}
                                     </p>
-                                    <button className="w-full  h-10 bg-textSecondColor rounded-lg">
+                                    <button className="w-full  h-12 bg-textSecondColor rounded-lg">
                                         saiba mais
                                     </button>
                                 </motion.div>

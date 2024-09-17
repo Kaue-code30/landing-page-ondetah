@@ -26,8 +26,8 @@ export default function Cta() {
             <motion.div ref={ref} 
                 initial={{ opacity: 0, y: 100 }} 
                 animate={controls} 
-                className="w-[88%] lg:flex-row flex-col flex justify-center lg:gap-0 gap-5 lg:justify-between items-start lg:items-center px-5 lg:px-32  rounded-2xl h-full bg-custom-linear">
-                <h1 className="text-2xl lg:text-[42px] leading-normal lg:w-[63%] text-white font-bold">
+                className="w-[90%] lg:flex-row flex-col flex justify-center lg:gap-0 gap-5 lg:justify-between items-start lg:items-center px-5 lg:px-32  rounded-2xl h-full bg-custom-linear">
+                <h1 className="text-2xl lg:text-[42px] lg:pl-5 leading-normal lg:w-[63%] text-white font-bold">
                     Agilidade e informação desde o
                     clique até o cliente:
                 </h1>
