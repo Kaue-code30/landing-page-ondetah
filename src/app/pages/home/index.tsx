@@ -6,6 +6,7 @@ import { FidelizeSeuCliente } from "./components/fidelize";
 import Cta from "./components/cta";
 import AssitaNossaDemos from "./components/assistaNossasDemos";
 import TransFormeSeuNegocio from "./components/transformeSeuNegocio";
+import ExperienciaDoCliente from "./components/experienciaDoCliente";
 
 export function Home() {
     const [scrolled, setScrolled] = useState(false);
@@ -23,9 +24,10 @@ export function Home() {
         <div className="h-auto flex overflow-x-hidden flex-col items-center w-full">
             <Header onScroll={scrolled} />
             <FidelizeSeuCliente />
+            <TransFormeSeuNegocio/>
             <Cta />
             <AssitaNossaDemos/>
-            <TransFormeSeuNegocio/>
+            <ExperienciaDoCliente/>
         </div>
 
 

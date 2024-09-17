@@ -1,12 +1,26 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import banner from "@/app/pages/home/assets/capaHome/home.png";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, AnimationControls, motion, useAnimation, useInView } from "framer-motion";
 
 export default function AssitaNossaDemos() {
     const [view, setViewVideo] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(-1);
+
+    const controls: AnimationControls = useAnimation();
+    const ref = useRef(null)
+    const inView = useInView(ref, { once: true })
+
+    useEffect(() => {
+        if (inView) {
+            controls.start({
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1 },
+            });
+        }
+    }, [inView, controls]);
 
     const jsonList = [
         {
@@ -25,6 +39,7 @@ export default function AssitaNossaDemos() {
             link: "https://www.gov.br/pt-br/midias-agorabrasil/video-fundo.mp4/"
         },
     ];
+    
 
     const handleSetIndex = (i: number) => {
         setCurrentIndex(i);
@@ -41,7 +56,11 @@ export default function AssitaNossaDemos() {
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </h2>
 
-                <div className="flex w-full mt-5 gap-5 h-full pb-5 overflow-y-hidden items-start lg:items-center lg:justify-center justify-start overflow-x-auto">
+                <motion.div
+                    ref={ref}
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={controls}
+                    className="flex w-full mt-5 gap-5 h-full pb-5 overflow-y-hidden items-start lg:items-center lg:justify-center justify-start overflow-x-auto">
                     {jsonList.map((item, key) => (
 
                         <div key={key} className={`min-w-[300px] w-[350px] lg:w-[400px] flex flex-col gap-5 z-0 rounded-2xl p-10 h-[500px] shadow shrink-0 relative`}>
@@ -82,7 +101,7 @@ export default function AssitaNossaDemos() {
                         </div>
 
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

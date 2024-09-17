@@ -86,7 +86,7 @@ export default function TransFormeSeuNegocio() {
 
 
     return (
-        <section className="w-full lg:h-[80vh] h-auto overflow-hidden pb-20 flex items-center justify-center">
+        <section className="w-full lg:h-[80vh] h-auto overflow-hidden mt-20  flex items-center justify-center">
             <div className="w-[90%] flex items-center gap-2 justify-center lg:justify-start pt-5 flex-col h-full">
                 <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
                     Transforme o seu negócio.
@@ -106,11 +106,11 @@ export default function TransFormeSeuNegocio() {
                     })}
                 </div>
                 <div className=" relative lg:mt-0 mt-3 top-[40%] flex lg:gap-0 gap-10 justify-between w-[95%]">
-                    <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-2xl items-center justify-center  bg-primaryColor">
-                        <IoIosArrowBack className="-ml-1 text-textSecondColor" fontWeight={700} fontSize={27} />
+                    <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-2xl items-center justify-center  bg-[#CCCBE4]">
+                        <IoIosArrowBack className="-ml-1 text-primaryColor"  fontSize={27} />
                     </button>
-                    <button onClick={() => handleNext()} className="w-10 h-10 flex hover:scale-95 transition rounded-2xl hover: items-center justify-center  bg-primaryColor">
-                        <IoIosArrowForward className="ml-1 text-textSecondColor" fontWeight={700} fontSize={27} />
+                    <button onClick={() => handleNext()} className="w-10 h-10 flex hover:scale-95 transition rounded-2xl hover: items-center justify-center  bg-[#CCCBE4]">
+                        <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
                     </button>
 
 
