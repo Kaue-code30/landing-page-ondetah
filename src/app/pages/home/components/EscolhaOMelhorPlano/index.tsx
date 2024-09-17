@@ -1,4 +1,6 @@
+import { AnimationControls, motion, useAnimation, useInView } from "framer-motion";
 import Link from "next/link"
+import { useEffect, useRef } from "react";
 import { BsChatRightText } from "react-icons/bs"
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 import { FaRegCircleCheck } from "react-icons/fa6"
@@ -6,6 +8,20 @@ import { FaRegCircleCheck } from "react-icons/fa6"
 
 export default function EscolhaOMelhorPlano() {
 
+    const controlsOne: AnimationControls = useAnimation();
+    const ref = useRef(null)
+    const inView = useInView(ref, { once: true })
+
+    useEffect(() => {
+        if (inView) {
+            controlsOne.start({
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1 },
+            });
+
+        }
+    }, [inView, controlsOne]);
 
     const JsonList = [
         {
@@ -128,7 +144,7 @@ export default function EscolhaOMelhorPlano() {
 
 
     return (
-        <section className="w-full lg:h-auto pb-[200px] h-auto overflow-hidden mt-0  flex items-center justify-center">
+        <section className="w-full lg:h-auto pb-[50px] h-auto overflow-hidden mt-0  flex items-center justify-center">
             <div className="w-[90%] lg:w-[75%] flex items-center gap-2 justify-center lg:justify-start pt-16 pb-20 lg:pb-[120px] flex-col h-full">
                 <h1 className="text-3xl lg:text-4xl text-left lg:text-center  leading-tight text-textPrimaryColor font-bold">
                     Escolha o melhor plano para você:
@@ -136,7 +152,9 @@ export default function EscolhaOMelhorPlano() {
                 <h2 className="text-textPrimaryColor pt-2 leading-tight text-left lg:text-center w-full font-normal text-base">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </h2>
-                <div className="w-full lg:flex-row flex-col mt-5 lg:mt-10 lg:h-[630px] gap-10 lg:gap-5 flex">
+                <motion.div ref={ref}
+                    initial={{ opacity: 0, y: 200 }}
+                    animate={controlsOne} className="w-full lg:flex-row flex-col mt-5 lg:mt-10 lg:h-[630px] gap-10 lg:gap-5 flex">
                     {
                         JsonList.map((i, key) => {
                             return (
@@ -176,7 +194,7 @@ export default function EscolhaOMelhorPlano() {
                             )
                         })
                     }
-                </div>
+                </motion.div>
             </div>
         </section>
     )

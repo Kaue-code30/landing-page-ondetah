@@ -10,6 +10,7 @@ import ExperienciaDoCliente from "./components/experienciaDoCliente";
 import ControleTotalDaSuaCadeia from "./components/controleTotalDaSuaCadeia";
 import Integracoes from "./components/intregracoes";
 import EscolhaOMelhorPlano from "./components/EscolhaOMelhorPlano";
+import Faq from "./components/Faq";
 
 export function Home() {
     const [scrolled, setScrolled] = useState(false);
@@ -34,6 +35,7 @@ export function Home() {
             <ExperienciaDoCliente/>
             <Integracoes/>
             <EscolhaOMelhorPlano/>
+            <Faq/>
         </div>
 
 
