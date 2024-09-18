@@ -29,7 +29,7 @@ export default function Cta() {
                 animate={controls}
                 style={{backgroundImage:`url(${bannerCta.src})`}}
                 className="w-[100%] lg:flex-row flex-col bg-cover flex justify-center lg:gap-0 gap-5 lg:justify-center items-start lg:items-center px-5 lg:px-32  h-full ">
-                <div className="w-[92%] flex items-center justify-center h-full">
+                <div className="lg:w-[92%] w-full flex lg:flex-row flex-col gap-5 items-center justify-center h-full">
                     <h1 className="text-2xl lg:text-[42px] lg:pl-5 leading-normal lg:w-[63%] text-white font-bold">
                         Agilidade e informação desde o
                         clique até o cliente:

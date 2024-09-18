@@ -121,7 +121,7 @@ export default function TransFormeSeuNegocio() {
                             key={currentIndex}
                             initial={{ opacity: 0.7, translateX: -50 }}
                             animate={{ opacity: 1.3, translateX: 0 }}
-                            transition={{ duration: 1, ease: "linear" }}
+                            transition={{ duration: 0.6, ease: "linear" }}
                             className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-start lg:items-start justify-center">
                             <h1 className="text-3xl lg:text-4xl text-left text-black font-bold">
                                 {JsonList[currentIndex].title}
@@ -129,7 +129,7 @@ export default function TransFormeSeuNegocio() {
                             <h2 className="text-black text-left  w-full lg:w-[90%]">
                                 {JsonList[currentIndex].text}
                             </h2>
-                            <button className="w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
+                            <button className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
                                 veja a demo
                             </button>
                         </motion.div>
@@ -145,9 +145,9 @@ export default function TransFormeSeuNegocio() {
                             key={currentIndex + 5}
                             initial={{ opacity: 0.8, translateX: 50 }}
                             animate={{ opacity: 1.3, translateX: 0 }}
-                            transition={{ duration: 1, ease: "linear" }}
+                            transition={{ duration: 0.6, ease: "linear" }}
                             className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center">
-                            <Image className="w-full object-cover rounded-l-2xl -mr-11 lg:rounded-2xl shadow-md flex" width={1000} quality={100} height={1000} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
+                            <Image className="w-full object-cover rounded-2xl  lg:rounded-2xl shadow-md flex" width={1000} quality={100} height={1000} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
                         </motion.div>
                     </AnimatePresence>
                 </div>

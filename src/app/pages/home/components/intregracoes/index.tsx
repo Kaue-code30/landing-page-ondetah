@@ -12,7 +12,7 @@ export default function Integracoes() {
     const [searchTerm, setSearchTerm] = useState('');
 
     // Estado para armazenar a categoria selecionada
-    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [selectedCategory, setSelectedCategory] = useState('E-commerce');
 
     useEffect(() => {
         if (inView) {
@@ -31,9 +31,6 @@ export default function Integracoes() {
         { index: 3, text: "Marketing" },
         { index: 4, text: "PDV" },
         { index: 5, text: "CRM" },
-        { index: 6, text: "Antifraude" },
-        { index: 7, text: "Pagamento" },
-        { index: 8, text: "SAF" },
         { index: 9, text: "Outras" },
     ];
 
@@ -59,7 +56,7 @@ export default function Integracoes() {
                     ref={ref}
                     initial={{ opacity: 0, y: 100 }}
                     animate={controls}
-                    className="w-[90%] shadow-md absolute flex lg:gap-0 gap-3 items-center justify-start py-10 p-5 lg:p-20 flex-col rounded-2xl -mt-[200px] h-[60%] lg:h-[50%] bg-[#EDEDED]"
+                    className="w-[90%] shadow-md absolute flex lg:gap-0 gap-3 items-center justify-start py-10 p-5 lg:p-20 flex-col rounded-2xl -mt-[200px] h-[55%] lg:h-[48%] bg-[#EDEDED]"
                 >
                     <h1 className="text-3xl lg:text-4xl text-center lg:w-1/2 leading-tight text-textPrimaryColor font-bold">
                         Integrações
@@ -102,7 +99,7 @@ export default function Integracoes() {
                     ref={ref}
                     initial={{ opacity: 0, y: 100 }}
                     animate={controls}
-                    className="w-full lg:w-[80%] flex gap-5 overflow-x-auto pb-3 lg:overflow-x-visible lg:flex-wrap pt-[380px] lg:pt-[280px]"
+                    className="w-full lg:w-[80%] flex gap-5 overflow-x-auto pb-3 lg:overflow-x-visible lg:flex-wrap pt-[320px] lg:pt-[280px]"
                 >
                     {filteredList.length > 0 ? (
                         filteredList.map((i, index) => (

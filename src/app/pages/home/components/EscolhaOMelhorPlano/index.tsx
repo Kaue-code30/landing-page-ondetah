@@ -155,7 +155,7 @@ export default function EscolhaOMelhorPlano() {
                 <motion.div ref={ref}
                     initial={{ opacity: 0, y: 200 }}
                     animate={controlsOne}
-                    className="lg:w-full w-full lg:flex-row overflow-y-hidden overflow-x-scroll scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full lg:h-full gap-4 lg:gap-5 flex">
+                    className="lg:w-full w-full lg:flex-row overflow-y-hidden overflow-x-scroll pb-4 scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full lg:h-full gap-4 lg:gap-5 flex">
                     {
                         JsonList.map((i, key) => {
                             return (

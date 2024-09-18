@@ -148,8 +148,8 @@ export default function ControleTotalDaSuaCadeia() {
                     </h2>
                     <motion.div ref={ref}
                         initial={{ opacity: 0, x: -200 }}
-                        animate={controlsOne} className="w-[100%] lg:hidden flex my-5 -left-10 relative h-full bg-[#D9D9D9] rounded-r-2xl">
-                        <Image className="w-full lg:hidden flex shadow-lg rounded-r-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
+                        animate={controlsOne} className="w-[100%] lg:hidden flex my-5 rounded-2xl relative h-full bg-[#D9D9D9] rounded-r-2xl">
+                        <Image className="w-full lg:hidden flex shadow-lg rounded-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
                     </motion.div>
                     <ul className="flex gap-5 pt-4 flex-col pb-4 left-[87%] -top-3/4">
                         {ListContente.map((i, key) => {

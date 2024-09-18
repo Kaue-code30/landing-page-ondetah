@@ -63,7 +63,7 @@ export default function AssitaNossaDemos() {
                     className="flex w-full mt-5 gap-5 h-full pb-5 overflow-y-hidden items-start lg:items-center lg:justify-center justify-start overflow-x-auto">
                     {jsonList.map((item, key) => (
 
-                        <div key={key} className={`min-w-[300px] w-[350px] lg:w-[400px] flex flex-col gap-5 z-0 rounded-2xl p-10 h-[500px] shadow-md border-[0.5px] shrink-0 relative`}>
+                        <div key={key} className={`min-w-[300px] w-[350px] lg:w-[400px] flex flex-col gap-5 z-0 rounded-2xl p-5 lg:p-10 h-[500px] shadow-md border-[0.5px] shrink-0 relative`}>
                             <AnimatePresence>
                                 {currentIndex === key && view ? (
                                     <motion.div
