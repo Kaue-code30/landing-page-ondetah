@@ -114,44 +114,44 @@ export default function ControleTotalDaSuaCadeia() {
 
 
     return (
-        <section className="w-full lg:h-[110vh] h-auto  mt-0 flex items-center justify-start">
-            <div className="w-[100%] lg:w-[95%] flex lg:flex-row flex-col items-center lg:items-start gap-10 justify-center lg:justify-start pt-10 pb-0 lg:pt-[100px] lg:pb-[100px]  h-full">
+        <section className="w-full  2xl:h-[80vh] xl:h-[130vh] lg:h-[120vh] pt-12 pb-0 h-auto mt-0 flex items-center justify-start">
+            <div className="w-[100%] lg:w-[90%] flex lg:flex-row flex-col items-center lg:items-center gap-10 justify-center lg:justify-start pt-10 pb-0 lg:pt-[0px] lg:pb-[0px] h-full">
                 <motion.div ref={ref}
                     initial={{ opacity: 0, x: -200 }}
-                    animate={controlsOne} className="lg:w-1/2 w-full  h-full">
+                    animate={controlsOne} className="lg:w-1/2 flex items-center justify-center w-full h-full">
                     <motion.div ref={ref}
                         initial={{ opacity: 0, x: -200 }}
-                        animate={controlsOne} className="w-[90%]  h-[95%] bg-[#D9D9D9] rounded-r-2xl">
-                        <Image className="w-full lg:hidden hidden shadow-lg rounded-r-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
+                        animate={controlsOne} className="w-full lg:w-[100%] lg:h-[90%] h-[95%] bg-[#D9D9D9] rounded-r-2xl">
+                        <Image className="w-full lg:hidden hidden shadow-lg rounded-r-2xl  h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
                     </motion.div>
-                    <ul className="relative lg:flex hidden  gap-5 flex-col left-[87%] -top-3/4">
+                    <ul className="relative  lg:flex hidden gap-2 flex-col left-[-3%] ">
                         {JsonList.map((i, key) => {
                             return (
-                                <li key={key} className={`w-12 shadow-md h-12 hover:scale-95 border-[0.5px] border-primaryColor transition duration-500  hover:bg-custom-linear hover:border-none ${currentIndex === key ? "bg-custom-linear border-none scale-95 text-textSecondColor" : "bg-textSecondColor text-primaryColor"}  rounded-lg`}>
-                                    <button onClick={() => { handleTeste(key) }} className="w-full hover:text-textSecondColor  h-full flex items-center justify-center">
+                                <li key={key} className={`w-12 shadow-md h-12 hover:scale-95 border-[0.5px] border-primaryColor transition duration-500 hover:bg-custom-linear hover:border-none ${currentIndex === key ? "bg-custom-linear border-none scale-95 text-textSecondColor" : "bg-textSecondColor text-primaryColor"} rounded-lg`}>
+                                    <button onClick={() => { handleTeste(key) }} className="w-full hover:text-textSecondColor h-full flex items-center justify-center">
                                         <i.icon fontSize={key === 3 && 2 ? 25 : 20}></i.icon>
                                     </button>
                                 </li>
-                            )
+                            );
                         })}
                     </ul>
 
                 </motion.div>
                 <motion.div ref={ref}
                     initial={{ opacity: 0, x: 200 }}
-                    animate={controlsOne} className="w-[90%] lg:w-1/2 lg:pl-10 pr-0 flex flex-col justify-center h-full">
-                    <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
+                    animate={controlsOne} className="w-full lg:w-1/2 lg:pl-10 pr-0 flex flex-col justify-center h-full">
+                    <h1 className="text-3xl lg:text-3xl text-left leading-tight text-textPrimaryColor font-bold">
                         Controle total da sua cadeia de entregas em um só lugar.
                     </h1>
-                    <h2 className="text-textPrimaryColor pt-2 leading-tight w-4/5 text-left  font-normal text-base">
+                    <h2 className="text-textPrimaryColor pt-2 leading-tight w-[90%] text-left font-normal text-base">
                         A gestão completa em uma única plataforma para facilitar o dia a dia do seu e-commerce.
                     </h2>
                     <motion.div ref={ref}
                         initial={{ opacity: 0, x: -200 }}
-                        animate={controlsOne} className="w-[100%] lg:hidden flex my-5 -left-10 relative h-full bg-[#D9D9D9] rounded-r-2xl">
+                        animate={controlsOne} className="w-[100%] lg:hidden  flex my-5 -left-10 relative h-[90%] lg:h-[80%] bg-[#D9D9D9] rounded-r-2xl">
                         <Image className="w-full lg:hidden flex shadow-lg rounded-r-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
                     </motion.div>
-                    <ul className="flex gap-5 pt-4 flex-col left-[87%] -top-3/4">
+                    <ul className="flex gap-2 pt-4 flex-col left-[87%] -top-3/4">
                         {ListContente.map((i, key) => {
                             return (
                                 <motion.li
@@ -170,10 +170,10 @@ export default function ControleTotalDaSuaCadeia() {
                                     </button>
 
                                 </motion.li>
-                            )
+                            );
                         })}
                     </ul>
-                    <div className=" hidden lg:flex lg:flex-row flex-col pt-5 justify-start items-center gap-2">
+                    <div className="hidden lg:flex lg:flex-row flex-col pt-5 justify-start items-center gap-2">
                         <button className="w-full lg:w-1/4 text-base h-12 hover:scale-95 transition text-textSecondColor bg-primaryColor rounded-lg">
                             <Link className="w-full h-full" href={""}>Veja a demo</Link>
                         </button>
