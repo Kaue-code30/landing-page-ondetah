@@ -114,7 +114,7 @@ export default function ControleTotalDaSuaCadeia() {
 
 
     return (
-        <section className="w-full 2xl:h-screen lg:h-[150vh] h-auto  mt-0 flex items-center justify-start">
+        <section className="w-full 2xl:h-screen xl:h-[150vh] lg:h-[150vh] h-auto  mt-0 flex items-center justify-start">
             <div className="w-[100%] lg:w-[95%] flex lg:flex-row flex-col items-center lg:items-start gap-10 justify-center lg:justify-start pt-10 pb-0 lg:pt-[100px] lg:pb-[100px]  h-full">
                 <motion.div ref={ref}
                     initial={{ opacity: 0, x: -200 }}
