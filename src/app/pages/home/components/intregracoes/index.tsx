@@ -121,7 +121,7 @@ export default function Integracoes() {
                             </div>
                         ))
                     ) : (
-                        <p className="text-textPrimaryColor w-full text-center">Desculpe mas não temos esta integração...</p>
+                        <p className="text-textPrimaryColor font-semibold flex items-center justify-center h-[130px] w-full text-center">Desculpe mas não temos esta integração...</p>
                     )}
                 </motion.div>
 

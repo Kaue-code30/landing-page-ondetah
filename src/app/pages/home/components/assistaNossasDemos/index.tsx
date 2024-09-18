@@ -17,7 +17,7 @@ export default function AssitaNossaDemos() {
             controls.start({
                 opacity: 1,
                 y: 0,
-                transition: { duration: 1 },
+                transition: { duration: 1.5 },
             });
         }
     }, [inView, controls]);
@@ -47,7 +47,7 @@ export default function AssitaNossaDemos() {
     };
 
     return (
-        <section className="w-full lg:h-[80vh] h-auto overflow-hidden pb-20 flex items-center justify-center">
+        <section className="w-full  h-auto overflow-hidden pb-20 flex items-center justify-center">
             <div className="w-[90%] flex items-center justify-start pt-5 flex-col h-full">
                 <h1 className="text-3xl lg:text-4xl leading-tight text-textPrimaryColor font-bold">
                     Assista às nossas demos:

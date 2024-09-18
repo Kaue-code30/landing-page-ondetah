@@ -22,12 +22,12 @@ export default function ControleTotalDaSuaCadeia() {
             controlsOne.start({
                 opacity: 1,
                 x: 0,
-                transition: { duration: 1 },
+                transition: { duration: 1.5 },
             });
             controlsTwo.start({
                 opacity: 1,
                 x: 0,
-                transition: { duration: 1 },
+                transition: { duration: 1.5 },
             });
 
         }
@@ -114,15 +114,15 @@ export default function ControleTotalDaSuaCadeia() {
 
 
     return (
-        <section className="w-full lg:h-screen h-auto overflow-hidden mt-0 flex items-center justify-start">
+        <section className="w-full lg:h-[110vh] h-auto  mt-0 flex items-center justify-start">
             <div className="w-[100%] lg:w-[95%] flex lg:flex-row flex-col items-center lg:items-start gap-10 justify-center lg:justify-start pt-10 pb-0 lg:pt-[100px] lg:pb-[100px]  h-full">
                 <motion.div ref={ref}
                     initial={{ opacity: 0, x: -200 }}
                     animate={controlsOne} className="lg:w-1/2 w-full  h-full">
                     <motion.div ref={ref}
                         initial={{ opacity: 0, x: -200 }}
-                        animate={controlsOne} className="w-[90%]  h-full bg-[#D9D9D9] rounded-r-2xl">
-                        <Image className="w-full lg:hidden flex shadow-lg rounded-r-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
+                        animate={controlsOne} className="w-[90%]  h-[95%] bg-[#D9D9D9] rounded-r-2xl">
+                        <Image className="w-full lg:hidden hidden shadow-lg rounded-r-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
                     </motion.div>
                     <ul className="relative lg:flex hidden  gap-5 flex-col left-[87%] -top-3/4">
                         {JsonList.map((i, key) => {
@@ -139,13 +139,18 @@ export default function ControleTotalDaSuaCadeia() {
                 </motion.div>
                 <motion.div ref={ref}
                     initial={{ opacity: 0, x: 200 }}
-                    animate={controlsOne} className="w-[90%] lg:w-1/2 lg:pl-10 pr-0 lg:py-5 h-full">
+                    animate={controlsOne} className="w-[90%] lg:w-1/2 lg:pl-10 pr-0 flex flex-col justify-center h-full">
                     <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
                         Controle total da sua cadeia de entregas em um só lugar.
                     </h1>
                     <h2 className="text-textPrimaryColor pt-2 leading-tight w-4/5 text-left  font-normal text-base">
                         A gestão completa em uma única plataforma para facilitar o dia a dia do seu e-commerce.
                     </h2>
+                    <motion.div ref={ref}
+                        initial={{ opacity: 0, x: -200 }}
+                        animate={controlsOne} className="w-[100%] lg:hidden flex my-5 -left-10 relative h-full bg-[#D9D9D9] rounded-r-2xl">
+                        <Image className="w-full lg:hidden flex shadow-lg rounded-r-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
+                    </motion.div>
                     <ul className="flex gap-5 pt-4 flex-col left-[87%] -top-3/4">
                         {ListContente.map((i, key) => {
                             return (

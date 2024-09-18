@@ -39,7 +39,7 @@ export default function Faq() {
 
     return (
         <section className="w-full lg:h-auto pb-[80px]  h-auto overflow-hidden mt-0 bg-custom-linear flex items-center justify-center">
-            <div className="w-[90%] lg:w-[75%] flex items-start gap-2 justify-center lg:justify-start pt-20 pb-20 lg:pt-[120px] lg:pb-[120px] flex-col h-full">
+            <div className="w-[90%] lg:w-[75%] flex items-start gap-2 justify-center lg:justify-start pt-14 pb-20 lg:pt-[120px] lg:pb-[120px] flex-col h-full">
                 <h1 className="text-3xl lg:text-4xl text-left lg:text-center  leading-tight text-textSecondColor font-bold">
                     FAQ
                 </h1>

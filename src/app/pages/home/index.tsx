@@ -11,6 +11,7 @@ import ControleTotalDaSuaCadeia from "./components/controleTotalDaSuaCadeia";
 import Integracoes from "./components/intregracoes";
 import EscolhaOMelhorPlano from "./components/EscolhaOMelhorPlano";
 import Faq from "./components/Faq";
+import Footer from "./components/footer";
 
 export function Home() {
     const [scrolled, setScrolled] = useState(false);
@@ -25,7 +26,7 @@ export function Home() {
     })
 
     return (
-        <div className="h-auto flex overflow-x-hidden flex-col items-center w-full">
+        <div className="h-auto flex overflow-hidden flex-col items-center w-full">
             <Header onScroll={scrolled} />
             <FidelizeSeuCliente />
             <ControleTotalDaSuaCadeia/>
@@ -36,6 +37,7 @@ export function Home() {
             <Integracoes/>
             <EscolhaOMelhorPlano/>
             <Faq/>
+            <Footer/>
         </div>
 
 
