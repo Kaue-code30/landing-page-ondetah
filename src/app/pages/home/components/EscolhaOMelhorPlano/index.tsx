@@ -155,11 +155,11 @@ export default function EscolhaOMelhorPlano() {
                 <motion.div ref={ref}
                     initial={{ opacity: 0, y: 200 }}
                     animate={controlsOne}
-                    className="lg:w-full w-full lg:flex-row overflow-y-hidden overflow-x-scroll scroll-smooth lg:overflow-auto mt-5 lg:mt-10 lg:h-[630px] gap-4 lg:gap-5 flex">
+                    className="lg:w-full w-full lg:flex-row overflow-y-hidden overflow-x-scroll scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full lg:h-full gap-4 lg:gap-5 flex">
                     {
                         JsonList.map((i, key) => {
                             return (
-                                <div key={key} className={`h-full cursor-default shrink-0 ${key === 1 ? "shadow-xl bg-secondColor lg:scale-105 text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[350px] lg:w-[32%] p-10 border rounded-2xl`}>
+                                <div key={key} className={`h-full cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[350px] lg:w-[32%] p-10 border rounded-2xl`}>
                                     <div className="flex items-center gap-5 justify-start">
                                         <div className={`w-12 flex items-center justify-center ${key === 1 ? "border-textSecondColor" : "border-primaryColor"} h-12 border-[0.5px] rounded-lg`}>
                                             <i.icon className={`${key === 1 ? "text-textSecondColor" : "text-primaryColor"} text-3xl`} />

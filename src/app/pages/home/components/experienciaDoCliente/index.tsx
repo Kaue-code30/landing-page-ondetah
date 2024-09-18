@@ -112,7 +112,7 @@ export default function ExperienciaDoCliente() {
                                         onClick={() => handleOpen(index)}
                                         className="w-7 flex items-center hover:scale-90 transition justify-center rounded-lg h-7 bg-[#BDF5EC]"
                                     >
-                                        <IoIosArrowUp className={`${openStates[index] ? "rotate-180" : ""} duration-500 transition-all`} fontSize={22} />
+                                        <IoIosArrowUp className={`${openStates[index] ? "" : "rotate-180"} duration-500 transition-all`} fontSize={22} />
                                     </button>
                                 </div>
                                 <motion.div transition={{ duration: 0.35, ease: "linear" }}

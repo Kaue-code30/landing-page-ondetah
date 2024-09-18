@@ -59,7 +59,7 @@ export default function Integracoes() {
                     ref={ref}
                     initial={{ opacity: 0, y: 100 }}
                     animate={controls}
-                    className="w-[90%] shadow-md absolute flex lg:gap-0 gap-3 items-center justify-start p-14 lg:p-20 flex-col rounded-2xl -mt-[200px] h-[70%] lg:h-[50%] bg-[#EDEDED]"
+                    className="w-[90%] shadow-md absolute flex lg:gap-0 gap-3 items-center justify-start py-10 p-5 lg:p-20 flex-col rounded-2xl -mt-[200px] h-[60%] lg:h-[50%] bg-[#EDEDED]"
                 >
                     <h1 className="text-3xl lg:text-4xl text-center lg:w-1/2 leading-tight text-textPrimaryColor font-bold">
                         Integrações
@@ -102,7 +102,7 @@ export default function Integracoes() {
                     ref={ref}
                     initial={{ opacity: 0, y: 100 }}
                     animate={controls}
-                    className="w-full lg:w-[80%] flex gap-5 overflow-x-auto lg:overflow-x-visible lg:flex-wrap pt-[450px] lg:pt-[300px]"
+                    className="w-full lg:w-[80%] flex gap-5 overflow-x-auto pb-3 lg:overflow-x-visible lg:flex-wrap pt-[380px] lg:pt-[280px]"
                 >
                     {filteredList.length > 0 ? (
                         filteredList.map((i, index) => (
@@ -121,12 +121,12 @@ export default function Integracoes() {
                             </div>
                         ))
                     ) : (
-                        <p className="text-textPrimaryColor font-semibold flex items-center justify-center h-[130px] w-full text-center">Desculpe mas não temos esta integração...</p>
+                        <p className="text-textPrimaryColor font-semibold flex items-center justify-center h-[50px] lg:h-[130px] w-full text-center">Desculpe mas não temos esta integração...</p>
                     )}
                 </motion.div>
 
                 {/* Botão de não encontrar a integração */}
-                <button className="mt-5 w-full lg:w-1/2 text-secondColor font-semibold hover:scale-95 duration-300 rounded-lg bg-[#BDF5EC] h-12">
+                <button className="mt-5 w-full lg:w-1/2 text-secondColor font-medium hover:scale-95 duration-300 rounded-lg bg-[#BDF5EC] h-12">
                     <Link href={""}>
                         Não encontrei a integração que preciso
                     </Link>

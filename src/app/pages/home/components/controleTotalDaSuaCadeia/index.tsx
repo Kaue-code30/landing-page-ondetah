@@ -114,8 +114,8 @@ export default function ControleTotalDaSuaCadeia() {
 
 
     return (
-        <section className="w-full 2xl:h-[100vh] md:h-[150vh] xl:h-[140vh] lg:h-[150vh] h-auto  mt-0 flex items-center justify-start">
-            <div className="w-[100%] lg:w-[95%] flex lg:flex-row flex-col items-center lg:items-start gap-10 justify-center lg:justify-start pt-10 pb-0 lg:pt-[100px] lg:pb-[100px]  h-full">
+        <section className="w-full 2xl:h-[100vh] md:h-[150vh] xl:h-[100vh] lg:h-[150vh] h-auto  mt-0 flex items-center justify-start">
+            <div className="w-[100%] lg:w-[95%] flex lg:flex-row flex-col items-center lg:items-start gap-10 justify-center lg:justify-start pt-10 pb-0 lg:pt-[100px] h-full">
                 <motion.div ref={ref}
                     initial={{ opacity: 0, x: -200 }}
                     animate={controlsOne} className="lg:w-1/2 w-full  h-full">
@@ -151,7 +151,7 @@ export default function ControleTotalDaSuaCadeia() {
                         animate={controlsOne} className="w-[100%] lg:hidden flex my-5 -left-10 relative h-full bg-[#D9D9D9] rounded-r-2xl">
                         <Image className="w-full lg:hidden flex shadow-lg rounded-r-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
                     </motion.div>
-                    <ul className="flex gap-5 pt-4 flex-col left-[87%] -top-3/4">
+                    <ul className="flex gap-5 pt-4 flex-col pb-4 left-[87%] -top-3/4">
                         {ListContente.map((i, key) => {
                             return (
                                 <motion.li
@@ -159,7 +159,7 @@ export default function ControleTotalDaSuaCadeia() {
                                     onClick={() => handleTeste(key)}
                                     transition={{ duration: 0.3, ease: "linear" }}
                                     animate={{ height: currentIndex === key ? "100px" : "60px" }}
-                                    className={`w-full flex flex-col items-start justify-center p-4 shadow-md border-[0.5px] border-primaryColor hover:bg-primaryColor hover:text-textSecondColor transition duration-400 ${currentIndex === key ? "bg-primaryColor text-textSecondColor gap-1 border-nonetext-textSecondColor" : "bg-textSecondColor text-primaryColor"} rounded-lg`}
+                                    className={`w-full flex flex-col items-start justify-center p-4 shadow-md border-[0.2px]  hover:scale-105  transition duration-500 ${currentIndex === key ? "border-[#CCCBE4] scale-105 text-primaryColor gap-1 border-nonetext-textSecondColor" : "bg-textSecondColor text-primaryColor"} rounded-lg`}
                                 >    <button className="w-full z-10 flex items-start cursor-pointer justify-start flex-col">
                                         <h3 className="text-base text-left font-semibold p-0 m-0">
                                             {i.title}
@@ -173,7 +173,7 @@ export default function ControleTotalDaSuaCadeia() {
                             )
                         })}
                     </ul>
-                    <div className=" hidden lg:flex lg:flex-row flex-col pt-5 justify-start items-center gap-2">
+                    <div className=" hidden lg:flex lg:flex-row flex-col pt-3 justify-start items-center gap-2">
                         <button className="w-full lg:w-1/4 text-base h-12 hover:scale-95 transition text-textSecondColor bg-primaryColor rounded-lg">
                             <Link className="w-full h-full" href={""}>Veja a demo</Link>
                         </button>

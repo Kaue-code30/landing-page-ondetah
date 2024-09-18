@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 import imagem from "@/app/pages/home/assets/capaHome/home.png"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 
@@ -75,26 +75,26 @@ export default function TransFormeSeuNegocio() {
         );
     };
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setCurrentIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
-    //     }, 10000);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
+        }, 10000);
 
 
-    //     return () => clearInterval(interval);
-    // }, []);
+        return () => clearInterval(interval);
+    }, []);
 
 
     return (
-        <section className="w-full lg:h-[80vh] h-auto overflow-hidden lg:my-10 mt-20  flex items-center justify-center">
-            <div className="w-[90%] flex items-center gap-2 justify-center pt-5 flex-col h-full">
+        <section className="w-full lg:h-[85vh] h-auto overflow-hidden  mt-20  flex items-center justify-center">
+            <div className="w-[90%] flex items-center gap-2 justify-center  flex-col h-full">
                 <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
                     Transforme o seu negócio.
                 </h1>
                 <h2 className="text-textPrimaryColor pt-2 leading-tight lg:text-center text-left w-full font-normal text-base lg:text-lg">
                     Confira os benefícios do Ondetah.
                 </h2>
-                <div className="mt-5 lg:flex w-full hidden justify-center items-center gap-5 h-16 ">
+                <div className="mt-3 lg:flex w-full hidden justify-center items-center gap-5 h-16 ">
                     {ButtonList.map((i, key) => {
                         return (
                             <span className={`${currentIndex === key ? "bg-primaryColor text-white" : "text-textPrimaryColor"} border h-12 w-[230px] hover:scale-95 hover:bg-primaryColor transition hover:text-textSecondColor  rounded-lg px-3`} key={key}>
@@ -105,7 +105,7 @@ export default function TransFormeSeuNegocio() {
                         )
                     })}
                 </div>
-                <div className=" relative lg:flex hidden lg:mt-0 mt-3 top-[20%] lg:gap-0 gap-10 justify-between w-[95%]">
+                <div className=" relative lg:flex hidden lg:mt-0 mt-3 top-[25%] lg:gap-0 gap-10 justify-between w-[100%]">
                     <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
                         <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
                     </button>
