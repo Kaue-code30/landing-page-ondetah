@@ -23,16 +23,6 @@ body {
 }
 
 
-
-/* Opcionalmente, você pode combinar com media queries */
-@media screen and (min-width: 1024px) {
-  .windows-zoom {
-    zoom: 0.8;
-    /* Aplica apenas para telas maiores (ex: desktops) */
-  }
-}
-
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
