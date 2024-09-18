@@ -114,8 +114,8 @@ export default function ControleTotalDaSuaCadeia() {
 
 
     return (
-        <section className="w-full  2xl:h-[80vh] xl:h-[130vh] lg:h-[120vh] pt-12 pb-0 h-auto mt-0 flex items-center justify-start">
-            <div className="w-[100%] lg:w-[90%] flex lg:flex-row flex-col items-center lg:items-center gap-10 justify-center lg:justify-start pt-10 pb-0 lg:pt-[0px] lg:pb-[0px] h-full">
+        <section className="w-full  2xl:h-[80vh] xl:h-[130vh] lg:h-[120vh] pt-12 pb-0 h-auto mt-0 flex items-center justify-center lg:justify-start">
+            <div className="w-[90%] lg:w-[90%] flex lg:flex-row flex-col items-center lg:items-center gap-10 justify-center lg:justify-start pt-10 pb-0 lg:pt-[0px] lg:pb-[0px] h-full">
                 <motion.div ref={ref}
                     initial={{ opacity: 0, x: -200 }}
                     animate={controlsOne} className="lg:w-1/2 flex items-center justify-center w-full h-full">
