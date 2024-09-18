@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export function FidelizeSeuCliente() {
     return (
-        <section className="bg-cover flex items-center justify-center bg-no-repeat w-full h-[100vh] lg:pt-0 pt-32 lg:h-screen " style={{ backgroundImage: `url(${bannerHome.src})` }}>
+        <section className="bg-cover flex items-center justify-center bg-no-repeat w-full h-[100vh] lg:pt-0 pt-32 2xl:h-screen lg:h-[130vh] " style={{ backgroundImage: `url(${bannerHome.src})` }}>
             <div className="w-[90%] lg:gap-0 gap-10 items-center justify-center flex flex-col-reverse lg:flex-row  lg:pt-[10%] h-full ">
 
                 <motion.div
