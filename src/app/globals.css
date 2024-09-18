@@ -20,6 +20,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* No seu globals.css */
+.windows-zoom {
+  zoom: 0.8;
+  /* Equivalente a -20% de zoom */
+}
+
+/* Opcionalmente, você pode combinar com media queries */
+@media screen and (min-width: 1024px) {
+  .windows-zoom {
+    zoom: 0.8;
+    /* Aplica apenas para telas maiores (ex: desktops) */
+  }
+}
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

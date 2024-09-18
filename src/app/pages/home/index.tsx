@@ -1,7 +1,7 @@
 "use client"
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import Header from "./components/header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FidelizeSeuCliente } from "./components/fidelize";
 import Cta from "./components/cta";
 import AssitaNossaDemos from "./components/assistaNossasDemos";
@@ -24,6 +24,12 @@ export function Home() {
             setScrolled(false)
         }
     })
+
+    useEffect(() => {
+        if (navigator.userAgent.indexOf('Windows') !== -1) {
+            document.body.classList.add('windows-zoom');
+        }
+    }, []);
 
     return (
         <div className="h-auto flex overflow-hidden flex-col items-center w-full">
