@@ -1,6 +1,6 @@
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import Header from "./components/header";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { FidelizeSeuCliente } from "./components/fidelize";
 import Cta from "./components/cta";
 import AssitaNossaDemos from "./components/assistaNossasDemos";
