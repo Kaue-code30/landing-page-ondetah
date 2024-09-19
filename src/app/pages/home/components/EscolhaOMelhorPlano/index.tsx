@@ -144,58 +144,63 @@ export default function EscolhaOMelhorPlano() {
 
 
     return (
-        <section className="w-full lg:h-auto  h-auto overflow-hidden mt-0  flex items-center justify-center">
-            <div className="w-[90%] lg:w-[75%] flex items-center gap-2 justify-center lg:justify-start pt-16 pb-20 lg:pb-[120px] flex-col h-full">
-                <h1 className="text-3xl lg:text-4xl text-left lg:text-center  leading-tight text-textPrimaryColor font-bold">
-                    Escolha o melhor plano para você:
-                </h1>
-                <h2 className="text-textPrimaryColor pt-2 leading-tight text-left lg:text-center w-full font-normal text-base">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </h2>
-                <motion.div ref={ref}
-                    initial={{ opacity: 0, y: 200 }}
-                    animate={controlsOne}
-                    className="lg:w-full w-full lg:flex-row overflow-y-hidden overflow-x-scroll pb-4 scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full lg:h-full gap-4 lg:gap-5 flex">
-                    {
-                        JsonList.map((i, key) => {
-                            return (
-                                <div key={key} className={`h-full cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[350px] lg:w-[32%] p-10 border rounded-2xl`}>
-                                    <div className="flex items-center gap-5 justify-start">
-                                        <div className={`w-12 flex items-center justify-center ${key === 1 ? "border-textSecondColor" : "border-primaryColor"} h-12 border-[0.5px] rounded-lg`}>
-                                            <i.icon className={`${key === 1 ? "text-textSecondColor" : "text-primaryColor"} text-3xl`} />
+        <section className="bg-white lg:h-auto max-w-[1996px] pt-[30%] xl:pt-[03%] w-full  ">
+            <div className="flex flex-col w-full items-center justify-center">
+                <div className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
+                    <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[75%] h-full">
+                        <div className="flex flex-col gap-5 w-full lg:w-3/5 leading-normal">
+                            <h1 className="text-3xl lg:text-4xl text-left lg:text-center  leading-tight text-textPrimaryColor font-bold">
+                                Escolha o melhor plano para você:
+                            </h1>
+                            <h2 className="text-textPrimaryColor pt-2 leading-tight text-left lg:text-center w-full font-normal text-base">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            </h2>
+                        </div>
+                        <motion.div ref={ref}
+                            initial={{ opacity: 0, y: 200 }}
+                            animate={controlsOne}
+                            className="w-full lg:flex-row overflow-y-hidden overflow-x-scroll pb-4 scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-4 flex">
+                            {
+                                JsonList.map((i, key) => {
+                                    return (
+                                        <div key={key} className={`h-full  cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[350px] lg:w-[32%] p-5 lg:p-10 border rounded-2xl`}>
+                                            <div className="flex items-center gap-5 justify-start">
+                                                <div className={`w-12 flex items-center justify-center ${key === 1 ? "border-textSecondColor" : "border-primaryColor"} h-12 border-[0.5px] rounded-lg`}>
+                                                    <i.icon className={`${key === 1 ? "text-textSecondColor" : "text-primaryColor"} text-3xl`} />
+                                                </div>
+                                                <h2 className="text-3xl font-bold">
+                                                    {i.title}
+                                                </h2>
+                                            </div>
+                                            <ul className="flex gap-5 cursor-default flex-col pt-5">
+                                                {i.listBeneficios.map((dataList, index) => {
+                                                    return (
+                                                        <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-10 gap-4 items-center justify-center`}>
+                                                            <dataList.icon fontSize={30}></dataList.icon>
+                                                            <p>{dataList.title}</p>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                            <div className={`w-full h-14 p-5 flex items-center justify-center text-2xl font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
+                                                {i.value}
+                                            </div>
+                                            <Link className="w-full text-center mt-5 flex items-center justify-center gap-3" href={""}>
+                                                <BsChatRightText fontWeight={700} fontSize={20} />
+                                                Falar com um especialista
+                                            </Link>
+                                            <button className={`w-full hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
+                                                <Link className="w-full h-full text-center flex items-center justify-center gap-3" href={""}>
+                                                    Comece agora
+                                                </Link>
+                                            </button>
                                         </div>
-                                        <h2 className="text-3xl font-bold">
-                                            {i.title}
-                                        </h2>
-                                    </div>
-                                    <ul className="flex gap-5 cursor-default flex-col pt-5">
-                                        {i.listBeneficios.map((dataList, index) => {
-                                            return (
-                                                <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-10 gap-4 items-center justify-center`}>
-                                                    <dataList.icon fontSize={30}></dataList.icon>
-                                                    <p>{dataList.title}</p>
-                                                </li>
-                                            );
-                                        })}
-                                    </ul>
-                                    <div className={`w-full h-14 p-5 flex items-center justify-center text-2xl font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
-                                        {i.value}
-                                    </div>
-                                    <Link className="w-full text-center mt-5 flex items-center justify-center gap-3" href={""}>
-                                        <BsChatRightText fontWeight={700} fontSize={20} />
-                                        Falar com um especialista
-                                    </Link>
-                                    <button className={`w-full hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
-                                        <Link className="w-full h-full text-center flex items-center justify-center gap-3" href={""}>
-                                            Comece agora
-                                        </Link>
-                                    </button>
-                                </div>
-                            );
-                        })
-                    }
-                </motion.div>
-
+                                    );
+                                })
+                            }
+                        </motion.div>
+                    </div>
+                </div>
             </div>
         </section>
     )

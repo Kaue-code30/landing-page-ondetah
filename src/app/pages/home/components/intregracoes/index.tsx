@@ -56,7 +56,7 @@ export default function Integracoes() {
                     ref={ref}
                     initial={{ opacity: 0, y: 100 }}
                     animate={controls}
-                    className="w-[90%] shadow-md absolute flex lg:gap-0 gap-3 items-center justify-start py-10 p-5 lg:p-20 flex-col rounded-2xl -mt-[200px] h-[55%] lg:h-[48%] bg-[#EDEDED]"
+                    className="w-[90%] shadow-md absolute flex lg:gap-0 gap-3 items-center justify-start py-10 p-5 lg:p-20 flex-col rounded-2xl -mt-[200px] h-[55%] lg:h-[28%] bg-[#EDEDED]"
                 >
                     <h1 className="text-3xl lg:text-4xl text-center lg:w-1/2 leading-tight text-textPrimaryColor font-bold">
                         Integrações
