@@ -1,14 +1,12 @@
 import { useClientData } from "@/app/pages/home/hooks/client";
 import { contactFormData } from "@/app/pages/home/interfaces/clientData";
-import { QueryClientProvider } from "@tanstack/react-query";
-import Script from "next/script";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { ClientData } from "@/app/pages/home/interfaces/clientData";
 
 export default function ContactForm({
-    content,
+
     inputAlternative,
     page,
     nameForm,
@@ -29,7 +27,7 @@ export default function ContactForm({
         page_name: page,
     });
 
-    const { mutate, isLoading, isSuccess } = useClientData();
+    const { mutate, isSuccess } = useClientData();
     const handleChange = (
         e: React.ChangeEvent<
             HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
