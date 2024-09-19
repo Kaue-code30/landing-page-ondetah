@@ -86,72 +86,77 @@ export default function TransFormeSeuNegocio() {
 
 
     return (
-        <section className="w-full lg:h-[85vh] h-auto overflow-hidden  mt-20  flex items-center justify-center">
-            <div className="w-[90%] flex items-center gap-2 justify-center  flex-col h-full">
-                <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
-                    Transforme o seu negócio.
-                </h1>
-                <h2 className="text-textPrimaryColor pt-2 leading-tight lg:text-center text-left w-full font-normal text-base lg:text-lg">
-                    Confira os benefícios do Ondetah.
-                </h2>
-                <div className="mt-3 lg:flex w-full hidden justify-center items-center gap-5 h-16 ">
-                    {ButtonList.map((i, key) => {
-                        return (
-                            <span className={`${currentIndex === key ? "bg-primaryColor text-white" : "text-textPrimaryColor"} border h-12 w-[230px] hover:scale-95 hover:bg-primaryColor transition hover:text-textSecondColor  rounded-lg px-3`} key={key}>
-                                <button onClick={() => handleTeste(key)} className="w-full h-full">
-                                    {i.textButton}
-                                </button>
-                            </span>
-                        )
-                    })}
-                </div>
-                <div className=" relative lg:flex hidden lg:mt-0 mt-3 top-[25%] lg:gap-0 gap-10 justify-between w-[100%]">
-                    <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
-                        <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
-                    </button>
-                    <button onClick={() => handleNext()} className="w-10 h-10 flex hover:scale-95 transition rounded-lg hover: items-center justify-center  bg-[#CCCBE4]">
-                        <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
-                    </button>
-
-
-                </div>
-                <div className="lg:w-[80%] w-full mt-5 flex lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
-                    <AnimatePresence>
-                        <motion.div
-                            key={currentIndex}
-                            initial={{ opacity: 0.7, translateX: -50 }}
-                            animate={{ opacity: 1.3, translateX: 0 }}
-                            transition={{ duration: 0.6, ease: "linear" }}
-                            className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-start lg:items-start justify-center">
-                            <h1 className="text-3xl lg:text-4xl text-left text-black font-bold">
-                                {JsonList[currentIndex].title}
+        <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
+            <div className="flex flex-col w-full items-center justify-center">
+                <div className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
+                    <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[77%] h-full">
+                        <div className="flex flex-col items-center gap-5 w-full lg:w-3/5 leading-normal">
+                            <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
+                                Transforme o seu negócio.
                             </h1>
-                            <h2 className="text-black text-left  w-full lg:w-[90%]">
-                                {JsonList[currentIndex].text}
+                            <h2 className="text-textPrimaryColor pt-2 leading-tight lg:text-center text-left w-full font-normal text-base lg:text-lg">
+                                Confira os benefícios do Ondetah.
                             </h2>
-                            <button className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
-                                veja a demo
-                            </button>
-                        </motion.div>
-                        <div className=" relative flex lg:hidden lg:mt-0 mt-0 top-[40%] lg:gap-0 gap-10 justify-between w-[100%]">
+                        </div>
+                        <div className="mt-3 lg:flex w-full hidden justify-center items-center gap-5 h-16 ">
+                            {ButtonList.map((i, key) => {
+                                return (
+                                    <span className={`${currentIndex === key ? "bg-primaryColor text-white" : "text-textPrimaryColor"} border h-12 w-[230px] hover:scale-95 hover:bg-primaryColor transition hover:text-textSecondColor  rounded-lg px-3`} key={key}>
+                                        <button onClick={() => handleTeste(key)} className="w-full h-full">
+                                            {i.textButton}
+                                        </button>
+                                    </span>
+                                )
+                            })}
+                        </div>
+                        <div className="  lg:flex hidden lg:mt-0 mt-3 relative top-[180px]  lg:gap-0 gap-10 justify-between w-full">
                             <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
                                 <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
                             </button>
                             <button onClick={() => handleNext()} className="w-10 h-10 flex hover:scale-95 transition rounded-lg hover: items-center justify-center  bg-[#CCCBE4]">
                                 <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
                             </button>
-                        </div>
-                        <motion.div
-                            key={currentIndex + 5}
-                            initial={{ opacity: 0.8, translateX: 50 }}
-                            animate={{ opacity: 1.3, translateX: 0 }}
-                            transition={{ duration: 0.6, ease: "linear" }}
-                            className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center">
-                            <Image className="w-full object-cover rounded-2xl  lg:rounded-2xl shadow-md flex" width={1000} quality={100} height={1000} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
 
+
+                        </div>
+                        <div className="lg:w-[80%] w-full mt-5 flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
+                            <AnimatePresence>
+                                <motion.div
+                                    key={currentIndex}
+                                    initial={{ opacity: 0.7, translateX: -50 }}
+                                    animate={{ opacity: 1.3, translateX: 0 }}
+                                    transition={{ duration: 0.6, ease: "linear" }}
+                                    className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-start lg:items-start justify-center">
+                                    <h1 className="text-3xl lg:text-4xl text-left text-black font-bold">
+                                        {JsonList[currentIndex].title}
+                                    </h1>
+                                    <h2 className="text-black text-left  w-full lg:w-[90%]">
+                                        {JsonList[currentIndex].text}
+                                    </h2>
+                                    <button className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
+                                        veja a demo
+                                    </button>
+                                </motion.div>
+                                <div className=" relative flex lg:hidden lg:mt-0 mt-0 top-[40%] lg:gap-0 gap-10 justify-between w-[100%]">
+                                    <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
+                                        <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
+                                    </button>
+                                    <button onClick={() => handleNext()} className="w-10 h-10 flex hover:scale-95 transition rounded-lg hover: items-center justify-center  bg-[#CCCBE4]">
+                                        <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
+                                    </button>
+                                </div>
+                                <motion.div
+                                    key={currentIndex + 5}
+                                    initial={{ opacity: 0.8, translateX: 50 }}
+                                    animate={{ opacity: 1.3, translateX: 0 }}
+                                    transition={{ duration: 0.6, ease: "linear" }}
+                                    className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center">
+                                    <Image className="w-full object-cover rounded-2xl  lg:rounded-2xl shadow-md flex" width={1000} quality={100} height={1000} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     )

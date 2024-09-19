@@ -8,9 +8,9 @@ export function FidelizeSeuCliente() {
     return (
         <section
             style={{ backgroundImage: `url(${bannerHome.src})` }}
-            className={`md:bg-center bg-[70%] bg-cover items-center flex justify-center lg:h-screen h-auto md:h-[100vh] w-full pb-0 bg-no-repeat bg-[#bfbfbf] bg-blend-multiply`}
+            className={`md:bg-center bg-[70%] bg-cover items-center flex justify-center lg:h-[110vh] h-auto md:h-[100vh] w-full pb-0 bg-no-repeat bg-[#bfbfbf] bg-blend-multiply`}
         >
-            <div className="w-[90%] lg:flex-row flex-col-reverse flex gap-10 items-start lg:pt-[15%] lg:py-0 pb-24 pt-24 justify-center  h-full">
+            <div className="w-[90%] lg:flex-row flex-col-reverse flex gap-10 items-center   lg:py-0 pb-24 pt-24 justify-center  h-full">
 
                 {/* Coluna Esquerda (Texto e Botões) */}
                 <motion.div

@@ -114,7 +114,7 @@ export default function ControleTotalDaSuaCadeia() {
 
 
     return (
-        <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] xl:pt-[03%] w-full  ">
+        <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:justify-start lg:pt-28 h-1/4 items-start">
                     <div className="flex items-center justify-center lg:justify-start w-full lg:w-[95%] h-full">
