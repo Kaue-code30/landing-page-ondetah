@@ -8,6 +8,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 export default function TransFormeSeuNegocio() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [side, setSide] = useState(false);
 
 
 
@@ -15,19 +16,19 @@ export default function TransFormeSeuNegocio() {
 
     const ButtonList = [
         {
-            textButton: "Lorem Ipsum is simply",
+            textButton: "Prazos competitivos",
             index: 0,
         },
         {
-            textButton: "Lorem Ipsum is simply",
+            textButton: "Visibilidade de ocorrências",
             index: 1,
         },
         {
-            textButton: "Lorem Ipsum is simply",
+            textButton: "Redução de custos",
             index: 2,
         },
         {
-            textButton: "Lorem Ipsum is simply",
+            textButton: "Aumento de recompra",
             index: 3,
         },
 
@@ -42,20 +43,20 @@ export default function TransFormeSeuNegocio() {
         },
         {
             index: 1,
-            title: "1",
-            text: "Com dados históricos e previsões detalhadas, nossa plataforma permite a análise de risco de atrasos por transportadora, região e sub-região. Antecipe problemas com a matriz de risco e ajuste prazos de forma estratégica, garantindo uma experiência de entrega superior e alinhada com as expectativas dos clientes",
+            title: "Visibilidade da gestão de ocorrência",
+            text: "Gerencie todas as ocorrências de forma segmentada por transportadora, região ou operação. Visualize sua operação com mapas de calor e monitore SLAs em cada fase. Identifique gargalos e ineficiências com análises de performance detalhadas, aprimorando a gestão de prazos, inatividade e a eficiência das entregas.",
             imagem: imagem.src
         },
         {
             index: 2,
-            title: "2",
-            text: "Com dados históricos e previsões detalhadas, nossa plataforma permite a análise de risco de atrasos por transportadora, região e sub-região. Antecipe problemas com a matriz de risco e ajuste prazos de forma estratégica, garantindo uma experiência de entrega superior e alinhada com as expectativas dos clientes",
+            title: "Redução de custos com SAC",
+            text: "Nossos recursos integram status de pedidos diretamente com as transportadoras, enviando atualizações proativas por e-mail e push para cada etapa da entrega. O processo inclui avaliação personalizada sem custos adicionais. Acompanhe o engajamento por canal e transportadora e otimize a comunicação com o cliente.",
             imagem: imagem.src
         },
         {
             index: 3,
-            title: "3",
-            text: "Com dados históricos e previsões detalhadas, nossa plataforma permite a análise de risco de atrasos por transportadora, região e sub-região. Antecipe problemas com a matriz de risco e ajuste prazos de forma estratégica, garantindo uma experiência de entrega superior e alinhada com as expectativas dos clientes",
+            title: "Aumento no índice de recompra",
+            text: "Monitore entregas finalizadas, adiantadas ou atrasadas e compare o desempenho de transportadoras com prazos planejados. Use análises de mapa de calor e avaliação personalizada para medir a satisfação dos seus clientes e utilize todas as informações  geradas no monitoramento para um atendimento ágil via chat, resultando em um aumento significativo na recompra.",
             imagem: imagem.src
         },
     ]
@@ -67,18 +68,20 @@ export default function TransFormeSeuNegocio() {
     const handleNext = () => {
 
         setCurrentIndex((prevIndex) => (prevIndex + 1) % JsonList.length);
+        setSide(true);
     };
     const handlePrevious = () => {
 
         setCurrentIndex((prevIndex) =>
             prevIndex === 0 ? JsonList.length - 1 : prevIndex - 1
         );
+        setSide(false);
     };
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
-        }, 10000);
+        }, 20000);
 
 
         return () => clearInterval(interval);
@@ -101,7 +104,7 @@ export default function TransFormeSeuNegocio() {
                         <div className="mt-3 lg:flex w-full hidden justify-center items-center gap-5 h-16 ">
                             {ButtonList.map((i, key) => {
                                 return (
-                                    <span className={`${currentIndex === key ? "bg-primaryColor text-white" : "text-textPrimaryColor"} border h-12 w-[230px] hover:scale-95 hover:bg-primaryColor transition hover:text-textSecondColor  rounded-lg px-3`} key={key}>
+                                    <span className={`${currentIndex === key ? "bg-primaryColor text-white" : "text-textPrimaryColor"} border ${key === 1 ? "w-[280px]" : ""} h-12 w-[230px] hover:scale-95 hover:bg-primaryColor transition hover:text-textSecondColor  rounded-lg px-3`} key={key}>
                                         <button onClick={() => handleTeste(key)} className="w-full h-full">
                                             {i.textButton}
                                         </button>
@@ -123,14 +126,14 @@ export default function TransFormeSeuNegocio() {
                             <AnimatePresence>
                                 <motion.div
                                     key={currentIndex}
-                                    initial={{ opacity: 0.7, translateX: -50 }}
-                                    animate={{ opacity: 1.3, translateX: 0 }}
-                                    transition={{ duration: 0.6, ease: "linear" }}
+                                    initial={{ opacity: 0, translateX: side ? 50 : -50 }}
+                                    animate={{ opacity: 1, translateX: 0 }}
+                                    transition={{ duration: 0.5, ease: "linear" }}
                                     className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-start lg:items-start justify-center">
-                                    <h1 className="text-3xl lg:text-4xl text-left text-black font-bold">
+                                    <h1 className="text-3xl lg:text-3xl text-left text-black font-bold">
                                         {JsonList[currentIndex].title}
                                     </h1>
-                                    <h2 className="text-black text-left  w-full lg:w-[90%]">
+                                    <h2 className="text-black text-left text-[15px] w-full lg:w-[90%]">
                                         {JsonList[currentIndex].text}
                                     </h2>
                                     <button className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
@@ -147,9 +150,9 @@ export default function TransFormeSeuNegocio() {
                                 </div>
                                 <motion.div
                                     key={currentIndex + 5}
-                                    initial={{ opacity: 0.8, translateX: 50 }}
-                                    animate={{ opacity: 1.3, translateX: 0 }}
-                                    transition={{ duration: 0.6, ease: "linear" }}
+                                    initial={{ opacity: 0, translateX: side ? 50 : -50 }}
+                                    animate={{ opacity: 1, translateX: 0 }}
+                                    transition={{ duration: 0.5, ease: "linear" }}
                                     className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center">
                                     <Image className="w-full object-cover rounded-2xl  lg:rounded-2xl shadow-md flex" width={1000} quality={100} height={1000} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
                                 </motion.div>

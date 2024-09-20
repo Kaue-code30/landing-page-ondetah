@@ -153,7 +153,7 @@ export default function EscolhaOMelhorPlano() {
                                 Escolha o melhor plano para você:
                             </h1>
                             <h2 className="text-textPrimaryColor pt-2 leading-tight text-left lg:text-center w-full font-normal text-base">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Nossos planos são do tamanho das necessidades do seu negócio.
                             </h2>
                         </div>
                         <motion.div ref={ref}

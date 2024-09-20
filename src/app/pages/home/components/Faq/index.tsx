@@ -10,22 +10,22 @@ export default function Faq() {
         {
             index: 0,
             title: "O Ondetah é responsável pela minha entrega?",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            text: "O Ondetah não é uma transportadora, portanto não realizamos a sua entrega. Não somos responsáveis por problemas na sua entrega como: atrasos, falhas na entrega e etc.",
         },
         {
             index: 1,
-            title: "O Ondetah é responsável pela minha entrega?",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            title: "Como consigo falar mais sobre a minha entrega?",
+            text: "Para mais informações e/ou alterações de endereços de entrega, entre em contato diretamente com o SAC da loja onde a compra foi realizada. Eles darão mais informações e lhe auxiliarão da melhor forma possível. ",
         },
         {
             index: 2,
-            title: "O Ondetah é responsável pela minha entrega?",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            title: "Como descubro qual é a transportadora da minha entrega?",
+            text: "No link de rastreio enviado pela loja onde a compra foi realizada, você consegue localizar o transportador.",
         },
         {
             index: 3,
-            title: "O Ondetah é responsável pela minha entrega?",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            title: "Como consigo rastrear o meu pedido?",
+            text: "Acesse a área de “Rastrear pedido” e insira o número do pedido que consta no e-mail enviado pela loja ou você pode localizar logo abaixo do seu nome no link de rastreio como exemplo abaixo.",
         },
     ]
     const handleOpen = (index: number) => {
@@ -47,7 +47,7 @@ export default function Faq() {
                                 FAQ
                             </h1>
                             <h2 className="text-textSecondColor  pt-2 leading-tight text-left  w-full font-normal text-base">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Aqui você encontra as respostas para as dúvidas mais comuns sobre o Ondetah.
                             </h2>
                         </div>
                         <div className="h-auto  flex-col lg:flex hidden text-textSecondColor w-full gap-3 mt-10 ">

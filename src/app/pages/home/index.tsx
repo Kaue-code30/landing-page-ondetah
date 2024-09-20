@@ -13,6 +13,7 @@ import Faq from "./components/Faq";
 import Footer from "./components/footer";
 import ContactForm from "./components/contactForm";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ModalVideoDemo from "./components/assistaNossasDemos/modal";
 
 export function Home() {
     const [scrolled, setScrolled] = useState(false);
@@ -57,6 +58,7 @@ export function Home() {
             <div className="h-auto flex overflow-hidden flex-col items-center w-full">
                 <Header onScroll={scrolled} />
                 <FidelizeSeuCliente />
+                {/* <ModalVideoDemo/> */}
                 <ControleTotalDaSuaCadeia />
                 <TransFormeSeuNegocio />
                 <Cta />

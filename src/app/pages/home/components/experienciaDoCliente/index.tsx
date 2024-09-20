@@ -33,42 +33,42 @@ export default function ExperienciaDoCliente() {
             index: 0,
             icon: ApIcon,
             title: "Integração via API:",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+            text: "ERP, TMS Embarcador e TMS Transportador, conecte facilmente a sistemas essenciais para uma operação sem falhas. ",
             link: ""
         },
         {
             index: 1,
             icon: headPhone,
             title: "Estrutura única de SAC:",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+            text: "Com suporte via Whatsapp e Chatbot 24x7: Atendimento instantâneo com suporte ágil e automatizado.",
             link: ""
         },
         {
             index: 2,
             icon: cloud,
             title: "Infraestrutura 100% na nuvem:",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+            text: "Com acessibilidade garantida e backups automáticos.",
             link: ""
         },
         {
             index: 3,
             icon: computer,
             title: "Rápida Implantação:",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+            text: "A solução pronta para uso  sem complicações e com suporte especializado.",
             link: ""
         },
         {
             index: 4,
             icon: security,
             title: "Segurança da informação:",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+            text: "Proteja os dados da sua empresa e clientes com o mais alto nível de segurança digital.",
             link: ""
         },
         {
             index: 5,
             icon: co2,
             title: "Compensação de CO2:",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+            text: "Opere de maneira sustentável com certificação de compensação nominal.",
             link: ""
         },
     ];
@@ -93,10 +93,10 @@ export default function ExperienciaDoCliente() {
                                 experiência do cliente.
                             </h1>
                             <h2 className="text-textSecondColor pt-2 leading-tight text-left w-full font-normal text-base lg:text-lg">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Projetada para oferecer suporte e gestão de ponta para o gestor de e-commerce.
                             </h2>
                         </div>
-                        
+
                         <motion.div ref={ref}
                             initial={{ opacity: 0, y: 100 }}
                             animate={controls} className="w-full flex lg:flex-row flex-col lg:flex-wrap gap-5 items-start justify-start h-full lg:h-auto pt-10">
@@ -106,7 +106,7 @@ export default function ExperienciaDoCliente() {
                                         key={index}
                                         className={`w-full lg:w-[31%]  ${openStates[index] ? "lg:h-[300px] h-[500px] bg-[#ffffff08] backdrop-blur-sm" : ""}  transition duration-500 flex ${openStates[index] ? "scale-[0.99]" : ""} shadow-xl backdrop-blur-3xl flex-col  gap-5 border rounded-2xl p-5`}
                                         transition={{ duration: 0.3, ease: "linear" }}
-                                        animate={{ height: openStates[index] ? "340px" : "200px" }}
+                                        animate={{ height: openStates[index] ? "375px" : "200px" }}
                                     >
                                         <Image className={`w-12 ${index === 0 ? "mt-5" : "mt-2"} h-12 `} src={item.icon} alt="icones representativos" width={100} height={100} />
                                         <div className="flex w-full justify-between items-center">

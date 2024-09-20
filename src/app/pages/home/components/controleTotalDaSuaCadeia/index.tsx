@@ -74,27 +74,27 @@ export default function ControleTotalDaSuaCadeia() {
         {
             index: 1,
             title: "Comunicação proativa de ocorrências:",
-            text: "Acompanhamento das entregas com atualizações automáticas e precisas.",
+            text: "Controle todo o ciclo de entrega, desde a expedição até o recebimento.",
         },
         {
             index: 2,
             title: "Monitoramento do ciclo de entregas:",
-            text: "Acompanhamento das entregas com atualizações automáticas e precisas.",
+            text: "Envie alertas imediatos sobre qualquer ocorrência durante a entrega.",
         },
         {
             index: 3,
             title: "Análise de performance:",
-            text: "Acompanhamento das entregas com atualizações automáticas e precisas.",
+            text: "Avalie o desempenho em cada etapa e otimize suas operações.",
         },
         {
             index: 4,
             title: "Gestão de riscos:",
-            text: "Acompanhamento das entregas com atualizações automáticas e precisas.",
+            text: "Identifique e minimize riscos de atrasos e insucessos com análises parametrizáveis.",
         },
         {
             index: 5,
             title: "Avaliação Personalizada:",
-            text: "Acompanhamento das entregas com atualizações automáticas e precisas.",
+            text: "Obtenha relatórios personalizados com base nas necessidades do seu negócio para decisões mais assertivas.",
         },
     ]
 
@@ -122,7 +122,7 @@ export default function ControleTotalDaSuaCadeia() {
                             initial={{ opacity: 0, x: -200 }}
                             animate={controlsOne} className="lg:w-1/2 lg:flex hidden  w-full h-full">
                             <motion.div ref={ref}
-                                
+
                                 initial={{ opacity: 0, x: -200 }}
                                 animate={controlsOne} className="w-[100%]  lg:flex hidden  left-0 relative h-[800px] bg-[#D9D9D9] rounded-r-2xl">
                                 <Image className="w-full  shadow-lg rounded-r-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />

@@ -314,43 +314,19 @@ export default function ContactForm({
                             <label className="text-sm text-[#bfbfbf]" htmlFor="title">Quero falar sobre*</label>
                         </div>
 
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre1" name="floating_querofalarSobre" value="Plataforma de e-commerce" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre1">Plataforma de e-commerce</label>
+                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre1" name="floating_querofalarSobre" value="Quero falar com um consultor" onChange={handleChange} />
+                        <label className="text-white" htmlFor="floating_querofalarSobre1">Quero falar com um consultor</label>
                         <br />
 
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre2" name="floating_querofalarSobre" value="Logística para e-commerce: Fulfillment" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre2">Logística para e-commerce: Fulfillment</label>
+                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre2" name="floating_querofalarSobre" value="Quero falar sobre os planos" onChange={handleChange} />
+                        <label className="text-white" htmlFor="floating_querofalarSobre2">Quero falar sobre os planos</label>
                         <br />
 
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre3" name="floating_querofalarSobre" value="TMS Embarcador" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre3">TMS Embarcador</label>
+                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre3" name="floating_querofalarSobre" value="Outros" onChange={handleChange} />
+                        <label className="text-white" htmlFor="floating_querofalarSobre3">Outros</label>
                         <br />
 
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre4" name="floating_querofalarSobre" value="TMS Transportador" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre4">TMS Transportador</label>
-                        <br />
 
-                        <input className="mr-2" type="checkbox" id="floating_querofalarSobre5" name="floating_querofalarSobre" value="Gestão de pedidos, comunicação e rastreio" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre5">CX: Comunicação, gestão de pedidos e rastreio</label>
-                        <br />
-
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre6" name="floating_querofalarSobre" value="Torre de controle em tempo real e envios" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre6">Torre de controle em tempo real e envios</label>
-                        <br />
-
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre7" name="floating_querofalarSobre" value="PUDO: Retirada e Coleta de Mercadorias" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre7">PUDO: Retirada e Coleta de Mercadorias</label>
-                        <br />
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre7" name="floating_querofalarSobre" value="Parcerias" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre8">Parcerias</label>
-                        <br />
-
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre8" name="floating_querofalarSobre" value="Quero trabalhar na UX Group!" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre8">Quero trabalhar na UX Group!</label>
-                        <br />
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_querofalarSobre9" name="floating_querofalarSobre" value="Outros" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_querofalarSobre9">Outros</label>
-                        <br />
                     </div>
 
                     {inputAlternative?.map((data) => (
