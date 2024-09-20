@@ -13,7 +13,7 @@ import Faq from "./components/Faq";
 import Footer from "./components/footer";
 import ContactForm from "./components/contactForm";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import ModalVideoDemo from "./components/assistaNossasDemos/modal";
+
 
 export function Home() {
     const [scrolled, setScrolled] = useState(false);
