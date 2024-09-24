@@ -1,9 +1,10 @@
 import { AnimationControls, motion, useAnimation, useInView } from "framer-motion";
 import Link from "next/link"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsChatRightText } from "react-icons/bs"
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 import { FaRegCircleCheck } from "react-icons/fa6"
+import style from "./style.module.scss"
 
 
 export default function EscolhaOMelhorPlano() {
@@ -11,6 +12,63 @@ export default function EscolhaOMelhorPlano() {
     const controlsOne: AnimationControls = useAnimation();
     const ref = useRef(null)
     const inView = useInView(ref, { once: true })
+    const [value, setValue] = useState(0);
+    const [valueBasic, setValueBasic] = useState(0);
+    const [valueStandard, setValueStandard] = useState(374);
+    const [valueEnterprise, setValueEnterprise] = useState(4.500);
+    const [viewValue, setValueView] = useState(false)
+    const porcent = value / 100
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(Number(Number(e.target.value)));
+    };
+
+    const min = 0;
+    const max = 10000;
+
+    const percentage = ((value - min) / (max - min)) * 100;
+    const rangeStyle = {
+        background: `linear-gradient(to right, rgb(0, 149, 128) ${percentage}%, #d9d9d9 ${percentage}%)`,
+    };
+
+    const UpdateValues = () => {
+
+        if (value <= 500) {
+            setValueBasic(299);
+            setValueStandard(374)
+            setValueEnterprise(561)
+        } else if (value <= 1000) {
+            setValueBasic(538);
+            setValueStandard(673)
+            setValueEnterprise(1009)
+        } else if (value <= 2000) {
+            setValueBasic(969);
+            setValueStandard(1211)
+            setValueEnterprise(1816)
+        }
+        else if (value <= 3000) {
+            setValueBasic(1308);
+            setValueStandard(1635)
+            setValueEnterprise(2452)
+        }
+        else if (value <= 5000) {
+            setValueBasic(1962);
+            setValueStandard(2452)
+            setValueEnterprise(3678)
+        }
+        else if (value <= 10000) {
+            setValueBasic(3531);
+            setValueStandard(4414)
+            setValueEnterprise(6621)
+        }else{
+            
+        }
+
+    }
+
+    useEffect(() => {
+        UpdateValues();
+    }, [value])
 
     useEffect(() => {
         if (inView) {
@@ -27,7 +85,7 @@ export default function EscolhaOMelhorPlano() {
         {
             title: "Basic",
             icon: FaRegStar,
-            value: "R$ 000,00/mês",
+            value: valueBasic,
             listBeneficios: [
                 {
                     icon: FaRegCircleCheck,
@@ -65,7 +123,7 @@ export default function EscolhaOMelhorPlano() {
         {
             title: "Standard",
             icon: FaStarHalfAlt,
-            value: "R$ 000,00/mês",
+            value: valueStandard,
             listBeneficios: [
                 {
                     icon: FaRegCircleCheck,
@@ -104,7 +162,7 @@ export default function EscolhaOMelhorPlano() {
         {
             title: "Enterprise",
             icon: FaStar,
-            value: "R$ 000,00/mês",
+            value: valueEnterprise,
             listBeneficios: [
                 {
                     icon: FaRegCircleCheck,
@@ -143,19 +201,88 @@ export default function EscolhaOMelhorPlano() {
     ]
 
 
+
     return (
         <section className="bg-white lg:h-auto max-w-[1996px] lg:pb-12 pb-10 w-full  ">
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:pt-16 h-1/4 items-center">
                     <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[78%] h-full">
-                        <div className="flex flex-col gap-5 w-full lg:w-3/5 leading-normal">
+                        <motion.div initial={{ opacity: 0, y: 200 }}
+                            animate={controlsOne} className="flex flex-col items-center justify-start w-[98%]  leading-normal">
                             <h1 className="text-3xl lg:text-4xl text-left lg:text-center  leading-tight text-textPrimaryColor font-bold">
                                 Escolha o melhor plano para você:
                             </h1>
-                            <h2 className="text-textPrimaryColor pt-2 leading-tight text-left lg:text-center w-full font-normal text-base">
+                            <h2 className="text-textPrimaryColor pt-3 leading-tight lg:text-center text-left  w-full font-normal text-base">
                                 Nossos planos são do tamanho das necessidades do seu negócio.
                             </h2>
-                        </div>
+                            {/* <div className="lg:w-[50%] w-full mt-4 rounded-full border scale-[0.97] h-14 border-[#D9D9D9] items-start  lg:items-center  flex justify-start ">
+                                <button onClick={() => setEtapa(false)} className={`w-1/2 ${etapa === false ? "bg-secondColor text-white rounded-full shadow-xl scale-110" : "bg-white rounded-l-full hover:bg-primaryColor "} hover:text-white border-none transition-all hover:border-white  text-black h-full `}>
+                                    Pedidos por mês
+                                </button>
+                                <button onClick={() => setEtapa(true)} className={`w-1/2 ${etapa === true ? "bg-secondColor text-white rounded-full shadow-xl scale-110" : "bg-white rounded-r-full hover:bg-primaryColor"} hover:text-white border-none transition-all  hover:border-white  text-black h-full `}>
+                                    Mensageria
+                                </button>
+
+                            </div> */}
+                            <div className="w-[98%] gap-20 items-center justify-center flex pb-6 pt-5 lg:h-24 ">
+                                <div className="relative flex flex-col items-end  gap-2 justify-center w-full lg:w-[50%] ">
+                                    {/* {etapa === false ? ( */}
+                                    <motion.div animate={{ opacity: 1, left: 0 }} initial={{ opacity: 0, left: -100 }} className="relative  w-full">
+                                        <label htmlFor="labels-range-input" className="sr-only">Labels range</label>
+
+                                        <div style={{ left: `${porcent}%`, boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)" }} className={`relative bg-custom-linear transition float-start border  border-[#ededed] teste -translate-x-6 rotate-45 w-12 flex items-center rounded-t-full rounded-bl-full justify-center h-12 `}>
+                                            <h1 className="relative transition text-textSecondColor text-xs  font-medium -rotate-45 ">
+                                                {value}
+                                            </h1>
+                                        </div>
+
+                                        <input
+                                            onMouseLeave={() => setValueView(!viewValue)}
+                                            id="labels-range-input"
+                                            type="range"
+                                            min={min}
+                                            max={max}
+                                            step={100}
+                                            value={value}
+                                            onChange={handleInputChange}
+                                            className={`w-full transition ${style.range}`}
+                                            style={rangeStyle}
+                                        ></input>
+
+
+                                        <span className="text-sm text-gray-500 absolute start-0 -bottom-6">500</span>
+                                        <span className="text-sm text-gray-500 absolute left-[25%] hidden lg:flex  start-0 -bottom-6"> Média de pedidos que sua empresa possui</span>
+
+                                        <span className="text-sm text-gray-500 absolute end-0 -bottom-6">+10.000</span>
+                                    </motion.div>
+                                    {/* ) : (
+                                        <motion.div key={0} animate={{ opacity: 1, left: 0 }} initial={{ opacity: 0, left: 100 }} className="relative w-full "> */}
+                                    {/* <div className="flex w-full items-start justify-start h-full ">
+                                                <div className="w-3/4  gap-3 flex flex-col items-start justify-start">
+                                                    <div>
+                                                        <h3 className="text-base">
+                                                            Selecione o tipo de mensageria:
+                                                        </h3>
+                                                    </div>
+                                                    <div className="flex gap-5">
+                                                        <div className="flex items-center ">
+                                                            <input id="default-checkbox" type="checkbox" value="" className="w-5 h-5  rounded-lg  bg-gray-100 border-gray-300 " />
+                                                            <label htmlFor="default-checkbox" className="ms-2 text-sm  text-black ">WhastApp</label>
+                                                        </div>
+                                                        <div className="flex items-center">
+                                                            <input id="default-checkbox" type="checkbox" value="" className="w-5 h-5  rounded-lg  bg-gray-100 border-gray-300 " />
+                                                            <label htmlFor="default-checkbox" className="ms-2 text-sm  text-black ">SMS</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> */}
+                                    {/* </motion.div>
+                                    )} */}
+                                </div>
+                            </div>
+
+
+                        </motion.div>
                         <motion.div ref={ref}
                             initial={{ opacity: 0, y: 200 }}
                             animate={controlsOne}
@@ -182,8 +309,8 @@ export default function EscolhaOMelhorPlano() {
                                                     );
                                                 })}
                                             </ul>
-                                            <div className={`w-full h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
-                                                {i.value}
+                                            <div className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
+                                                R${i.value}/mês
                                             </div>
                                             <Link className="w-full text-center mt-5 flex items-center text-sm justify-center gap-3" href={""}>
                                                 <BsChatRightText fontWeight={700} fontSize={20} />

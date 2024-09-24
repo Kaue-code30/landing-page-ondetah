@@ -18,11 +18,9 @@ body {
   /* color: var(--foreground);
   background: var(--background); */
   font-family: Arial, Helvetica, sans-serif;
-  
-  
+
+
 }
-
-
 
 /* Opcionalmente, você pode combinar com media queries */
 @media screen and (min-width: 1024px) {

@@ -1,12 +1,13 @@
 import { AnimationControls, motion, useAnimation, useInView } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { IoMdSearch } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoMdSearch } from "react-icons/io";
 
 export default function Integracoes() {
     const controls: AnimationControls = useAnimation();
     const ref = useRef(null);
     const inView = useInView(ref, { once: true });
+    const containerRef = useRef<HTMLDivElement>(null);
 
     // Estado para armazenar o termo de pesquisa
     const [searchTerm, setSearchTerm] = useState('');
@@ -23,6 +24,23 @@ export default function Integracoes() {
             });
         }
     }, [inView, controls]);
+
+    const handleScrollRight = () => {
+        if (containerRef.current) {
+            containerRef.current.scrollTo({
+                left: containerRef.current.scrollLeft + 260,
+                behavior: "smooth",
+            });
+        }
+    };
+    const handleScrollLeft = () => {
+        if (containerRef.current) {
+            containerRef.current.scrollTo({
+                left: containerRef.current.scrollLeft - 1000,
+                behavior: "smooth",
+            });
+        }
+    };
 
     const ButtonList = [
 
@@ -98,13 +116,27 @@ export default function Integracoes() {
                             </div>
                         </motion.div>
 
-                        {/* Lista de Integrações filtrada */}
+                        <div className="lg:hidden  my-2 flex items-center w-full justify-between">
+                            <div
+                                className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
+                                onClick={handleScrollLeft}
+                            >
+                                <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={26} />
+                            </div>
+                            <div
+                                className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
+                                onClick={handleScrollRight}
+                            >
+                                <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={26} />
+                            </div>
+                        </div>
+
                         <motion.div
-                            ref={ref}
-                            initial={{ opacity: 0, y: 100 }}
-                            animate={controls}
-                            className="w-full lg:w-[80%] flex gap-5 overflow-x-auto pb-3 lg:overflow-x-visible lg:flex-wrap pt-10 "
+                            ref={containerRef}
+
+                            className="w-full lg:w-[80%] flex gap-5 overflow-x-auto pb-3 lg:overflow-x-visible lg:flex-wrap lg:pt-10 "
                         >
+
                             {filteredList.length > 0 ? (
                                 filteredList.map((i, index) => (
                                     <div key={index} className="min-w-[150px] shadow-md w-[100px] lg:w-[32%] flex lg:flex-row flex-col gap-4 items-center lg:items-start justify-start rounded-lg p-5 h-[200px] lg:h-32 border-[0.5px]">
