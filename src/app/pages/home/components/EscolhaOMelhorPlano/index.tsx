@@ -100,7 +100,7 @@ export default function EscolhaOMelhorPlano() {
     const handleScrollRight = () => {
         if (containerRef.current) {
             containerRef.current.scrollTo({
-                left: containerRef.current.scrollLeft + 320,
+                left: containerRef.current.scrollLeft + 330,
                 behavior: "smooth",
             });
         }
@@ -386,7 +386,7 @@ export default function EscolhaOMelhorPlano() {
 
 
     return (
-        <section id="planos" className="bg-white lg:h-auto max-w-[1996px] lg:pb-12 pb-10 w-full  ">
+        <section id="planos" className="bg-white lg:h-auto max-w-[1996px] lg:pb-12  w-full  ">
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:pt-16 h-1/4 items-center">
                     <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[78%] h-full">
@@ -401,7 +401,7 @@ export default function EscolhaOMelhorPlano() {
 
                             <div className="w-[98%] gap-20 items-center justify-center flex pb-6 pt-5 lg:h-24 ">
                                 <div className="relative flex flex-col items-end  gap-2 justify-center w-full lg:w-[50%] ">
-                                    {/* {etapa === false ? ( */}
+                                   
                                     <motion.div animate={{ opacity: 1, left: 0 }} initial={{ opacity: 0, left: -100 }} className="relative  w-full">
                                         <label htmlFor="labels-range-input" className="sr-only">Labels range</label>
 
@@ -437,7 +437,7 @@ export default function EscolhaOMelhorPlano() {
                         <motion.div ref={ref}
                             initial={{ opacity: 0, y: 200 }}
                             animate={controlsOne}
-                            className="w-full flex-col overflow-y-hidden overflow-x-scroll pb-4 scroll-smooth lg:overflow-auto mt-5  h-full flex">
+                            className="w-full flex-col overflow-y-hidden overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5  h-full flex">
 
                             <div className="lg:hidden flex items-center w-full justify-between">
                                 <button
@@ -457,12 +457,12 @@ export default function EscolhaOMelhorPlano() {
                             <motion.div ref={containerRef}
                                 initial={{ opacity: 0, y: 200 }}
                                 animate={controlsOne}
-                                className="w-full lg:flex-row overflow-y-hidden overflow-x-scroll pb-4 scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-4 flex">
+                                className="w-full lg:flex-row overflow-y-hidden overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-4 flex">
 
                                 {
                                     JsonList.map((i, key) => {
                                         return (
-                                            <div key={key} className={`lg:h-fit h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[325px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
+                                            <div key={key} className={`lg:h-fit h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
 
                                                 <div className="flex items-center gap-5 justify-start">
                                                     {/* <div className={`${key === 1 ? "flex" : "hidden"} absolute left-[10%] w-10 h-10 bg-white`}>
@@ -503,6 +503,18 @@ export default function EscolhaOMelhorPlano() {
                                                         </motion.div>
                                                     )
                                                 }
+
+
+                                                <ul className="flex  items-start gap-0 lg:gap-0  cursor-default flex-col pt-5">
+                                                    {i.listBeneficios.map((dataList, index) => {
+                                                        return (
+                                                            <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-12 gap-4 items-center justify-center`}>
+                                                                <dataList.icon className="lg:w-5 lg:h-5 w-5 h-5 flex text-lef justify-start items-start" ></dataList.icon>
+                                                                <p className="lg:text-sm  text-[12.7px]">{dataList.title}</p>
+                                                            </li>
+                                                        );
+                                                    })}
+                                                </ul>
                                                 <span className="w-full text-left mt-5 flex items-center text-sm justify-start gap-3" >
                                                     *R$0.10 por SMS |  R$ 0.25 por WhatsApp não oficial ou R$ 0.55 por WhatsApp oficial
                                                 </span>
@@ -511,17 +523,6 @@ export default function EscolhaOMelhorPlano() {
                                                         Comece agora
                                                     </Link>
                                                 </button>
-                                                <ul className="flex  items-start gap-0 lg:gap-2  cursor-default flex-col pt-5">
-                                                    {i.listBeneficios.map((dataList, index) => {
-                                                        return (
-                                                            <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-12 gap-4 items-center justify-center`}>
-                                                                <dataList.icon className="lg:w-4 lg:h-4 w-5 h-5 flex text-lef justify-start items-start" ></dataList.icon>
-                                                                <p className="lg:text-sm  text-[12.7px]">{dataList.title}</p>
-                                                            </li>
-                                                        );
-                                                    })}
-                                                </ul>
-
                                             </div>
                                         );
                                     })
