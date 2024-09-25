@@ -4,6 +4,7 @@ import Image from "next/image";
 import imagem from "@/app/pages/home/assets/capaHome/home.png"
 import { useEffect, useState } from "react"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Link from "next/link";
 
 
 export default function TransFormeSeuNegocio() {
@@ -137,7 +138,10 @@ export default function TransFormeSeuNegocio() {
                                         {JsonList[currentIndex].text}
                                     </h2>
                                     <button className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
+                                        <Link href={"#demos"} className="w-full h-full">
                                         veja a demo
+                                        </Link>
+                                       
                                     </button>
                                 </motion.div>
                                 <div className=" relative flex lg:hidden lg:mt-0 mt-0 top-[40%] lg:gap-0 gap-10 justify-between w-[100%]">

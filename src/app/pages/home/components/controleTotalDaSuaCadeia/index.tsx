@@ -114,7 +114,7 @@ export default function ControleTotalDaSuaCadeia() {
 
 
     return (
-        <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
+        <section id="funcionalidades" className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:justify-start lg:pt-28 h-1/4 items-start">
                     <div className="flex items-center justify-center lg:justify-start w-full lg:w-[95%] h-full">
@@ -178,10 +178,10 @@ export default function ControleTotalDaSuaCadeia() {
                             </ul>
                             <div className=" hidden lg:flex lg:flex-row flex-col pt-3 justify-start items-center gap-2">
                                 <button className="w-full lg:w-1/4 text-base h-12 hover:scale-95 transition text-textSecondColor bg-primaryColor rounded-lg">
-                                    <Link className="w-full h-full" href={""}>Veja a demo</Link>
+                                    <Link className="w-full h-full" href={"#demos"}>Veja a demo</Link>
                                 </button>
                                 <button className="w-full lg:w-2/4 text-base h-12 text-textSecondColor hover:scale-95 transition bg-secondColor rounded-lg">
-                                    <Link className="w-full h-full" href={""}>Fale com um especialista</Link>
+                                    <Link className="w-full h-full" href={"#formulario"}>Fale com um especialista</Link>
                                 </button>
                             </div>
                         </motion.div>

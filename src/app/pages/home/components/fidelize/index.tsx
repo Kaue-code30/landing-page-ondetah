@@ -39,10 +39,10 @@ export function FidelizeSeuCliente() {
                         {/* Botões */}
                         <div className="flex lg:flex-row flex-col gap-2 justify-start items-center">
                             <button className="w-full lg:w-1/4 text-base h-12 bg-primaryColor text-textSecondColor rounded-lg hover:scale-95 transition">
-                                <Link href={""} className="w-full h-full">Veja a demo</Link>
+                                <Link href={"#demos"} className="w-full h-full">Veja a demo</Link>
                             </button>
                             <button className="w-full lg:w-2/4 text-base h-12 bg-secondColor text-textSecondColor rounded-lg hover:scale-95 transition">
-                                <Link href={""} className="w-full h-full">Fale com um especialista</Link>
+                                <Link href={"#formulario"} className="w-full h-full">Fale com um especialista</Link>
                             </button>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ import { FaRegCircleCheck } from "react-icons/fa6"
 import style from "./style.module.scss"
 
 
+
 export default function EscolhaOMelhorPlano() {
 
     const controlsOne: AnimationControls = useAnimation();
@@ -34,34 +35,46 @@ export default function EscolhaOMelhorPlano() {
     const UpdateValues = () => {
 
         if (value <= 500) {
+            // Muda o valor de cada plano
             setValueBasic(299);
             setValueStandard(374)
             setValueEnterprise(561)
+
         } else if (value <= 1000) {
+            // Muda o valor de cada plano
             setValueBasic(538);
             setValueStandard(673)
             setValueEnterprise(1009)
+
         } else if (value <= 2000) {
+            // Muda o valor de cada plano
             setValueBasic(969);
             setValueStandard(1211)
             setValueEnterprise(1816)
+
         }
         else if (value <= 3000) {
+            // Muda o valor de cada plano
             setValueBasic(1308);
             setValueStandard(1635)
             setValueEnterprise(2452)
+
         }
         else if (value <= 5000) {
+            // Muda o valor de cada plano
             setValueBasic(1962);
             setValueStandard(2452)
             setValueEnterprise(3678)
+
         }
-        else if (value <= 10000) {
+        else if (value < 10000) {
+            // Muda o valor de cada plano
             setValueBasic(3531);
             setValueStandard(4414)
             setValueEnterprise(6621)
-        }else{
-            
+
+        } else {
+
         }
 
     }
@@ -81,6 +94,17 @@ export default function EscolhaOMelhorPlano() {
         }
     }, [inView, controlsOne]);
 
+
+
+    //     Link de rastreio para clientes
+    // Comunicação via E-mail
+    // Comunicação via SMS e/ou Whatsapp*
+    // Integração com Transportadoras
+    // Integração de pedidos
+    // Avaliação de serviços e produtos
+    // Análise de engajamento e canais
+
+
     const JsonList = [
         {
             title: "Basic",
@@ -89,72 +113,126 @@ export default function EscolhaOMelhorPlano() {
             listBeneficios: [
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
+                    title: "Link de rastreio para clientes",
                     available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
+                    title: "Comunicação via E-mail",
                     available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
-                    available: false
+                    title: "Comunicação via SMS e/ou Whatsapp*",
+                    available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
-                    available: false
+                    title: "Integração com Transportadoras",
+                    available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
-                    available: false
+                    title: "Integração de pedidos",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Avaliação de serviços e produtos",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Análise de engajamento e canais",
+                    available: true
 
                 },
             ]
-
         },
+
+
+        //         Análise e performance de entregas: prazos, inatividade
+        // Gestão de ocorrências, prazos e transportadoras
+        // Análise de dados: evolução, real vs planejado, qualidade e status
+
         {
-            title: "Standard",
+            title: "Pro",
             icon: FaStarHalfAlt,
             value: valueStandard,
             listBeneficios: [
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
+                    title: "Link de rastreio para clientes",
                     available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
+                    title: "Comunicação via E-mail",
                     available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
+                    title: "Comunicação via SMS e/ou Whatsapp*",
                     available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
-                    available: false
+                    title: "Integração com Transportadoras",
+                    available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
-                    available: false
+                    title: "Integração de pedidos",
+                    available: true
 
                 },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Avaliação de serviços e produtos",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Análise de engajamento e canais",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Funcionalidades do plano Basic",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Análise e performance de entregas",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Gestão de ocorrências",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Análise de dados",
+                    available: true
+
+                },
+
             ]
 
         },
@@ -188,12 +266,6 @@ export default function EscolhaOMelhorPlano() {
                     available: true
 
                 },
-                {
-                    icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
-                    available: true
-
-                },
             ]
 
         },
@@ -203,7 +275,7 @@ export default function EscolhaOMelhorPlano() {
 
 
     return (
-        <section className="bg-white lg:h-auto max-w-[1996px] lg:pb-12 pb-10 w-full  ">
+        <section id="planos" className="bg-white lg:h-auto max-w-[1996px] lg:pb-12 pb-10 w-full  ">
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:pt-16 h-1/4 items-center">
                     <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[78%] h-full">
@@ -230,7 +302,7 @@ export default function EscolhaOMelhorPlano() {
                                     <motion.div animate={{ opacity: 1, left: 0 }} initial={{ opacity: 0, left: -100 }} className="relative  w-full">
                                         <label htmlFor="labels-range-input" className="sr-only">Labels range</label>
 
-                                        <div style={{ left: `${porcent}%`, boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)" }} className={`relative bg-custom-linear transition float-start border  border-[#ededed] teste -translate-x-6 rotate-45 w-12 flex items-center rounded-t-full rounded-bl-full justify-center h-12 `}>
+                                        <div style={{ left: `${porcent}%`, boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)" }} className={`relative bg-custom-linear transition float-start border  border-[#ededed] teste ${porcent <= 50 ? "-translate-x-[5px]" : "-translate-x-[43.5px]"}  rotate-45 w-12  flex items-center rounded-t-full rounded-bl-full justify-center h-12 `}>
                                             <h1 className="relative transition text-textSecondColor text-xs  font-medium -rotate-45 ">
                                                 {value}
                                             </h1>
@@ -250,9 +322,8 @@ export default function EscolhaOMelhorPlano() {
                                         ></input>
 
 
-                                        <span className="text-sm text-gray-500 absolute start-0 -bottom-6">500</span>
-                                        <span className="text-sm text-gray-500 absolute left-[25%] hidden lg:flex  start-0 -bottom-6"> Média de pedidos que sua empresa possui</span>
-
+                                        <span className="text-sm text-gray-500 absolute start-0 -bottom-6">0</span>
+                                        <span className="text-sm text-gray-500 absolute lg:left-[25%] hidden lg:flex  start-0 -bottom-6"></span>
                                         <span className="text-sm text-gray-500 absolute end-0 -bottom-6">+10.000</span>
                                     </motion.div>
                                     {/* ) : (
@@ -290,7 +361,7 @@ export default function EscolhaOMelhorPlano() {
                             {
                                 JsonList.map((i, key) => {
                                     return (
-                                        <div key={key} className={`h-auto  cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[300px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
+                                        <div key={key} className={`h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[300px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
                                             <div className="flex items-center gap-5 justify-start">
                                                 <div className={`w-12 flex items-center justify-center ${key === 1 ? "border-textSecondColor" : "border-primaryColor"} h-12 border-[0.5px] rounded-lg`}>
                                                     <i.icon className={`${key === 1 ? "text-textSecondColor" : "text-primaryColor"} text-3xl`} />
@@ -299,22 +370,44 @@ export default function EscolhaOMelhorPlano() {
                                                     {i.title}
                                                 </h2>
                                             </div>
-                                            <ul className="flex gap-5 cursor-default flex-col pt-5">
+                                            <ul className="flex  items-start gap-2  cursor-default flex-col pt-5">
                                                 {i.listBeneficios.map((dataList, index) => {
                                                     return (
                                                         <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-10 gap-4 items-center justify-center`}>
-                                                            <dataList.icon fontSize={30}></dataList.icon>
+                                                            <dataList.icon fontSize={25}></dataList.icon>
                                                             <p className="text-sm">{dataList.title}</p>
                                                         </li>
                                                     );
                                                 })}
                                             </ul>
-                                            <div className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
-                                                R${i.value}/mês
-                                            </div>
+                                            {
+                                                value >= 10000 ? (
+                                                    <motion.div
+                                                        className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
+                                                        <Link href={"#formulario"}><motion.h1
+                                                            className="flex items-center justify-center text-lg gap-3"
+                                                            key={value}
+                                                            initial={{ opacity: 0 }}
+                                                            animate={{ translateX: 0, opacity: 1 }}
+                                                            transition={{ duration: 0.5, ease: 'linear' }}>
+                                                            <BsChatRightText /> Fale com um consultor
+                                                        </motion.h1></Link>
+
+                                                    </motion.div>
+                                                ) : (
+                                                    <motion.div
+                                                        className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
+                                                        <motion.h1
+                                                            initial={{ opacity: 0 }}
+                                                            animate={{ translateX: 0, opacity: 1 }}
+                                                            transition={{ duration: 0.5, ease: 'linear' }}>
+                                                            R${i.value}/mês
+                                                        </motion.h1>
+                                                    </motion.div>
+                                                )
+                                            }
                                             <Link className="w-full text-center mt-5 flex items-center text-sm justify-center gap-3" href={""}>
-                                                <BsChatRightText fontWeight={700} fontSize={20} />
-                                                Falar com um especialista
+                                                *R$0.10 por SMS |  R$ 0.25 por WhatsApp
                                             </Link>
                                             <button className={`w-full hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
                                                 <Link className="w-full h-full text-center flex items-center justify-center gap-3" href={""}>

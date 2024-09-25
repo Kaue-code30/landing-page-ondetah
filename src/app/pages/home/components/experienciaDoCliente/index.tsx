@@ -8,6 +8,7 @@ import co2 from "@/app/pages/home/assets/iconsExperienciaDoCliente/co2.svg";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimationControls, motion, useAnimation, useInView } from "framer-motion";
+import Link from "next/link";
 
 export default function ExperienciaDoCliente() {
 
@@ -130,7 +131,8 @@ export default function ExperienciaDoCliente() {
                                                 {item.text}
                                             </p>
                                             <button className="w-full  h-12 bg-textSecondColor rounded-lg">
-                                                saiba mais
+                                                <Link className="w-full h-full" href={"#formulario"}>saiba mais</Link>
+                                             
                                             </button>
                                         </motion.div>
                                     </motion.div>

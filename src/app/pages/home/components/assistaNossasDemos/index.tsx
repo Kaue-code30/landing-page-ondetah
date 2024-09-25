@@ -75,7 +75,7 @@ export default function AssitaNossaDemos() {
     };
 
     return (
-        <section className="bg-white overflow-auto lg:h-auto lg:pt-0 pb-14 pt-20 lg:pb-14 max-w-[1996px] w-full  ">
+        <section id="demos" className="bg-white overflow-auto lg:h-auto lg:pt-0 pb-14 pt-20 lg:pb-14 max-w-[1996px] w-full  ">
             {open && (
                 <ModalVideoDemo closeModalFunc={() => handleClose()} urlVideo={view ? jsonList[currentIndex].link : ""} />
             )}

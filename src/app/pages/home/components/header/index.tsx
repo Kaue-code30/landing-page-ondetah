@@ -17,17 +17,17 @@ export default function Header({ onScroll }: PropsComponent) {
         {
             index: 0,
             nameLink: "Funcionalidades",
-            link: ""
+            link: "#funcionalidades"
         },
         {
             index: 1,
             nameLink: "Planos",
-            link: ""
+            link: "#planos"
         },
         {
             index: 2,
             nameLink: "Integrações",
-            link: ""
+            link: "#integracoes"
         },
     ]
 
@@ -40,8 +40,6 @@ export default function Header({ onScroll }: PropsComponent) {
             {localizarPedido && (
                 <PedidoOndetah />
             )}
-
-            
             <motion.header
                 key="header"
                 animate={{

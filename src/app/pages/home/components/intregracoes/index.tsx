@@ -68,10 +68,11 @@ export default function Integracoes() {
     );
 
     return (
-        <section className="bg-white lg:h-auto max-w-[1996px] lg:pb-0 pb-16 pt-[2%] w-full">
-            <div className="flex flex-col w-full items-center justify-center">
+        <section id="integracoes" className="bg-white lg:h-auto max-w-[1996px] lg:pb-0 pb-16 pt-[2%] w-full">
+            <div  className="flex flex-col w-full items-center justify-center">
                 <motion.div ref={ref}
                     initial={{ opacity: 0, y: 100 }}
+                        
                     animate={controls} className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
                     <div className="w-[90%] lg:w-[90%] flex items-center gap-2 justify-start lg:justify-start pb-10 flex-col h-full">
                         <motion.div
@@ -160,7 +161,7 @@ export default function Integracoes() {
 
                         {/* Botão de não encontrar a integração */}
                         <button className="mt-5 w-full lg:w-1/2 text-secondColor font-medium hover:scale-95 duration-300 rounded-lg bg-[#BDF5EC] h-12">
-                            <Link href={""}>
+                            <Link href={"#formulario"}>
                                 Não encontrei a integração que preciso
                             </Link>
                         </button>
