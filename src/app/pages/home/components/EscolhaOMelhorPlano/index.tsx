@@ -31,7 +31,7 @@ export default function EscolhaOMelhorPlano() {
 
     const percentage = ((value - min) / (max - min)) * 100;
     const rangeStyle = {
-        background: `linear-gradient(to right, rgb(0, 149, 128) ${percentage}%, #d9d9d9 ${percentage}%)`,
+        background: `linear-gradient(to right, rgb(40, 38, 91) ${percentage}%, #d9d9d9 ${percentage}%)`,
     };
 
     const UpdateValues = () => {
@@ -398,10 +398,14 @@ export default function EscolhaOMelhorPlano() {
                             <h2 className="text-textPrimaryColor pt-3 leading-tight lg:text-center text-left  w-full font-normal text-base">
                                 Nossos planos são do tamanho das necessidades do seu negócio.
                             </h2>
+                            <h2 className="text-black pt-3 lg:hidden leading-tight lg:text-center text-left  w-full font-normal text-sm">
+                                Iforme o limite de pedidos por mês que você deseja em seu plano.
+                            </h2>
+
 
                             <div className="w-[98%] gap-20 items-center justify-center flex pb-6 pt-5 lg:h-24 ">
                                 <div className="relative flex flex-col items-end  gap-2 justify-center w-full lg:w-[50%] ">
-                                   
+
                                     <motion.div animate={{ opacity: 1, left: 0 }} initial={{ opacity: 0, left: -100 }} className="relative  w-full">
                                         <label htmlFor="labels-range-input" className="sr-only">Labels range</label>
 
@@ -457,7 +461,7 @@ export default function EscolhaOMelhorPlano() {
                             <motion.div ref={containerRef}
                                 initial={{ opacity: 0, y: 200 }}
                                 animate={controlsOne}
-                                className="w-full lg:flex-row overflow-y-hidden overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-4 flex">
+                                className="w-full lg:flex-row overflow-y-hidden pb-4 overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-4 flex">
 
                                 {
                                     JsonList.map((i, key) => {
