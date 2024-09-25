@@ -424,7 +424,7 @@ export default function EscolhaOMelhorPlano() {
                             {
                                 JsonList.map((i, key) => {
                                     return (
-                                        <div key={key} className={`lg:h-fit h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[300px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
+                                        <div key={key} className={`lg:h-fit h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
 
                                             <div className="flex items-center gap-5 justify-start">
                                                 {/* <div className={`${key === 1 ? "flex" : "hidden"} absolute left-[10%] w-10 h-10 bg-white`}>
@@ -455,28 +455,30 @@ export default function EscolhaOMelhorPlano() {
                                                     <motion.div
                                                         className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
                                                         <motion.h1
-                                                            initial={{ opacity: 0.4 }}
-                                                            animate={{ translateX: 0, opacity: 1 }}
-                                                            transition={{ duration: 0.5, ease: 'linear' }}>
+                                                            key={valueBasic}
+
+                                                            initial={{ opacity: 0, translateY:-5 }}
+                                                            animate={{ translateY: 0, opacity: 1 }}
+                                                            transition={{ duration: 0.2, ease: 'linear' }}>
                                                             R${i.value}/mês
                                                         </motion.h1>
                                                     </motion.div>
                                                 )
                                             }
-                                            <Link className="w-full text-center mt-5 flex items-center text-sm justify-center gap-3" href={""}>
-                                                *R$0.10 por SMS |  R$ 0.25 por WhatsApp
-                                            </Link>
+                                            <span className="w-full text-left mt-5 flex items-center text-sm justify-start gap-3" >
+                                                *R$0.10 por SMS |  R$ 0.25 por WhatsApp não oficial ou R$ 0.55 por WhatsApp oficial
+                                            </span>
                                             <button className={`w-full hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
                                                 <Link className="w-full h-full text-center flex items-center justify-center gap-3" href={""}>
                                                     Comece agora
                                                 </Link>
                                             </button>
-                                            <ul className="flex  items-start gap-2  cursor-default flex-col pt-5">
+                                            <ul className="flex  items-start gap-0 lg:gap-2  cursor-default flex-col pt-5">
                                                 {i.listBeneficios.map((dataList, index) => {
                                                     return (
-                                                        <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-10 gap-4 items-center justify-center`}>
+                                                        <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-12 gap-4 items-center justify-center`}>
                                                             <dataList.icon className="lg:w-4 lg:h-4 w-5 h-5 flex text-lef justify-start items-start" ></dataList.icon>
-                                                            <p className="lg:text-sm   text-xs">{dataList.title}</p>
+                                                            <p className="lg:text-sm  text-[12.7px]">{dataList.title}</p>
                                                         </li>
                                                     );
                                                 })}
