@@ -425,6 +425,7 @@ export default function EscolhaOMelhorPlano() {
                                 JsonList.map((i, key) => {
                                     return (
                                         <div key={key} className={`lg:h-fit h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[300px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
+
                                             <div className="flex items-center gap-5 justify-start">
                                                 {/* <div className={`${key === 1 ? "flex" : "hidden"} absolute left-[10%] w-10 h-10 bg-white`}>
                                                     klnl
@@ -436,22 +437,12 @@ export default function EscolhaOMelhorPlano() {
                                                     {i.title}
                                                 </h2>
                                             </div>
-                                            <ul className="flex  items-start gap-2  cursor-default flex-col pt-5">
-                                                {i.listBeneficios.map((dataList, index) => {
-                                                    return (
-                                                        <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-10 gap-4 items-center justify-center`}>
-                                                            <dataList.icon className="lg:text-[55px] lg:w-6 lg:h-6 w-5 h-5 flex text-lef justify-start items-start text-[20px]" ></dataList.icon>
-                                                            <p className="lg:text-sm   text-xs">{dataList.title}</p>
-                                                        </li>
-                                                    );
-                                                })}
-                                            </ul>
                                             {
                                                 value >= 10000 ? (
                                                     <motion.div
                                                         className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
                                                         <Link href={"#formulario"}><motion.h1
-                                                            className="flex items-center justify-center text-sm lg:text-lg gap-3"
+                                                            className="flex items-center justify-center text-sm lg:text-[15px] gap-3"
                                                             key={value}
                                                             initial={{ opacity: 0.4 }}
                                                             animate={{ translateX: 0, opacity: 1 }}
@@ -480,6 +471,17 @@ export default function EscolhaOMelhorPlano() {
                                                     Comece agora
                                                 </Link>
                                             </button>
+                                            <ul className="flex  items-start gap-2  cursor-default flex-col pt-5">
+                                                {i.listBeneficios.map((dataList, index) => {
+                                                    return (
+                                                        <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-10 gap-4 items-center justify-center`}>
+                                                            <dataList.icon className="lg:w-4 lg:h-4 w-5 h-5 flex text-lef justify-start items-start" ></dataList.icon>
+                                                            <p className="lg:text-sm   text-xs">{dataList.title}</p>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+
                                         </div>
                                     );
                                 })
