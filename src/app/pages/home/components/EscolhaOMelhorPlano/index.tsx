@@ -96,13 +96,7 @@ export default function EscolhaOMelhorPlano() {
 
 
 
-    //     Link de rastreio para clientes
-    // Comunicação via E-mail
-    // Comunicação via SMS e/ou Whatsapp*
-    // Integração com Transportadoras
-    // Integração de pedidos
-    // Avaliação de serviços e produtos
-    // Análise de engajamento e canais
+
 
 
     const JsonList = [
@@ -153,13 +147,46 @@ export default function EscolhaOMelhorPlano() {
                     available: true
 
                 },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Análise e performance de entregas",
+                    available: false
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Gestão de ocorrências",
+                    available: false
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Análise de dados: real vs planejado",
+                    available: false
+
+                },
+
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Histórico, compartivo, variação",
+                    available: false
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Matriz de risco",
+                    available: false
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Ação pró ativa na redefinição de prazos",
+                    available: false
+
+                },
+
             ]
         },
-
-
-        //         Análise e performance de entregas: prazos, inatividade
-        // Gestão de ocorrências, prazos e transportadoras
-        // Análise de dados: evolução, real vs planejado, qualidade e status
 
         {
             title: "Pro",
@@ -210,7 +237,89 @@ export default function EscolhaOMelhorPlano() {
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Funcionalidades do plano Basic",
+                    title: "Análise e performance de entregas",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Gestão de ocorrências",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Análise de dados: real vs planejado",
+                    available: true
+
+                },
+
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Histórico, compartivo, variação",
+                    available: false
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Matriz de risco",
+                    available: false
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Ação pró ativa na redefinição de prazos",
+                    available: false
+
+                },
+            ]
+
+        },
+
+        {
+            title: "Enterprise",
+            icon: FaStar,
+            value: valueEnterprise,
+            listBeneficios: [
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Link de rastreio para clientes",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Comunicação via E-mail",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Comunicação via SMS e/ou Whatsapp*",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Integração com Transportadoras",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Integração de pedidos",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Avaliação de serviços e produtos",
+                    available: true
+
+                },
+                {
+                    icon: FaRegCircleCheck,
+                    title: "Análise de engajamento e canais",
                     available: true
 
                 },
@@ -228,41 +337,26 @@ export default function EscolhaOMelhorPlano() {
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Análise de dados",
+                    title: "Análise de dados: real vs planejado",
                     available: true
 
                 },
 
-            ]
-
-        },
-
-        {
-            title: "Enterprise",
-            icon: FaStar,
-            value: valueEnterprise,
-            listBeneficios: [
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
+                    title: "Histórico, compartivo, variação",
                     available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
+                    title: "Matriz de risco",
                     available: true
 
                 },
                 {
                     icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
-                    available: true
-
-                },
-                {
-                    icon: FaRegCircleCheck,
-                    title: "Lorem Ipsum is simply dummy text of the printing",
+                    title: "Ação pró ativa na redefinição de prazos",
                     available: true
 
                 },
@@ -287,15 +381,7 @@ export default function EscolhaOMelhorPlano() {
                             <h2 className="text-textPrimaryColor pt-3 leading-tight lg:text-center text-left  w-full font-normal text-base">
                                 Nossos planos são do tamanho das necessidades do seu negócio.
                             </h2>
-                            {/* <div className="lg:w-[50%] w-full mt-4 rounded-full border scale-[0.97] h-14 border-[#D9D9D9] items-start  lg:items-center  flex justify-start ">
-                                <button onClick={() => setEtapa(false)} className={`w-1/2 ${etapa === false ? "bg-secondColor text-white rounded-full shadow-xl scale-110" : "bg-white rounded-l-full hover:bg-primaryColor "} hover:text-white border-none transition-all hover:border-white  text-black h-full `}>
-                                    Pedidos por mês
-                                </button>
-                                <button onClick={() => setEtapa(true)} className={`w-1/2 ${etapa === true ? "bg-secondColor text-white rounded-full shadow-xl scale-110" : "bg-white rounded-r-full hover:bg-primaryColor"} hover:text-white border-none transition-all  hover:border-white  text-black h-full `}>
-                                    Mensageria
-                                </button>
 
-                            </div> */}
                             <div className="w-[98%] gap-20 items-center justify-center flex pb-6 pt-5 lg:h-24 ">
                                 <div className="relative flex flex-col items-end  gap-2 justify-center w-full lg:w-[50%] ">
                                     {/* {etapa === false ? ( */}
@@ -323,32 +409,9 @@ export default function EscolhaOMelhorPlano() {
 
 
                                         <span className="text-sm text-gray-500 absolute start-0 -bottom-6">0</span>
-                                        <span className="text-sm text-gray-500 absolute lg:left-[25%] hidden lg:flex  start-0 -bottom-6"></span>
+                                        <span className="text-base text-gray-500 absolute lg:left-[26%] hidden lg:flex  start-0 -bottom-6">Iforme o limite de pedidos por mês</span>
                                         <span className="text-sm text-gray-500 absolute end-0 -bottom-6">+10.000</span>
                                     </motion.div>
-                                    {/* ) : (
-                                        <motion.div key={0} animate={{ opacity: 1, left: 0 }} initial={{ opacity: 0, left: 100 }} className="relative w-full "> */}
-                                    {/* <div className="flex w-full items-start justify-start h-full ">
-                                                <div className="w-3/4  gap-3 flex flex-col items-start justify-start">
-                                                    <div>
-                                                        <h3 className="text-base">
-                                                            Selecione o tipo de mensageria:
-                                                        </h3>
-                                                    </div>
-                                                    <div className="flex gap-5">
-                                                        <div className="flex items-center ">
-                                                            <input id="default-checkbox" type="checkbox" value="" className="w-5 h-5  rounded-lg  bg-gray-100 border-gray-300 " />
-                                                            <label htmlFor="default-checkbox" className="ms-2 text-sm  text-black ">WhastApp</label>
-                                                        </div>
-                                                        <div className="flex items-center">
-                                                            <input id="default-checkbox" type="checkbox" value="" className="w-5 h-5  rounded-lg  bg-gray-100 border-gray-300 " />
-                                                            <label htmlFor="default-checkbox" className="ms-2 text-sm  text-black ">SMS</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> */}
-                                    {/* </motion.div>
-                                    )} */}
                                 </div>
                             </div>
 
@@ -361,8 +424,11 @@ export default function EscolhaOMelhorPlano() {
                             {
                                 JsonList.map((i, key) => {
                                     return (
-                                        <div key={key} className={`h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[300px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
+                                        <div key={key} className={`lg:h-fit h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[300px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
                                             <div className="flex items-center gap-5 justify-start">
+                                                {/* <div className={`${key === 1 ? "flex" : "hidden"} absolute left-[10%] w-10 h-10 bg-white`}>
+                                                    klnl
+                                                </div> */}
                                                 <div className={`w-12 flex items-center justify-center ${key === 1 ? "border-textSecondColor" : "border-primaryColor"} h-12 border-[0.5px] rounded-lg`}>
                                                     <i.icon className={`${key === 1 ? "text-textSecondColor" : "text-primaryColor"} text-3xl`} />
                                                 </div>
@@ -374,8 +440,8 @@ export default function EscolhaOMelhorPlano() {
                                                 {i.listBeneficios.map((dataList, index) => {
                                                     return (
                                                         <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-10 gap-4 items-center justify-center`}>
-                                                            <dataList.icon fontSize={25}></dataList.icon>
-                                                            <p className="text-sm">{dataList.title}</p>
+                                                            <dataList.icon className="lg:text-[55px] lg:w-6 lg:h-6 w-5 h-5 flex text-lef justify-start items-start text-[20px]" ></dataList.icon>
+                                                            <p className="lg:text-sm   text-xs">{dataList.title}</p>
                                                         </li>
                                                     );
                                                 })}
@@ -385,9 +451,9 @@ export default function EscolhaOMelhorPlano() {
                                                     <motion.div
                                                         className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
                                                         <Link href={"#formulario"}><motion.h1
-                                                            className="flex items-center justify-center text-lg gap-3"
+                                                            className="flex items-center justify-center text-sm lg:text-lg gap-3"
                                                             key={value}
-                                                            initial={{ opacity: 0 }}
+                                                            initial={{ opacity: 0.4 }}
                                                             animate={{ translateX: 0, opacity: 1 }}
                                                             transition={{ duration: 0.5, ease: 'linear' }}>
                                                             <BsChatRightText /> Fale com um consultor
@@ -398,7 +464,7 @@ export default function EscolhaOMelhorPlano() {
                                                     <motion.div
                                                         className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
                                                         <motion.h1
-                                                            initial={{ opacity: 0 }}
+                                                            initial={{ opacity: 0.4 }}
                                                             animate={{ translateX: 0, opacity: 1 }}
                                                             transition={{ duration: 0.5, ease: 'linear' }}>
                                                             R${i.value}/mês
