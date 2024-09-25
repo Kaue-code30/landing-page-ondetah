@@ -155,19 +155,20 @@ export default function ControleTotalDaSuaCadeia() {
                                 <Image className="w-full lg:hidden flex shadow-lg rounded-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
                             </motion.div>
                             <ul className="flex gap-5 pt-4 flex-col pb-4 left-[87%] -top-3/4">
+                            
                                 {ListContente.map((i, key) => {
                                     return (
                                         <motion.li
                                             key={key}
                                             onClick={() => handleTeste(key)}
                                             transition={{ duration: 0.3, ease: "linear" }}
-                                            animate={{ height: currentIndex === key ? "100px" : "60px" }}
-                                            className={`w-full flex flex-col items-start justify-center p-4 shadow-md border-[0.2px]  hover:scale-105  transition duration-500 ${currentIndex === key ? "border-[#CCCBE4] scale-105 text-primaryColor gap-1 border-nonetext-textSecondColor" : "bg-textSecondColor text-primaryColor"} rounded-lg`}
+                                            animate={{ height: currentIndex === key ? "140px" : "80px" }}
+                                            className={`w-full flex flex-col items-start  justify-center p-4 shadow-md border-[0.2px]  hover:scale-105  transition duration-500 ${currentIndex === key ? "border-[#CCCBE4] scale-105 text-primaryColor gap-1 border-nonetext-textSecondColor" : "bg-textSecondColor text-primaryColor"} rounded-lg`}
                                         >    <button className="w-full z-10 flex items-start cursor-pointer justify-start flex-col">
                                                 <h3 className="text-base text-left font-semibold p-0 m-0">
                                                     {i.title}
                                                 </h3>
-                                                <p className={`text-sm  text-left ${currentIndex === key ? "flex" : "hidden"}`}>
+                                                <p className={`text-sm pt-2  text-left ${currentIndex === key ? "flex" : "hidden"}`}>
                                                     {i.text}
                                                 </p>
                                             </button>
