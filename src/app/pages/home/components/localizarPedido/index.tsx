@@ -59,19 +59,20 @@ export default function PedidoOndetah() {
   };
 
   const handleCodigoTransport = (codigo: { codigo: string, index: any }) => {
-
     setCodigoTransport(codigo.codigo);
     setClicked(codigo.index);
     setSegundaEtapa(true);
     setPrimeiraEtapa(false)
     setCurrentIndez(codigo.index);
+    setVoltar(true);
     // primeiraEtapa ? setSegundaEtapa(false) : setSegundaEtapa(true);
   };
 
- 
+
 
   const handleVolta = () => {
     setPrimeiraEtapa(true);
+    setVoltar(false);
     setSegundaEtapa(false);
     setMessageError("")
     setCodigoPedido("");
@@ -136,25 +137,15 @@ export default function PedidoOndetah() {
       image: whp.src,
       codigo: "WHP",
     },
-
-
-
-
-
-    // {
-    //   index:9,
-    //   image: uxd.src,
-    //   codigo: "uxd",
-    // },
   ];
 
-  useEffect(() => {
-    segundaEtapa ? setVoltar(true) : setVoltar(false);
 
+
+  useEffect(() => {
     if (codigoPedido.length > 0) {
       setMessageError("");
     }
-  },[])
+  }, [])
 
 
 

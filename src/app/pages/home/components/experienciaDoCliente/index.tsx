@@ -107,7 +107,7 @@ export default function ExperienciaDoCliente() {
                                         key={index}
                                         className={`w-full lg:w-[31%]  ${openStates[index] ? "lg:h-[300px] h-[500px] bg-[#ffffff08] backdrop-blur-sm" : ""}  transition duration-500 flex ${openStates[index] ? "scale-[0.99]" : ""} shadow-xl backdrop-blur-3xl flex-col  gap-5 border rounded-2xl p-5`}
                                         transition={{ duration: 0.3, ease: "linear" }}
-                                        animate={{ height: openStates[index] ? "375px" : "200px" }}
+                                        animate={{ height: openStates[index] ? "350px" : "200px" }}
                                     >
                                         <Image className={`w-12 ${index === 0 ? "mt-5" : "mt-2"} h-12 `} src={item.icon} alt="icones representativos" width={100} height={100} />
                                         <div className="flex w-full justify-between items-center">
@@ -132,7 +132,7 @@ export default function ExperienciaDoCliente() {
                                             </p>
                                             <button className="w-full  h-12 bg-textSecondColor rounded-lg">
                                                 <Link className="w-full h-full" href={"#formulario"}>saiba mais</Link>
-                                             
+
                                             </button>
                                         </motion.div>
                                     </motion.div>

@@ -1,4 +1,4 @@
-import { AnimationControls, motion, useAnimation, useInView } from "framer-motion";
+import { AnimatePresence, AnimationControls, motion, useAnimation, useInView } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward, IoMdSearch } from "react-icons/io";
@@ -69,10 +69,10 @@ export default function Integracoes() {
 
     return (
         <section id="integracoes" className="bg-white lg:h-auto max-w-[1996px] lg:pb-0 pb-5 pt-[2%] w-full">
-            <div  className="flex flex-col w-full items-center justify-center">
+            <div className="flex flex-col w-full items-center justify-center">
                 <motion.div ref={ref}
                     initial={{ opacity: 0, y: 100 }}
-                        
+
                     animate={controls} className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
                     <div className="w-[90%] lg:w-[90%] flex items-center gap-2 justify-start lg:justify-start pb-10 flex-col h-full">
                         <motion.div
@@ -137,26 +137,35 @@ export default function Integracoes() {
 
                             className="w-full lg:w-[80%] flex gap-5 overflow-x-auto pb-3 lg:overflow-x-visible lg:flex-wrap lg:pt-10 "
                         >
+                            <AnimatePresence>
 
-                            {filteredList.length > 0 ? (
-                                filteredList.map((i, index) => (
-                                    <div key={index} className="min-w-[150px] shadow-md w-[100px] lg:w-[32%] flex lg:flex-row flex-col gap-4 items-center lg:items-start justify-start rounded-lg p-5 h-[200px] lg:h-32 border-[0.5px]">
-                                        <div className="w-[80%] h-full lg:w-1/4 lg:h-full rounded-2xl bg-primaryColor">
-                                            {/* Espaço para a imagem ou conteúdo */}
-                                        </div>
-                                        <div className="w-full lg:w-3/4 flex items-center lg:items-start justify-center flex-col h-full">
-                                            <p className="font-bold text-textPrimaryColor">
-                                                {i.title}
-                                            </p>
-                                            <p className="text-sm text-textPrimaryColor">
-                                                {i.type}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))
-                            ) : (
-                                <p className="text-textPrimaryColor font-semibold flex items-center justify-center h-[50px] lg:h-[50px] w-full text-center">Desculpe mas não temos esta integração...</p>
-                            )}
+                                {filteredList.length > 0 ? (
+                                    filteredList.map((i, index) => (
+                                        <motion.div
+                                            initial={{ opacity: 0, translateY: -10 }}
+                                            animate={{ translateY: 0, opacity: 1 }}
+                                            transition={{ duration: 0.3, ease: 'linear' }}
+                                            key={index} className="min-w-[150px] shadow-md w-[100px] lg:w-[32%] flex lg:flex-row flex-col gap-4 items-center lg:items-start justify-start rounded-lg p-5 h-[200px] lg:h-32 border-[0.5px]">
+                                            <div className="w-[80%] h-full lg:w-1/4 lg:h-full rounded-2xl bg-primaryColor">
+                                                {/* Espaço para a imagem ou conteúdo */}
+                                            </div>
+                                            <div className="w-full lg:w-3/4 flex items-center lg:items-start justify-center flex-col h-full">
+                                                <p className="font-bold text-textPrimaryColor">
+                                                    {i.title}
+                                                </p>
+                                                <p className="text-sm text-textPrimaryColor">
+                                                    {i.type}
+                                                </p>
+                                            </div>
+                                        </motion.div>
+                                    ))
+                                ) : (
+                                    <motion.p initial={{ opacity: 0, translateY: -10 }}
+                                        exit={{ opacity: 0, translateY: -10 }}
+                                        animate={{ translateY: 0, opacity: 1 }}
+                                        transition={{ duration: 0.3, ease: 'linear' }} key={0} className="text-textPrimaryColor font-semibold flex items-center justify-center h-[50px] lg:h-[50px] w-full text-center">Desculpe mas não temos esta integração...</motion.p>
+                                )}
+                            </AnimatePresence>
                         </motion.div>
 
                         {/* Botão de não encontrar a integração */}
