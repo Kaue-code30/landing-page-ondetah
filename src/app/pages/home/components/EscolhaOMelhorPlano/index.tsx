@@ -386,7 +386,7 @@ export default function EscolhaOMelhorPlano() {
 
 
     return (
-        <section id="planos" className="bg-white lg:h-auto max-w-[1996px] lg:pb-12  w-full  ">
+        <section id="planos" className="bg-white lg:h-auto max-w-[1996px] lg:pb-12 pb-5  w-full  ">
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:pt-16 h-1/4 items-center">
                     <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[78%] h-full">
@@ -522,7 +522,7 @@ export default function EscolhaOMelhorPlano() {
                                                 <span className="w-full text-left mt-5 flex items-center text-sm justify-start gap-3" >
                                                     *R$0.10 por SMS |  R$ 0.25 por WhatsApp não oficial ou R$ 0.55 por WhatsApp oficial
                                                 </span>
-                                                <button className={`w-full hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
+                                                <button className={`w-full unique hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
                                                     <Link className="w-full h-full text-center flex items-center justify-center gap-3" href={""}>
                                                         Comece agora
                                                     </Link>

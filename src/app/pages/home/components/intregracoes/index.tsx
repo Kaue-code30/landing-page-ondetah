@@ -68,7 +68,7 @@ export default function Integracoes() {
     );
 
     return (
-        <section id="integracoes" className="bg-white lg:h-auto max-w-[1996px] lg:pb-0 pb-16 pt-[2%] w-full">
+        <section id="integracoes" className="bg-white lg:h-auto max-w-[1996px] lg:pb-0 pb-5 pt-[2%] w-full">
             <div  className="flex flex-col w-full items-center justify-center">
                 <motion.div ref={ref}
                     initial={{ opacity: 0, y: 100 }}

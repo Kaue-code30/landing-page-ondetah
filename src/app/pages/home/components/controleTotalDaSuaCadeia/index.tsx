@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { FaRegBell, FaRegClock, FaRegStar } from "react-icons/fa"
 import { HiOutlineChartBarSquare } from "react-icons/hi2"
+import { IoIosArrowUp } from "react-icons/io"
 import { MdOutlineDashboard } from "react-icons/md"
 import { TfiTarget } from "react-icons/tfi"
 
@@ -155,7 +156,7 @@ export default function ControleTotalDaSuaCadeia() {
                                 <Image className="w-full lg:hidden flex shadow-lg rounded-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
                             </motion.div>
                             <ul className="flex gap-5 pt-4 flex-col pb-4 left-[87%] -top-3/4">
-                            
+
                                 {ListContente.map((i, key) => {
                                     return (
                                         <motion.li
@@ -164,14 +165,20 @@ export default function ControleTotalDaSuaCadeia() {
                                             transition={{ duration: 0.3, ease: "linear" }}
                                             animate={{ height: currentIndex === key ? "140px" : "80px" }}
                                             className={`w-full flex flex-col items-start  justify-center p-4 shadow-md border-[0.2px]  hover:scale-105  transition duration-500 ${currentIndex === key ? "border-[#CCCBE4] scale-105 text-primaryColor gap-1 border-nonetext-textSecondColor" : "bg-textSecondColor text-primaryColor"} rounded-lg`}
-                                        >    <button className="w-full z-10 flex items-start cursor-pointer justify-start flex-col">
-                                                <h3 className="text-base text-left font-semibold p-0 m-0">
+                                        >    <div className="w-full z-10 flex items-start cursor-pointer justify-start flex-col">
+                                                <h3 className="text-base flex items-center justify-between w-full text-left font-semibold p-0 m-0">
                                                     {i.title}
+                                                    <button
+
+                                                        className="w-7 lg:hidden flex items-center hover:scale-90 transition justify-center rounded-lg h-7 bg-[#CCCBE4]"
+                                                    >
+                                                        <IoIosArrowUp className={`${currentIndex === key ? "" : "rotate-180"} duration-500 transition-all`} fontSize={22} />
+                                                    </button>
                                                 </h3>
                                                 <p className={`text-sm pt-2  text-left ${currentIndex === key ? "flex" : "hidden"}`}>
                                                     {i.text}
                                                 </p>
-                                            </button>
+                                            </div>
 
                                         </motion.li>
                                     )
