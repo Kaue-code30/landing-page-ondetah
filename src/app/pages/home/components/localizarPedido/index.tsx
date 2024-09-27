@@ -145,7 +145,7 @@ export default function PedidoOndetah() {
     if (codigoPedido.length > 0) {
       setMessageError("");
     }
-  }, [])
+  }, [codigoPedido])
 
 
 
@@ -249,11 +249,17 @@ export default function PedidoOndetah() {
                       </div>
                     </form>
 
-                    {messageError && (
-                      <p className="text-red-500 md:text-lg w-[95%] text-sm pb-0 pt-4">
-                        {messageError}
-                      </p>
-                    )}
+                    <AnimatePresence>
+                      {messageError && (
+                        <motion.p
+                          initial={{ translateX: -100, opacity: 0 }}
+                          animate={{ translateX: 0, opacity: 1 }}
+                          transition={{ duration: 0.5, ease: "linear" }}
+                          className="text-red-500 md:text-lg w-[95%] text-sm pb-0 pt-3">
+                          {messageError}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
                     <Link
                       className="w-[95%] h-14 mt-5 hover:p-[1px] transition-all rounded-2xl"
                       onClick={(e) => {

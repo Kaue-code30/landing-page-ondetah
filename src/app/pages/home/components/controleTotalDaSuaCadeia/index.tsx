@@ -1,4 +1,3 @@
-import bannerHome from "@/app/pages/home/assets/capaHome/home.png"
 import { AnimationControls, motion, useAnimation, useInView } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
@@ -8,11 +7,16 @@ import { HiOutlineChartBarSquare } from "react-icons/hi2"
 import { IoIosArrowUp } from "react-icons/io"
 import { MdOutlineDashboard } from "react-icons/md"
 import { TfiTarget } from "react-icons/tfi"
+import monitoramentoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-monitoramento.png"
+import comunicacaoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-comunicacaoproativa.png";
+import gestaoDeRiscosBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-gestaoderiscos.png";
+import performanceBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-performance.png";
+import avaliacaoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-avaliacao.png";
+import rastreamentoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-rastreamento.png"
 
 
 export default function ControleTotalDaSuaCadeia() {
     const [currentIndex, setCurrentIndex] = useState(0);
-
     const controlsOne: AnimationControls = useAnimation();
     const controlsTwo: AnimationControls = useAnimation();
     const ref = useRef(null)
@@ -70,32 +74,37 @@ export default function ControleTotalDaSuaCadeia() {
             index: 0,
             title: "Rastreamento em tempo real:",
             text: "Acompanhamento das entregas com atualizações automáticas e precisas.",
-
+            image: rastreamentoBanner.src
         },
         {
             index: 1,
             title: "Comunicação proativa de ocorrências:",
             text: "Controle todo o ciclo de entrega, desde a expedição até o recebimento.",
+            image: comunicacaoBanner.src
         },
         {
             index: 2,
             title: "Monitoramento do ciclo de entregas:",
             text: "Envie alertas imediatos sobre qualquer ocorrência durante a entrega.",
+            image: monitoramentoBanner.src
         },
         {
             index: 3,
             title: "Análise de performance:",
             text: "Avalie o desempenho em cada etapa e otimize suas operações.",
+            image: performanceBanner.src
         },
         {
             index: 4,
             title: "Gestão de riscos:",
             text: "Identifique e minimize riscos de atrasos e insucessos com análises parametrizáveis.",
+            image: gestaoDeRiscosBanner.src
         },
         {
             index: 5,
             title: "Avaliação Personalizada:",
             text: "Obtenha relatórios personalizados com base nas necessidades do seu negócio para decisões mais assertivas.",
+            image: avaliacaoBanner.src
         },
     ]
 
@@ -105,7 +114,7 @@ export default function ControleTotalDaSuaCadeia() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
+            setCurrentIndex(prevIndex => (prevIndex === 5 ? 0 : prevIndex + 1));
         }, 15000);
 
 
@@ -122,11 +131,12 @@ export default function ControleTotalDaSuaCadeia() {
                         <motion.div ref={ref}
                             initial={{ opacity: 0, x: -200 }}
                             animate={controlsOne} className="lg:w-1/2 lg:flex hidden  w-full h-full">
-                            <motion.div ref={ref}
-
-                                initial={{ opacity: 0, x: -200 }}
-                                animate={controlsOne} className="w-[100%]  lg:flex hidden  left-0 relative h-[800px] bg-[#D9D9D9] rounded-r-2xl">
-                                <Image className="w-full  shadow-lg rounded-r-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
+                            <motion.div
+                                key={ListContente[currentIndex].index}
+                                initial={{ opacity: 0, translateX: -100 }}
+                                transition={{ duration: 0.5, easing: 'linear' }}
+                                animate={{ opacity: 1, translateX: 0 }} className="w-[100%]  lg:flex hidden justify-start items-center  left-0 relative h-[800px] rounded-r-2xl">
+                                < Image key={ListContente[currentIndex].index} className=" object-cover shadow-md rounded-r-2xl h-full" alt="" src={ListContente[currentIndex].image} quality={100} width={1000} height={1000} />
                             </motion.div>
                             <ul className=" relative lg:flex hidden  gap-5 flex-col left-[-3%] top-[200px]">
                                 {JsonList.map((i, key) => {
@@ -153,7 +163,7 @@ export default function ControleTotalDaSuaCadeia() {
                             <motion.div ref={ref}
                                 initial={{ opacity: 0, x: -200 }}
                                 animate={controlsOne} className="w-[100%] lg:hidden flex my-5 rounded-2xl relative h-full bg-[#D9D9D9] rounded-r-2xl">
-                                <Image className="w-full lg:hidden flex shadow-lg rounded-2xl h-full" alt="" src={bannerHome.src} quality={100} width={1000} height={1000} />
+                                <Image className="w-full lg:hidden flex shadow-lg rounded-2xl h-full" alt="" src={ListContente[currentIndex].image} quality={100} width={1000} height={1000} />
                             </motion.div>
                             <ul className="flex gap-5 pt-4 flex-col pb-4 left-[87%] -top-3/4">
 
@@ -163,8 +173,8 @@ export default function ControleTotalDaSuaCadeia() {
                                             key={key}
                                             onClick={() => handleTeste(key)}
                                             transition={{ duration: 0.3, ease: "linear" }}
-                                            animate={{ height: currentIndex === key ? "140px" : "80px" }}
-                                            className={`w-full flex flex-col items-start  justify-center p-4 shadow-md border-[0.2px]  hover:scale-105  transition duration-500 ${currentIndex === key ? "border-[#CCCBE4] scale-105 text-primaryColor gap-1 border-nonetext-textSecondColor" : "bg-textSecondColor text-primaryColor"} rounded-lg`}
+                                            animate={{ height: currentIndex === key ? "130px" : "80px" }}
+                                            className={`w-full flex flex-col items-start  justify-center p-4 shadow-md border-[0.2px]   transition duration-500 ${currentIndex === key ? "border-[#CCCBE4]  text-primaryColor gap-1 border-nonetext-textSecondColor" : "bg-textSecondColor text-primaryColor"} rounded-lg`}
                                         >    <div className="w-full z-10 flex items-start cursor-pointer justify-start flex-col">
                                                 <h3 className="text-base flex items-center justify-between w-full text-left font-semibold p-0 m-0">
                                                     {i.title}

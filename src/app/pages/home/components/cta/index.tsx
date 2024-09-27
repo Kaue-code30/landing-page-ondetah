@@ -23,7 +23,7 @@ export default function Cta() {
 
 
     return (
-        <section className="w-full h-[60vh] lg:h-[50vh] pt-14 lg:pt-[3%] pb-[5%] lg:max-]  flex items-center justify-center">
+        <section className="w-full h-[60vh] lg:h-[50vh] pt-14 lg:pt-[5%] pb-[5%] flex items-center justify-center">
             <motion.div ref={ref}
                 initial={{ opacity: 0, y: 100 }}
                 animate={controls}

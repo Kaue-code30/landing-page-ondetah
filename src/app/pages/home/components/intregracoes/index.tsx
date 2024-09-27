@@ -2,6 +2,12 @@ import { AnimatePresence, AnimationControls, motion, useAnimation, useInView } f
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward, IoMdSearch } from "react-icons/io";
+import logoBling from "@/app/pages/home/assets/integracoes/integracao-bling.png"
+import logoMirakl from "@/app/pages/home/assets/integracoes/integracao-mirakl.png"
+import logoShopify from "@/app/pages/home/assets/integracoes/integracao-shopify.png"
+import logoTray from "@/app/pages/home/assets/integracoes/integracao-tray.png"
+import logoTrux from "@/app/pages/home/assets/integracoes/integracao-trux.png"
+import Image from "next/image";
 
 export default function Integracoes() {
     const controls: AnimationControls = useAnimation();
@@ -53,11 +59,11 @@ export default function Integracoes() {
     ];
 
     const JsonList = [
-        { index: 0, title: "RD station", type: "Marketing", image: "" },
-        { index: 1, title: "Send Grid", type: "Marketing", image: "" },
-        { index: 2, title: "Wordpress", type: "Marketing", image: "" },
-        { index: 3, title: "HubSpot", type: "Marketing", image: "" },
-        { index: 4, title: "Salesforce", type: "Marketing", image: "" },
+        { index: 0, title: "Bling", type: "E-commerce", image: logoBling.src },
+        { index: 1, title: "Mirakl", type: "Marketing", image: logoMirakl.src },
+        { index: 2, title: "Shopify", type: "Marketplace", image: logoShopify.src },
+        { index: 3, title: "Tray", type: "PDV", image: logoTray.src },
+        { index: 4, title: "Trux", type: "CRM", image: logoTrux.src },
     ];
 
     // Filtrar a lista com base no termo de pesquisa e na categoria selecionada
@@ -146,8 +152,8 @@ export default function Integracoes() {
                                             animate={{ translateY: 0, opacity: 1 }}
                                             transition={{ duration: 0.3, ease: 'linear' }}
                                             key={index} className="min-w-[150px] shadow-md w-[100px] lg:w-[32%] flex lg:flex-row flex-col gap-4 items-center lg:items-start justify-start rounded-lg p-5 h-[200px] lg:h-32 border-[0.5px]">
-                                            <div className="w-[80%] h-full lg:w-1/4 lg:h-full rounded-2xl bg-primaryColor">
-                                                {/* Espaço para a imagem ou conteúdo */}
+                                            <div className="w-[80%]  lg:w-1/4  rounded-2xl">
+                                                <Image className=" object-cover rounded-lg shadow-md " src={i.image} alt={`Logo da empresa ${i.title}`} quality={100} width={10000} height={10000} />
                                             </div>
                                             <div className="w-full lg:w-3/4 flex items-center lg:items-start justify-center flex-col h-full">
                                                 <p className="font-bold text-textPrimaryColor">
