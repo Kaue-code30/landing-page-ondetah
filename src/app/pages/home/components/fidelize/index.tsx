@@ -1,4 +1,5 @@
 import bannerHome from "@/app/pages/home/assets/capaHome/home.png";
+import gif from "@/app/pages/home/assets/gif-ondetah.gif"
 import iconLogo from "@/app/pages/home/assets/iconLogo.svg";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -55,7 +56,7 @@ export function FidelizeSeuCliente() {
                     transition={{ duration: 0.8, ease: "backInOut" }}
                     className="w-full lg:w-1/2 flex flex-col items-center justify-center h-2/5 lg:h-auto"
                 >
-                    <Image className="w-2/4 lg:w-1/3" src={iconLogo} width={150} height={150} alt="Logo Grande" />
+                    <Image className="w-2/4 lg:w-3/4" src={gif.src} width={150} height={150} alt="Logo Grande" />
                 </motion.div>
             </div>
         </section>
