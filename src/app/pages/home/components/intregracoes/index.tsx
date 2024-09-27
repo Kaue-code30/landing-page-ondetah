@@ -153,7 +153,7 @@ export default function Integracoes() {
                                             transition={{ duration: 0.3, ease: 'linear' }}
                                             key={index} className="min-w-[150px] shadow-md w-[100px] lg:w-[32%] flex lg:flex-row flex-col gap-4 items-center lg:items-start justify-start rounded-lg p-5 h-[200px] lg:h-32 border-[0.5px]">
                                             <div className="w-[80%]  lg:w-1/4  rounded-2xl">
-                                                <Image className=" object-cover rounded-lg shadow-md " src={i.image} alt={`Logo da empresa ${i.title}`} quality={100} width={10000} height={10000} />
+                                                <Image className=" object-cover rounded-lg transition shadow-md " src={i.image} alt={`Logo da empresa ${i.title}`} quality={100} width={10000} height={10000} />
                                             </div>
                                             <div className="w-full lg:w-3/4 flex items-center lg:items-start justify-center flex-col h-full">
                                                 <p className="font-bold text-textPrimaryColor">
