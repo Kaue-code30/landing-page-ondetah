@@ -136,7 +136,7 @@ export default function ControleTotalDaSuaCadeia() {
                                 initial={{ opacity: 0, translateX: -100 }}
                                 transition={{ duration: 0.5, easing: 'linear' }}
                                 animate={{ opacity: 1, translateX: 0 }} className="w-[100%]  lg:flex hidden justify-start items-center  left-0 relative h-[800px] rounded-r-2xl">
-                                < Image key={ListContente[currentIndex].index} className=" object-cover shadow-md rounded-r-2xl h-full" alt="" src={ListContente[currentIndex].image} quality={100} width={1000} height={1000} />
+                                < Image priority key={ListContente[currentIndex].index} className=" object-cover shadow-md rounded-r-2xl h-full" alt="" src={ListContente[currentIndex].image} quality={100} width={1000} height={1000} />
                             </motion.div>
                             <ul className=" relative lg:flex hidden  gap-5 flex-col left-[-3%] top-[200px]">
                                 {JsonList.map((i, key) => {

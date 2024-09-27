@@ -14,10 +14,6 @@ export default function TransFormeSeuNegocio() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [side, setSide] = useState(false);
 
-
-
-
-
     const ButtonList = [
         {
             textButton: "Prazos competitivos",
@@ -92,6 +88,8 @@ export default function TransFormeSeuNegocio() {
     }, []);
 
 
+
+
     return (
         <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
             <div className="flex flex-col w-full items-center justify-center">
@@ -130,9 +128,10 @@ export default function TransFormeSeuNegocio() {
                             <AnimatePresence>
                                 <motion.div
                                     key={currentIndex}
-                                    initial={{ opacity: 0, translateX: side ? 50 : -50 }}
+                                    // exit={{ opacity: 0, translateY: side ? 50 : -50, transition: { duration: 0, ease: "easeInOut" } }}
+                                    initial={{ opacity: 0.7, translateX: side ? 50 : -50 }}
                                     animate={{ opacity: 1, translateX: 0 }}
-                                    transition={{ duration: 0.5, ease: "linear" }}
+                                    transition={{ duration: 0.3, ease: "linear" }}
                                     className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-start lg:items-start justify-center">
                                     <h1 className="text-3xl lg:text-3xl text-left text-black font-bold">
                                         {JsonList[currentIndex].title}
@@ -142,9 +141,9 @@ export default function TransFormeSeuNegocio() {
                                     </h2>
                                     <button className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
                                         <Link href={"#demos"} className="w-full h-full">
-                                        veja a demo
+                                            veja a demo
                                         </Link>
-                                       
+
                                     </button>
                                 </motion.div>
                                 <div className=" relative flex lg:hidden lg:mt-0 mt-0 top-[40%] lg:gap-0 gap-10 justify-between w-[100%]">
@@ -155,14 +154,20 @@ export default function TransFormeSeuNegocio() {
                                         <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={25} />
                                     </button>
                                 </div>
-                                <motion.div
-                                    key={currentIndex + 5}
-                                    initial={{ opacity: 0, translateX: side ? 50 : -50 }}
-                                    animate={{ opacity: 1, translateX: 0 }}
-                                    transition={{ duration: 0.5, ease: "linear" }}
-                                    className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center">
-                                    <Image className="w-full object-cover rounded-2xl  lg:rounded-2xl flex" width={1000}  height={100} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
-                                </motion.div>
+
+                                <AnimatePresence mode="sync" >
+                                    <motion.div
+                                        key={currentIndex + 5}
+                                        exit={{ opacity: 0, translateY: side ? 50 : -50, transition: { duration: 0, ease: "easeInOut" } }}
+                                        initial={{ opacity: 0.7, translateX: side ? 50 : -50 }}
+                                        animate={{ opacity: 1, translateX: 0 }}
+                                        transition={{ duration: 0.3, ease: "linear" }}
+
+                                        className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center"
+                                    >
+                                        <Image priority className="w-full object-cover rounded-2xl lg:rounded-2xl flex" width={1000} height={100} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
+                                    </motion.div>
+                                </AnimatePresence>
                             </AnimatePresence>
                         </div>
                     </div>
