@@ -1,7 +1,7 @@
-import { AnimatePresence, AnimationControls, motion, useAnimation, useInView } from "framer-motion";
+import {  AnimationControls, motion, useAnimation, useInView } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { IoIosArrowBack, IoIosArrowForward, IoMdSearch } from "react-icons/io";
+import { useEffect, useRef } from "react";
+import { IoIosArrowBack, IoIosArrowForward, } from "react-icons/io";
 import logoBling from "@/app/pages/home/assets/integracoes/integracao-bling.png"
 import logoMirakl from "@/app/pages/home/assets/integracoes/integracao-mirakl.png"
 import logoShopify from "@/app/pages/home/assets/integracoes/integracao-shopify.png"
@@ -16,10 +16,10 @@ export default function Integracoes() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Estado para armazenar o termo de pesquisa
-    const [searchTerm, setSearchTerm] = useState('');
+    // const [searchTerm, setSearchTerm] = useState('');
 
     // Estado para armazenar a categoria selecionada
-    const [selectedCategory, setSelectedCategory] = useState('E-commerce');
+    // const [selectedCategory] = useState('E-commerce');
 
     useEffect(() => {
         if (inView) {
@@ -48,15 +48,15 @@ export default function Integracoes() {
         }
     };
 
-    const ButtonList = [
+    // const ButtonList = [
 
-        { index: 1, text: "E-commerce" },
-        { index: 2, text: "Marketplace" },
-        { index: 3, text: "Marketing" },
-        { index: 4, text: "PDV" },
-        { index: 5, text: "CRM" },
-        { index: 9, text: "Outras" },
-    ];
+    //     { index: 1, text: "E-commerce" },
+    //     { index: 2, text: "Marketplace" },
+    //     { index: 3, text: "Marketing" },
+    //     { index: 4, text: "PDV" },
+    //     { index: 5, text: "CRM" },
+    //     { index: 9, text: "Outras" },
+    // ];
 
     const JsonList = [
         { index: 0, title: "Bling", type: "E-commerce", image: logoBling.src },
@@ -67,11 +67,11 @@ export default function Integracoes() {
     ];
 
     // Filtrar a lista com base no termo de pesquisa e na categoria selecionada
-    const filteredList = JsonList.filter(item =>
-        (item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.type.toLowerCase().includes(searchTerm.toLowerCase())) &&
-        (selectedCategory === 'All' || item.type === selectedCategory)
-    );
+    // const filteredList = JsonList.filter(item =>
+    //     (item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //         item.type.toLowerCase().includes(searchTerm.toLowerCase())) &&
+    //     (selectedCategory === 'All' || item.type === selectedCategory)
+    // );
 
     return (
         <section id="integracoes" className="bg-white lg:h-auto max-w-[1996px] lg:pb-0 pb-5 pt-[2%] w-full">
