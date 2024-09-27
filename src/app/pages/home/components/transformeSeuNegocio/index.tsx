@@ -1,10 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-
-import imagem from "@/app/pages/home/assets/capaHome/home.png"
 import { useEffect, useState } from "react"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
+import recompraBanner from "@/app/pages/home/assets/transformeSeuNegocio/aumento-de-recompra.png"
+import competitividadeBanner from "@/app/pages/home/assets/transformeSeuNegocio/competitividade.png";
+import ocorrenciasBanner from "@/app/pages/home/assets/transformeSeuNegocio/ocorrencias.png";
+import reducaoDeCustoBanner from "@/app/pages/home/assets/transformeSeuNegocio/reducao-de-custos.png";
+
 
 
 export default function TransFormeSeuNegocio() {
@@ -40,25 +43,25 @@ export default function TransFormeSeuNegocio() {
             index: 0,
             title: "Competitividade em prazos de entrega:",
             text: "Com dados históricos e previsões detalhadas, nossa plataforma permite a análise de risco de atrasos por transportadora, região e sub-região. Antecipe problemas com a matriz de risco e ajuste prazos de forma estratégica, garantindo uma experiência de entrega superior e alinhada com as expectativas dos clientes",
-            imagem: imagem.src
+            imagem: competitividadeBanner.src
         },
         {
             index: 1,
             title: "Visibilidade da gestão de ocorrência",
             text: "Gerencie todas as ocorrências de forma segmentada por transportadora, região ou operação. Visualize sua operação com mapas de calor e monitore SLAs em cada fase. Identifique gargalos e ineficiências com análises de performance detalhadas, aprimorando a gestão de prazos, inatividade e a eficiência das entregas.",
-            imagem: imagem.src
+            imagem: ocorrenciasBanner.src
         },
         {
             index: 2,
             title: "Redução de custos com SAC",
             text: "Nossos recursos integram status de pedidos diretamente com as transportadoras, enviando atualizações proativas por e-mail e push para cada etapa da entrega. O processo inclui avaliação personalizada sem custos adicionais. Acompanhe o engajamento por canal e transportadora e otimize a comunicação com o cliente.",
-            imagem: imagem.src
+            imagem: reducaoDeCustoBanner.src
         },
         {
             index: 3,
             title: "Aumento no índice de recompra",
             text: "Monitore entregas finalizadas, adiantadas ou atrasadas e compare o desempenho de transportadoras com prazos planejados. Use análises de mapa de calor e avaliação personalizada para medir a satisfação dos seus clientes e utilize todas as informações  geradas no monitoramento para um atendimento ágil via chat, resultando em um aumento significativo na recompra.",
-            imagem: imagem.src
+            imagem: recompraBanner.src
         },
     ]
 
@@ -158,7 +161,7 @@ export default function TransFormeSeuNegocio() {
                                     animate={{ opacity: 1, translateX: 0 }}
                                     transition={{ duration: 0.5, ease: "linear" }}
                                     className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center">
-                                    <Image className="w-full object-cover rounded-2xl  lg:rounded-2xl shadow-md flex" width={1000} quality={100} height={1000} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
+                                    <Image className="w-full object-cover rounded-2xl  lg:rounded-2xl flex" width={1000}  height={100} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
                                 </motion.div>
                             </AnimatePresence>
                         </div>

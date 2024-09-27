@@ -38,7 +38,7 @@ export default function Cta() {
                 className="w-full lg:flex-row flex-col bg-cover bg-[75%] flex justify-center lg:gap-0 gap-5 lg:justify-center items-start lg:items-center px-5 lg:px-32  h-full ">
                 <div className="w-[85%] h-full flex items-center justify-center">
                     <div className="w-full flex lg:flex-row flex-col gap-5 items-center justify-center h-full">
-                        <h1 className={`text-2xl ${windows ? "text-lg":"lg:text-[44px] lg:pr-10"} lg:pl-5 leading-normal lg:w-[63%] text-white font-bold`}>
+                        <h1 className={`text-2xl ${windows ? "text-xl":"lg:text-[44px] lg:pr-10"} lg:pl-5 leading-normal lg:w-[63%] text-white font-bold`}>
                             Agilidade e informação desde o
                             clique até o cliente:
                         </h1>
