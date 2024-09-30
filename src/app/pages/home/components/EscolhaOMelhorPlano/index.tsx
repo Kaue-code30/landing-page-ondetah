@@ -6,7 +6,7 @@ import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 import { FaRegCircleCheck } from "react-icons/fa6"
 import style from "./style.module.scss"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import ModalFormulario, { DataFormulario, DataFormularioObject } from "./modalFormulario";
+import ModalFormulario, { DataFormularioObject } from "./modalFormulario";
 
 
 

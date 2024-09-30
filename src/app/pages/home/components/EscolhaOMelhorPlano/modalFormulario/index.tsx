@@ -17,10 +17,10 @@ export interface DataFormularioObject {
 
 
 
-export default function ModalFormulario({ mediaPedidos, plano, close, estado }: DataFormulario) {
+export default function ModalFormulario({  plano, close,  }: DataFormulario) {
     return (
         <div className={`fixed z-50 bg-[#00000093] transition-all flex items-end justify-center w-full left-0 h-full top-[0%] `}>
-
+           
             <AnimatePresence>
                 <motion.div key={0} className="lg:w-[35%] w-[95%] p-5 h-[95%] lg:h-[90%] rounded-t-2xl shadow-md bg-custom-linear" initial={{ translateY: 300, opacity: 0, }} transition={{ duration: 0.4, ease: "linear" }} animate={{ translateY: 0, opacity: 1 }} exit={{ translateY: 100, opacity: 0 }}>
                     <div className="w-full flex justify-end items-center">
