@@ -420,7 +420,6 @@ export default function EscolhaOMelhorPlano() {
                                 Informe o limite de pedidos por mês que você deseja em seu plano.
                             </h2>
 
-
                             <div className="w-[98%] gap-20 items-center justify-center flex pb-6 pt-5 lg:h-24 ">
                                 <div className="relative flex flex-col items-end  gap-2 justify-center w-full lg:w-[50%] ">
 
@@ -547,9 +546,9 @@ export default function EscolhaOMelhorPlano() {
                                                     *R$0.10 por SMS |  R$ 0.25 por WhatsApp não oficial ou R$ 0.55 por WhatsApp oficial
                                                 </span>
                                                 <button onClick={() => HandleComeceAgora(i.title, value)} className={`w-full unique hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
-                                                    <Link className="w-full h-full text-center flex items-center justify-center gap-3" href={""}>
+                                                    <p className="w-full h-full text-center flex items-center justify-center gap-3" >
                                                         Comece agora
-                                                    </Link>
+                                                    </p>
                                                 </button>
                                             </div>
                                         );

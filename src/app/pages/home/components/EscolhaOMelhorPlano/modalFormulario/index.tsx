@@ -17,12 +17,13 @@ export interface DataFormularioObject {
 
 
 
-export default function ModalFormulario({  plano, close,  }: DataFormulario) {
+export default function ModalFormulario({ close, }: DataFormulario) {
+    
     return (
-        <div className={`fixed z-50 bg-[#00000093] transition-all flex items-end justify-center w-full left-0 h-full top-[0%] `}>
-           
+        <div className={`fixed z-50 bg-[#00000093] transition-all flex items-center justify-center w-full left-0 h-full top-[0%] `}>
+
             <AnimatePresence>
-                <motion.div key={0} className="lg:w-[35%] w-[95%] p-5 h-[95%] lg:h-[90%] rounded-t-2xl shadow-md bg-custom-linear" initial={{ translateY: 300, opacity: 0, }} transition={{ duration: 0.4, ease: "linear" }} animate={{ translateY: 0, opacity: 1 }} exit={{ translateY: 100, opacity: 0 }}>
+                <motion.div key={0} className={`lg:w-fit bg-black shadow-2xl border-[#ffffffe1]  w-[95%] p-5 h-[95%] scale-95 lg:h-[90%]  rounded-2xl  bg-custom-linear`} initial={{ translateY: 300, opacity: 0, }} transition={{ duration: 0.6, ease: "linear" }} animate={{ translateY: 0, opacity: 1 }} exit={{ translateY: 100, opacity: 0 }}>
                     <div className="w-full flex justify-end items-center">
                         <IoClose
                             onClick={() => close()}
@@ -30,21 +31,21 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
                         />
                     </div>
 
-                    <div className="w-full h-full flex flex-col items-center pt-[5%] lg:pt-16 justify-start ">
-                        <h1 className="text-2xl mb-5 text-center lg:text-left font-bold text-white">
-                            Contratação do plano {plano}
+                    <div className="w-full h-full flex flex-col items-center pt-[6%]  justify-start ">
+                        <h1 className="text-xl mb-2 max-w-md w-[90%] mx-auto text-center lg:text-left font-bold text-white">
+                            Preencha seus dados e receba sua proposta em até 1 dia útil.
                         </h1>
                         <form
 
-                            className="max-w-md w-[90%] mx-auto"
+                            className="max-w-md w-[90%]  scale-y-95 mx-auto"
                         // onSubmit={handleSubmit}
                         >
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-4 group">
                                 <input
                                     type="text"
                                     name="floating_first_name"
                                     id="floating_first_name"
-                                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
+                                    className="block py-2.5 px-0 w-full text-xs text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                                     placeholder=" "
                                     // value={formData.floating_first_name}
                                     // onChange={handleChange}
@@ -52,17 +53,17 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
                                 />
                                 <label
                                     htmlFor="floating_first_name"
-                                    className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium absolute text-xs text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Nome*
                                 </label>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-4 group">
                                 <input
                                     type="email"
                                     name="floating_email"
                                     id="floating_email"
-                                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
+                                    className="block py-2.5 px-0 w-full text-xs text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                                     placeholder=" "
                                     // value={formData.floating_email}
                                     // onChange={handleChange}
@@ -70,17 +71,17 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
                                 />
                                 <label
                                     htmlFor="floating_email"
-                                    className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium absolute text-xs text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     E-mail*
                                 </label>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-4 group">
                                 <input
                                     type="text"
                                     name="floating_company"
                                     id="floating_company"
-                                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
+                                    className="block py-2 px-0 w-full text-xs text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                                     placeholder=" "
                                     // value={formData.floating_company}
                                     // onChange={handleChange}
@@ -88,18 +89,18 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
                                 />
                                 <label
                                     htmlFor="floating_company"
-                                    className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium absolute text-xs text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Empresa* (Ex. UX Group)
                                 </label>
 
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-4 group">
                                 <input
                                     type="cnpj"
                                     name="floating_cnpj"
                                     id="floating_cnpj"
-                                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
+                                    className="block py-2 px-0 w-full text-xs text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                                     placeholder=" "
                                     // value={formData.floating_phone}
                                     // onChange={handleChange}
@@ -107,17 +108,17 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
                                 />
                                 <label
                                     htmlFor="cnpj"
-                                    className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium absolute text-xs text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     CNPJ*
                                 </label>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-4 group">
                                 <input
                                     type="cnpj"
                                     name="floating_cnpj"
                                     id="floating_cnpj"
-                                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
+                                    className="block py-2 px-0 w-full text-xs text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                                     placeholder=" "
                                     // value={formData.floating_phone}
                                     // onChange={handleChange}
@@ -125,16 +126,16 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
                                 />
                                 <label
                                     htmlFor="cnpj"
-                                    className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="peer-focus:font-medium absolute text-xs text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
                                     Site da empresa*
                                 </label>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-4 group">
                                 <select
                                     name="floating_numeroFuncionarios"
                                     id="floating_numeroFuncionarios"
-                                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                                    className="block py-2 px-0 w-full text-xs text-white bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                                     // value={formData.floating_numeroFuncionarios}
                                     // onChange={handleChange}
                                     required
@@ -156,11 +157,11 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
                                     </option>
                                 </select>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-4 group">
                                 <select
                                     name="floating_numeroFuncionarios"
                                     id="floating_numeroFuncionarios"
-                                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                                    className="block py-2 px-0 w-full text-xs text-white bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                                     // value={formData.floating_numeroFuncionarios}
                                     // onChange={handleChange}
                                     required
@@ -182,11 +183,11 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
                                     </option>
                                 </select>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-4 group">
                                 <select
                                     name="floating_numeroFuncionarios"
                                     id="floating_numeroFuncionarios"
-                                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                                    className="block py-2 px-0 w-full text-xs text-white bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                                     // value={formData.floating_numeroFuncionarios}
                                     // onChange={handleChange}
                                     required
@@ -206,17 +207,17 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
 
                                 </select>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-4 group">
                                 <select
                                     name="floating_numeroFuncionarios"
                                     id="floating_numeroFuncionarios"
-                                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                                    className="block py-2 px-0 w-full text-xs text-white bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                                     // value={formData.floating_numeroFuncionarios}
                                     // onChange={handleChange}
                                     required
                                 >
                                     <option value="0" className="text-white">
-                                        Quantas comunicações?*
+                                        {"Qual o número de vezes que o mesmo link sera enviado?"}
                                     </option>
                                     <option value="ERP" className="text-black ">
                                         1
@@ -230,10 +231,13 @@ export default function ModalFormulario({  plano, close,  }: DataFormulario) {
                                     <option value="TMS" className="text-black ">
                                         4 ou mais
                                     </option>
+                                    <option value="TMS" className="text-black ">
+                                        Não sei
+                                    </option>
 
                                 </select>
                             </div>
-                            <button className="w-full h-12 bg-white flex items-center justify-center rounded-lg">
+                            <button className="w-full h-12 hover:scale-95 transition duration-300 bg-white flex items-center justify-center rounded-lg">
                                 enviar
                             </button>
                         </form>

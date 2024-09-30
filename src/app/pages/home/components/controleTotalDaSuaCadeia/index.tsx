@@ -1,17 +1,15 @@
-import { AnimationControls, motion, useAnimation, useInView } from "framer-motion"
+import { AnimatePresence, AnimationControls, motion, useAnimation, useInView } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { FaRegBell, FaRegClock, FaRegStar } from "react-icons/fa"
+import { FaRegBell, FaRegClock } from "react-icons/fa"
 import { HiOutlineChartBarSquare } from "react-icons/hi2"
-import { IoIosArrowUp } from "react-icons/io"
-import { MdOutlineDashboard } from "react-icons/md"
+import { IoIosArrowForward, IoIosArrowUp } from "react-icons/io"
+
 import { TfiTarget } from "react-icons/tfi"
-import monitoramentoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-monitoramento.png"
 import comunicacaoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-comunicacaoproativa.png";
 import gestaoDeRiscosBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-gestaoderiscos.png";
 import performanceBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-performance.png";
-import avaliacaoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-avaliacao.png";
 import rastreamentoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-rastreamento.png"
 
 
@@ -57,54 +55,126 @@ export default function ControleTotalDaSuaCadeia() {
             icon: HiOutlineChartBarSquare
 
         },
-        {
-            index: 4,
-            icon: MdOutlineDashboard
 
-        },
-        {
-            index: 5,
-            icon: FaRegStar
-
-        },
     ]
 
     const ListContente = [
         {
             index: 0,
-            title: "Rastreamento em tempo real:",
+            title: "Comunicação com o cliente",
             text: "Acompanhamento das entregas com atualizações automáticas e precisas.",
-            image: rastreamentoBanner.src
+            image: rastreamentoBanner.src,
+            list: [
+                {
+                    id: 4,
+                    text: "Link de Tracking."
+                },
+                {
+                    id: 5,
+                    text: "Disparo por E-mail, SMS e/ou Whatsapp."
+                },
+                {
+                    id: 6,
+                    text: "Consulta de status em tempo real."
+                },
+                {
+                    id: 7,
+                    text: "Avaliação personalizada de serviços e produtos."
+                },
+            ]
         },
+
         {
             index: 1,
-            title: "Comunicação proativa de ocorrências:",
-            text: "Controle todo o ciclo de entrega, desde a expedição até o recebimento.",
-            image: comunicacaoBanner.src
+            title: "Análise de dados:",
+            text: "Avalie o desempenho em cada etapa e otimize suas operações.",
+            image: performanceBanner.src,
+            list: [
+                {
+                    id: 8,
+                    text: "Engajamento por canal"
+                },
+                {
+                    id: 9,
+                    text: "Nível de serviço por transportadora"
+                },
+                {
+                    id: 10,
+                    text: "Nível de serviço por transportadora"
+                },
+                {
+                    id: 11,
+                    text: "Status de pedido"
+                },
+                {
+                    id: 12,
+                    text: "Nível de serviço por fase"
+                },
+                {
+                    id: 13,
+                    text: "Filtros e segmentação"
+                },
+            ]
         },
         {
             index: 2,
-            title: "Monitoramento do ciclo de entregas:",
-            text: "Envie alertas imediatos sobre qualquer ocorrência durante a entrega.",
-            image: monitoramentoBanner.src
+            title: "Gestão da informação",
+            text: "Identifique e minimize riscos de atrasos e insucessos com análises parametrizáveis.",
+            image: gestaoDeRiscosBanner.src,
+            list: [
+                {
+                    id: 14,
+                    text: "Ocorrências e Prazos."
+                },
+                {
+                    id: 15,
+                    text: "Evolução histórica."
+                },
+                {
+                    id: 16,
+                    text: "Real X Planejado."
+                },
+                {
+                    id: 17,
+                    text: "Risco."
+                },
+                {
+                    id: 18,
+                    text: "Comparativos."
+                },
+                {
+                    id: 19,
+                    text: "Tendências."
+                },
+                {
+                    id: 20,
+                    text: "Ação ativa e redefinição de prazos."
+                },
+            ]
         },
         {
             index: 3,
-            title: "Análise de performance:",
-            text: "Avalie o desempenho em cada etapa e otimize suas operações.",
-            image: performanceBanner.src
-        },
-        {
-            index: 4,
-            title: "Gestão de riscos:",
-            text: "Identifique e minimize riscos de atrasos e insucessos com análises parametrizáveis.",
-            image: gestaoDeRiscosBanner.src
-        },
-        {
-            index: 5,
-            title: "Avaliação Personalizada:",
-            text: "Obtenha relatórios personalizados com base nas necessidades do seu negócio para decisões mais assertivas.",
-            image: avaliacaoBanner.src
+            title: "Atendimento efetivo",
+            text: "Interações automatizadas que garantem agilidade e redução de custos.",
+            image: comunicacaoBanner.src,
+            list: [
+                {
+                    id: 21,
+                    text: "Chatbot de atendimento."
+                },
+                {
+                    id: 22,
+                    text: "Consulta de tracking automatizada."
+                },
+                {
+                    id: 23,
+                    text: "Assertividade e diminuição da ansiedade do cliente."
+                },
+                {
+                    id: 24,
+                    text: "Otimização das equipes de atendimento."
+                },
+            ]
         },
     ]
 
@@ -112,11 +182,11 @@ export default function ControleTotalDaSuaCadeia() {
         setCurrentIndex(i)
     }
 
-   
+
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex(prevIndex => (prevIndex === 5 ? 0 : prevIndex + 1));
+            setCurrentIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
         }, 15000);
 
 
@@ -140,7 +210,7 @@ export default function ControleTotalDaSuaCadeia() {
                                 animate={{ opacity: 1, translateX: 0 }} className="w-[100%]  lg:flex hidden justify-start items-center  left-0 relative h-[800px] rounded-r-2xl">
                                 < Image priority key={ListContente[currentIndex].index} className=" object-cover shadow-md rounded-r-2xl h-full" alt="" src={ListContente[currentIndex].image} quality={100} width={1000} height={1000} />
                             </motion.div>
-                            <ul className=" relative lg:flex hidden  gap-5 flex-col left-[-3%] top-[200px]">
+                            <ul className=" relative lg:flex hidden  gap-5 flex-col left-[-3%] top-[250px]">
                                 {JsonList.map((i, key) => {
                                     return (
                                         <li key={key} className={`w-12 shadow-md h-12 hover:scale-95 border-[0.5px] border-primaryColor transition duration-500  hover:bg-custom-linear hover:border-none ${currentIndex === key ? "bg-custom-linear border-none scale-95 text-textSecondColor" : "bg-textSecondColor text-primaryColor"}  rounded-lg`}>
@@ -155,7 +225,7 @@ export default function ControleTotalDaSuaCadeia() {
                         </motion.div>
                         <motion.div ref={ref}
                             initial={{ opacity: 0, x: 200 }}
-                            animate={controlsOne} className="w-[90%] lg:w-1/2 lg:pl-10 pr-0 flex flex-col justify-center h-full">
+                            animate={controlsOne} className="w-[90%] lg:w-1/2 transition-all lg:pl-10 pr-0 flex flex-col justify-center h-full">
                             <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
                                 Controle total da sua cadeia de entregas em um só lugar.
                             </h1>
@@ -169,31 +239,54 @@ export default function ControleTotalDaSuaCadeia() {
                             </motion.div>
                             <ul className="flex gap-5 pt-4 flex-col pb-4 left-[87%] -top-3/4">
 
-                                {ListContente.map((i, key) => {
+                                {ListContente.map((i) => {
                                     return (
                                         <motion.li
-                                            key={key}
-                                            onClick={() => handleTeste(key)}
-                                            transition={{ duration: 0.3, ease: "linear" }}
-                                            animate={{ height: currentIndex === key ? "130px" : "80px" }}
-                                            className={`w-full flex flex-col items-start  justify-center p-4 shadow-md border-[0.2px]   transition duration-500 ${currentIndex === key ? "border-[#CCCBE4]  text-primaryColor gap-1 border-nonetext-textSecondColor" : "bg-textSecondColor text-primaryColor"} rounded-lg`}
-                                        >    <div className="w-full z-10 flex items-start cursor-pointer justify-start flex-col">
+                                            key={i.index} // Usamos 'i.index' como chave única para o elemento pai
+                                            onClick={() => handleTeste(i.index)} // Atribuímos o index no clique
+                                            transition={{ duration: 0, ease: 'linear' }}
+                                            animate={{ height: currentIndex === i.index ? "max-content" : "80px" }}
+                                            className={`w-full flex flex-col items-start transition-all duration-500 ${currentIndex === i.index ? "h-auto border-[#CCCBE4] text-primaryColor gap-1" : "h-16 bg-textSecondColor text-primaryColor"
+                                                } justify-center p-4 shadow-md border-[0.2px] rounded-lg`}
+                                        >
+                                            <div className="w-full z-10 flex items-start cursor-pointer justify-start flex-col">
                                                 <h3 className="text-base flex items-center justify-between w-full text-left font-semibold p-0 m-0">
                                                     {i.title}
                                                     <button
-
                                                         className="w-7 lg:hidden flex items-center hover:scale-90 transition justify-center rounded-lg h-7 bg-[#CCCBE4]"
                                                     >
-                                                        <IoIosArrowUp className={`${currentIndex === key ? "" : "rotate-180"} duration-500 transition-all`} fontSize={22} />
+                                                        <IoIosArrowUp className={`${currentIndex === i.index ? "" : "rotate-180"} duration-500 transition-all`} fontSize={22} />
                                                     </button>
                                                 </h3>
-                                                <p className={`text-sm pt-2  text-left ${currentIndex === key ? "flex" : "hidden"}`}>
+                                                <motion.p
+                                                    key={currentIndex}
+                                                    initial={{ opacity: 0, translateX: 100 }}
+                                                    transition={{ duration: 0.3, ease: "linear" }}
+                                                    animate={{ opacity: 1, translateX: 0 }}
+                                                    className={`text-sm pt-2 font-medium text-left ${currentIndex === i.index ? "flex" : "hidden"}`}>
                                                     {i.text}
-                                                </p>
-                                            </div>
+                                                </motion.p>
+                                                <ul>
+                                                    <AnimatePresence>
+                                                        {currentIndex === i.index && i.list.map((a) => {
+                                                            return (
+                                                                <motion.li
+                                                                    key={a.id}
+                                                                    initial={{ opacity: 0, translateX: 100 }}
+                                                                    animate={{ opacity: 1, translateX: 0 }}
 
+                                                                    transition={{ duration: 0.3, ease: "linear" }}
+                                                                    className={`text-sm pt-2 text-left flex items-center gap-2`}
+                                                                >
+                                                                    <IoIosArrowForward /> <p className="font-medium">{a.text}</p>
+                                                                </motion.li>
+                                                            );
+                                                        })}
+                                                    </AnimatePresence>
+                                                </ul>
+                                            </div>
                                         </motion.li>
-                                    )
+                                    );
                                 })}
                             </ul>
                             <div className=" hidden lg:flex lg:flex-row flex-col pt-3 justify-start items-center gap-2">
