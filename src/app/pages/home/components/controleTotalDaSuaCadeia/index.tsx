@@ -112,6 +112,8 @@ export default function ControleTotalDaSuaCadeia() {
         setCurrentIndex(i)
     }
 
+   
+
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex(prevIndex => (prevIndex === 5 ? 0 : prevIndex + 1));

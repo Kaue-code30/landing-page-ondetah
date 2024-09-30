@@ -6,6 +6,7 @@ import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 import { FaRegCircleCheck } from "react-icons/fa6"
 import style from "./style.module.scss"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import ModalFormulario, { DataFormulario, DataFormularioObject } from "./modalFormulario";
 
 
 
@@ -21,6 +22,8 @@ export default function EscolhaOMelhorPlano() {
     const [viewValue, setValueView] = useState(false)
     const porcent = value / 100
     const containerRef = useRef<HTMLDivElement>(null);
+    const [openModal, setOpenModal] = useState(false);
+    const [objectModal, setObjectModal] = useState<DataFormularioObject>();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(Number(Number(e.target.value)));
@@ -90,7 +93,7 @@ export default function EscolhaOMelhorPlano() {
             controlsOne.start({
                 opacity: 1,
                 y: 0,
-                transition: { duration: 1.5 },
+                transition: { duration: 1 },
             });
 
         }
@@ -114,11 +117,19 @@ export default function EscolhaOMelhorPlano() {
         }
     };
 
+    const handleCloseModal = () => {
+        setOpenModal(false);
+    }
 
+    const HandleComeceAgora = (plano: string, mediaPedidos: number) => {
+        setObjectModal({ plano, mediaPedidos });
+        setOpenModal(!openModal)
+    }
 
     const JsonList = [
         {
-            title: "Basic",
+            title: "Comunicar",
+            subtitle: "Informação e experiência do cliente.",
             icon: FaRegStar,
             value: valueBasic,
             listBeneficios: [
@@ -206,7 +217,8 @@ export default function EscolhaOMelhorPlano() {
         },
 
         {
-            title: "Pro",
+            title: "Gerir",
+            subtitle: "Visibilidade e gestão detalhada.",
             icon: FaStarHalfAlt,
             value: valueStandard,
             listBeneficios: [
@@ -294,7 +306,8 @@ export default function EscolhaOMelhorPlano() {
         },
 
         {
-            title: "Enterprise",
+            title: "Expandir",
+            subtitle: "Insghts personalizados e controle absoluto.",
             icon: FaStar,
             value: valueEnterprise,
             listBeneficios: [
@@ -387,6 +400,11 @@ export default function EscolhaOMelhorPlano() {
 
     return (
         <section id="planos" className="bg-white lg:h-auto max-w-[1996px] lg:pb-12 pb-5  w-full  ">
+            {
+                openModal && (
+                    <ModalFormulario estado={openModal} close={handleCloseModal} mediaPedidos={objectModal?.mediaPedidos} plano={objectModal?.plano} />
+                )
+            }
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:pt-16 h-1/4 items-center">
                     <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[78%] h-full">
@@ -399,7 +417,7 @@ export default function EscolhaOMelhorPlano() {
                                 Nossos planos são do tamanho das necessidades do seu negócio.
                             </h2>
                             <h2 className="text-black pt-3 lg:hidden leading-tight lg:text-center text-left  w-full font-normal text-sm">
-                                Iforme o limite de pedidos por mês que você deseja em seu plano.
+                                Informe o limite de pedidos por mês que você deseja em seu plano.
                             </h2>
 
 
@@ -413,6 +431,7 @@ export default function EscolhaOMelhorPlano() {
                                             <h1 className="relative transition text-textSecondColor text-xs  font-medium -rotate-45 ">
                                                 {value}
                                             </h1>
+
                                         </div>
 
                                         <input
@@ -430,7 +449,7 @@ export default function EscolhaOMelhorPlano() {
 
 
                                         <span className="text-sm text-gray-500 absolute start-0 -bottom-6">0</span>
-                                        <span className="text-base text-gray-500 absolute lg:left-[26%] hidden lg:flex  start-0 -bottom-6">Iforme o limite de pedidos por mês</span>
+                                        <span className="text-base text-gray-500 absolute lg:left-[26%] hidden lg:flex  start-0 -bottom-6">Informe o limite de pedidos por mês</span>
                                         <span className="text-sm text-gray-500 absolute end-0 -bottom-6">+10.000</span>
                                     </motion.div>
                                 </div>
@@ -468,16 +487,21 @@ export default function EscolhaOMelhorPlano() {
                                         return (
                                             <div key={key} className={`lg:h-fit h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
 
-                                                <div className="flex items-center gap-5 justify-start">
+                                                <div className="flex items-center flex-col gap-5 justify-start">
                                                     {/* <div className={`${key === 1 ? "flex" : "hidden"} absolute left-[10%] w-10 h-10 bg-white`}>
                                                     klnl
                                                 </div> */}
-                                                    <div className={`w-12 flex items-center justify-center ${key === 1 ? "border-textSecondColor" : "border-primaryColor"} h-12 border-[0.5px] rounded-lg`}>
-                                                        <i.icon className={`${key === 1 ? "text-textSecondColor" : "text-primaryColor"} text-3xl`} />
+                                                    <div className="w-full gap-5 flex items-center justify-start h-auto">
+                                                        <div className={`w-12 flex items-center  justify-center ${key === 1 ? "border-textSecondColor" : "border-primaryColor"} h-12 border-[0.5px] rounded-lg`}>
+                                                            <i.icon className={`${key === 1 ? "text-textSecondColor" : "text-primaryColor"} text-3xl`} />
+                                                        </div>
+                                                        <h2 className="text-2xl font-bold">
+                                                            {i.title}
+                                                        </h2>
                                                     </div>
-                                                    <h2 className="text-2xl font-bold">
-                                                        {i.title}
-                                                    </h2>
+                                                    <span className="w-full text-left">
+                                                        {i.subtitle}
+                                                    </span>
                                                 </div>
                                                 {
                                                     value >= 10000 ? (
@@ -522,7 +546,7 @@ export default function EscolhaOMelhorPlano() {
                                                 <span className="w-full text-left mt-5 flex items-center text-sm justify-start gap-3" >
                                                     *R$0.10 por SMS |  R$ 0.25 por WhatsApp não oficial ou R$ 0.55 por WhatsApp oficial
                                                 </span>
-                                                <button className={`w-full unique hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
+                                                <button onClick={() => HandleComeceAgora(i.title, value)} className={`w-full unique hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
                                                     <Link className="w-full h-full text-center flex items-center justify-center gap-3" href={""}>
                                                         Comece agora
                                                     </Link>

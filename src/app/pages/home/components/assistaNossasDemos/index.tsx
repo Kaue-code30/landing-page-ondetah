@@ -119,7 +119,7 @@ export default function AssitaNossaDemos() {
                                                 <Image src={banner.src} className="w-full rounded-2xl object-cover" alt="" quality={100} width={100} height={100} />
                                             </div>
                                             <div className="flex gap-3 pt-5 flex-col items-start justify-start w-full h-1/2">
-                                                <h3 className="text-lg font-semibold">
+                                                <h3 className="text-lg lg:pt-2 font-semibold">
                                                     {item.title}
                                                 </h3>
                                                 <p className="text-base">
