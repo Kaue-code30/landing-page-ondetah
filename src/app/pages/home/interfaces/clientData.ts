@@ -15,7 +15,7 @@ export interface ClientData {
 
 export interface ClientDataPlano {
     floating_plano:string;
-    floating_mediaPedidos:number;
+    floating_mediaPedidos:string;
     floating_first_name: string;
     floating_email: string;
     floating_company: string;
@@ -66,5 +66,5 @@ export interface contactFormDataPlano{
     page:string;
     nameForm: string;
     plano:string;
-    mediaPedidos:number;
+    mediaPedidos:string;
 }

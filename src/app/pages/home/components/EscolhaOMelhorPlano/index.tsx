@@ -438,7 +438,7 @@ export default function EscolhaOMelhorPlano() {
             {
                 openModal === true ? (
                     <motion.div className="w-[90%] lg:w-full" initial={{ translateX: 300, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} transition={{ duration: 1, ease: "linear" }}>
-                        <ContactForm mediaPedidos={value} plano={plano} content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
+                        <ContactForm mediaPedidos={`${value}`} plano={plano} content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
                     </motion.div>
                 ) : (
                     <div className="flex flex-col w-full items-center justify-center">
