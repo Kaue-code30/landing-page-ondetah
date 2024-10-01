@@ -513,7 +513,7 @@ export default function EscolhaOMelhorPlano() {
                                         {
                                             JsonList.map((i, key) => {
                                                 return (
-                                                    <motion.div key={key} className={` ${isExpanded ? "lg:h-fit transition duration-300 " : " h-[290px] transition duration-300 overflow-hidden "} h-auto  flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32.5%] p-5 lg:p-8 border rounded-2xl`}>
+                                                    <motion.div key={key} className={` ${isExpanded ? "h-auto transition duration-300 " : " h-[290px] transition duration-300 overflow-hidden "} flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32.5%] p-5 lg:p-8 border rounded-2xl`}>
 
                                                         <div className="flex items-center flex-col gap-5 w-full justify-between">
 
@@ -577,7 +577,7 @@ export default function EscolhaOMelhorPlano() {
                                                         <ul className="flex  items-start gap-0 lg:gap-0  cursor-default flex-col pt-5">
                                                             {i.listBeneficios.map((dataList, index) => {
                                                                 return (
-                                                                    <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} ${isExpanded === false ? "mt-10 " : ""} h-12 gap-4 items-center justify-center`}>
+                                                                    <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} ${isExpanded === false ? "mt-3" : ""} h-12 gap-4 items-center justify-center`}>
                                                                         <dataList.icon className="lg:w-5 lg:h-5 w-5 h-5 flex text-lef justify-start items-start" ></dataList.icon>
                                                                         <p className="lg:text-sm  text-[12.7px]">{dataList.title}</p>
                                                                     </li>
