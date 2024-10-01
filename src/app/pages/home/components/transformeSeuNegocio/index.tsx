@@ -146,7 +146,7 @@ export default function TransFormeSeuNegocio() {
 
                                     </button>
                                 </motion.div>
-                                <div className=" flex lg:hidden lg:mt-0 mt-3 relative top-[180px]  lg:gap-0 gap-10 justify-between w-full">
+                                {/* <div className=" flex lg:hidden lg:mt-0 mt-3 relative top-[180px]  lg:gap-0 gap-10 justify-between w-full">
                                     <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
                                         <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
                                     </button>
@@ -155,7 +155,7 @@ export default function TransFormeSeuNegocio() {
                                     </button>
 
 
-                                </div>
+                                </div> */}
 
                                 <AnimatePresence mode="sync" >
                                     <motion.div

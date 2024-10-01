@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react"
 import { FaRegBell, FaRegClock } from "react-icons/fa"
 import { HiOutlineChartBarSquare } from "react-icons/hi2"
 import { IoIosArrowForward, IoIosArrowUp } from "react-icons/io"
-
 import { TfiTarget } from "react-icons/tfi"
 import comunicacaoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-comunicacaoproativa.png";
 import gestaoDeRiscosBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-gestaoderiscos.png";
@@ -187,7 +186,7 @@ export default function ControleTotalDaSuaCadeia() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex(prevIndex => (prevIndex === 3 ? 0 : prevIndex + 1));
-        }, 15000);
+        }, 5000);
 
 
         return () => clearInterval(interval);

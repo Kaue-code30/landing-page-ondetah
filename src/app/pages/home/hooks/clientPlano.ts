@@ -1,11 +1,12 @@
 import { AxiosResponse } from "axios";
-import { ClientData } from "@/app/pages/home/interfaces/clientData";
+import { ClientDataPlano } from "@/app/pages/home/interfaces/clientData";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
 const API_URL = 'https://api.rd.services/platform/conversions?api_key=uMNBxrWUgccjMwMfkzYxIcPFAgEJexMYZTqf';
 
-const fetchData = async (clientData: ClientData): Promise<AxiosResponse<ClientData>> => {
+const fetchData = async (clientData: ClientDataPlano): Promise<AxiosResponse<ClientDataPlano>> => {
+    console.log(clientData);
 
     const options = {
         method: 'POST',
@@ -21,14 +22,14 @@ const fetchData = async (clientData: ClientData): Promise<AxiosResponse<ClientDa
                 conversion_identifier: clientData.conversion_identifier,
                 name: clientData.floating_first_name,
                 email: clientData.floating_email,
-                personal_phone: clientData.floating_phone,
-                job_title: clientData.floating_cargo,
                 company_name: clientData.floating_company,
-                cf_numero_de_funcionarios: clientData.floating_numeroFuncionarios,
-                cf_atividade_da_empresa: clientData.floating_segmento,
-                cf_subject: clientData.floating_querofalarSobre,  // Double-check the naming
-                cf_querofalarsobre: clientData.floating_querofalarSobre,  // Double-check the naming
-                cf_message: "Novo Contato",
+                cf_cnpj: clientData.floating_cnpj,
+                cf_comunicacao: clientData.floating_funcoesDeComunicacao,
+                cf_link: clientData.floating_linkEnviados,
+                cf_tecnologia: clientData.floating_tecnologiasQuePossui,
+                cf_media_de_pedidos: clientData.floating_mediaPedidos,
+                cf_plano_escolhido: clientData.floating_plano,
+                cf_transportadoras: clientData.floating_QuantasTransportadoras,
                 cf_referencia: clientData.page_name,
                 cf_termos: clientData.floating_terms
             }
@@ -36,7 +37,7 @@ const fetchData = async (clientData: ClientData): Promise<AxiosResponse<ClientDa
     };
 
     try {
-        const response = await axios.request<ClientData>(options);
+        const response = await axios.request<ClientDataPlano>(options);
         return response;
     } catch (error: any) {
         console.error('Erro na requisição:', error.response?.data || error.message);
@@ -45,7 +46,7 @@ const fetchData = async (clientData: ClientData): Promise<AxiosResponse<ClientDa
 };
 
 export function useClientData() {
-    const mutation = useMutation<AxiosResponse<ClientData>, Error, ClientData>({
+    const mutation = useMutation<AxiosResponse<ClientDataPlano>, Error, ClientDataPlano>({
         mutationFn: fetchData
     });
 
