@@ -589,7 +589,7 @@ export default function EscolhaOMelhorPlano() {
                                                         </span>
                                                         <button onClick={() => HandleComeceAgora(i.title)} className={`w-full unique hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
                                                             <p className="w-full h-full text-center flex items-center justify-center gap-3" >
-                                                                Comece agora
+                                                                Faça seu orçamento
                                                             </p>
                                                         </button>
                                                     </motion.div>
