@@ -377,7 +377,7 @@ export default function ContactForm({
                             <FaRegCheckCircle className="w-9 text-4xl text-[#009580] " />
                             <div className="ps-4 text-sm text-black font-normal">
                                 <h1 className="text-base ">Obrigado pelo contato.</h1>
-                                Em Breve nosso time comercial entrará em contato com você.
+                                Você receberá sua proposta em até 1 dia útil.
                             </div>
                         </motion.div>
                     )}
