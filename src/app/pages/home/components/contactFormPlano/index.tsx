@@ -13,7 +13,6 @@ export default function ContactForm({
     nameForm,
 }: contactFormDataPlano) {
     const [showSuccess, setShowSuccess] = useState(false);
-    const mediaPedidosNew = mediaPedidos.toString
     const [formData, setFormData] = useState({
 
         floating_first_name: "",
