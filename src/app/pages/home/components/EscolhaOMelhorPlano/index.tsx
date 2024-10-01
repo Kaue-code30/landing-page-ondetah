@@ -5,7 +5,7 @@ import { BsChatRightText } from "react-icons/bs"
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 import { FaRegCircleCheck } from "react-icons/fa6"
 import style from "./style.module.scss"
-import { IoIosArrowBack, IoIosArrowForward, IoIosArrowRoundBack } from "react-icons/io";
+import { IoIosArrowBack,  IoIosArrowForward, IoIosArrowRoundBack, IoIosArrowUp } from "react-icons/io";
 import ContactForm from "../contactFormPlano";
 
 
@@ -25,6 +25,11 @@ export default function EscolhaOMelhorPlano() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [openModal, setOpenModal] = useState(false);
     const [plano, setPlano] = useState("");
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded);
+    };
 
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -123,7 +128,7 @@ export default function EscolhaOMelhorPlano() {
         setOpenModal(false);
     }
 
-    const HandleComeceAgora = (plano:string) => {
+    const HandleComeceAgora = (plano: string) => {
         setPlano(plano);
         setOpenModal(true)
     }
@@ -417,7 +422,7 @@ export default function EscolhaOMelhorPlano() {
     ];
 
     return (
-        <section id="planos" className={` ${openModal ? "bg-primaryColor lg:mt-10" : "bg-white"} flex items-center pb-20 justify-center flex-col lg:h-auto max-w-[1996px] lg:pt-[20px] lg:pb-[100px]  w-full  `}>
+        <section id="planos" className={` ${openModal ? "bg-primaryColor lg:mt-10" : "bg-white"} flex items-center pb-20 justify-center flex-col lg:h-auto max-w-[1996px] lg:pt-[20px] lg:pb-[60px]  w-full  `}>
             <motion.div initial={{ opacity: 0, y: 200 }}
                 animate={controlsOne} className="flex flex-col pt-16 lg:items-center items-start justify-center  lg:justify-start w-[90%] lg:w-[98%]  leading-normal">
 
@@ -503,26 +508,33 @@ export default function EscolhaOMelhorPlano() {
 
                                     <motion.div ref={containerRef}
 
-                                        className="w-full lg:flex-row overflow-y-hidden pb-4 overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-4 flex">
+                                        className="w-full lg:flex-row overflow-y-hidden pb-4 overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-3 flex">
 
                                         {
                                             JsonList.map((i, key) => {
                                                 return (
-                                                    <div key={key} className={`lg:h-fit h-auto flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32%] p-5 lg:p-8 border rounded-2xl`}>
+                                                    <motion.div key={key} className={` ${isExpanded ? "lg:h-fit transition duration-300 " : " h-[290px] transition duration-300 overflow-hidden "} h-auto  flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32.5%] p-5 lg:p-8 border rounded-2xl`}>
 
-                                                        <div className="flex items-center flex-col gap-5 justify-start">
+                                                        <div className="flex items-center flex-col gap-5 w-full justify-between">
 
                                                             <div className="w-full gap-5 flex items-center justify-start h-auto">
-                                                                <div className={`w-12 flex items-center  justify-center ${key === 1 ? "border-textSecondColor" : "border-primaryColor"} h-12 border-[0.5px] rounded-lg`}>
-                                                                    <i.icon className={`${key === 1 ? "text-textSecondColor" : "text-primaryColor"} text-3xl`} />
+                                                                <div className="w-full flex items-center justify-start gap-5">
+                                                                    <div className={`w-12 flex items-center  justify-center ${key === 1 ? "border-textSecondColor" : "border-primaryColor"} h-12 border-[0.5px] rounded-lg`}>
+                                                                        <i.icon className={`${key === 1 ? "text-textSecondColor" : "text-primaryColor"} text-3xl`} />
+                                                                    </div>
+                                                                    <h2 className="text-2xl font-bold">
+                                                                        {i.title}
+
+                                                                    </h2>
                                                                 </div>
-                                                                <h2 className="text-2xl font-bold">
-                                                                    {i.title}
-                                                                </h2>
+
+
                                                             </div>
+
                                                             <span className="w-full text-left">
                                                                 {i.subtitle}
                                                             </span>
+
                                                         </div>
                                                         {
                                                             value >= 10000 ? (
@@ -552,12 +564,20 @@ export default function EscolhaOMelhorPlano() {
                                                                 </motion.div>
                                                             )
                                                         }
+                                                        <div className="flex w-full mt-3 items-end justify-start ">
+                                                            <button
+                                                                className={`flex items-center gap-2 text-xs justify-center ${key === 1 ? "bg-[#bdf5ec]" : "bg-[#CCCBE4]"}  text-primaryColor rounded-lg w-[130px] px-2 h-10 hover:scale-95 transition`} onClick={toggleExpand}
+                                                            >
+                                                                ver detalhes
+                                                                <IoIosArrowUp className={`${isExpanded ? "rotate-180" : ""} transition duration-200`} fontSize={26} />
 
+                                                            </button>
+                                                        </div>
 
                                                         <ul className="flex  items-start gap-0 lg:gap-0  cursor-default flex-col pt-5">
                                                             {i.listBeneficios.map((dataList, index) => {
                                                                 return (
-                                                                    <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} h-12 gap-4 items-center justify-center`}>
+                                                                    <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} ${isExpanded === false ? "mt-10 " : ""} h-12 gap-4 items-center justify-center`}>
                                                                         <dataList.icon className="lg:w-5 lg:h-5 w-5 h-5 flex text-lef justify-start items-start" ></dataList.icon>
                                                                         <p className="lg:text-sm  text-[12.7px]">{dataList.title}</p>
                                                                     </li>
@@ -572,7 +592,7 @@ export default function EscolhaOMelhorPlano() {
                                                                 Comece agora
                                                             </p>
                                                         </button>
-                                                    </div>
+                                                    </motion.div>
                                                 );
                                             })
                                         }

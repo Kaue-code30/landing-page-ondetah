@@ -135,7 +135,7 @@ export default function ContactForm({
         async
         src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/139aadf5-b7d4-4ce5-b117-ddb828aef384-loader.js"
       ></Script> */}
-            <section id="formulario" className="bg-primaryColor flex items-start justify-start pt-[20px] w-full">
+            <div id="formulario" className="bg-primaryColor flex items-start justify-start pt-[20px] w-full">
                 <form
                     id={nameForm}
                     name={nameForm}
@@ -389,7 +389,7 @@ export default function ContactForm({
                         Enviar contato
                     </button>
                 </form>
-            </section>
+            </div>
         </>
     );
 }
