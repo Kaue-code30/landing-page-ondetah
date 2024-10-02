@@ -10,12 +10,14 @@ import comunicacaoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/
 import gestaoDeRiscosBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-gestaoderiscos.png";
 import performanceBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-performance.png";
 import rastreamentoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-rastreamento.png"
+import ModalVideoDemo from "../assistaNossasDemos/modal"
 
 
 export default function ControleTotalDaSuaCadeia() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const controlsOne: AnimationControls = useAnimation();
     const controlsTwo: AnimationControls = useAnimation();
+    const [open, setOpen] = useState(false);
     const ref = useRef(null)
     const inView = useInView(ref, { once: true })
 
@@ -181,7 +183,9 @@ export default function ControleTotalDaSuaCadeia() {
         setCurrentIndex(i)
     }
 
-
+    const handleClose = () => {
+        setOpen(false);
+    }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -196,6 +200,9 @@ export default function ControleTotalDaSuaCadeia() {
 
     return (
         <section id="funcionalidades" className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
+            {open && (
+                <ModalVideoDemo closeModalFunc={() => handleClose()} urlVideo={""} />
+            )}
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:justify-start lg:pt-28 h-1/4 items-start">
                     <div className="flex items-center justify-center lg:justify-start w-full lg:w-[95%] h-full">
@@ -289,8 +296,8 @@ export default function ControleTotalDaSuaCadeia() {
                                 })}
                             </ul>
                             <div className=" hidden lg:flex lg:flex-row flex-col pt-3 justify-start items-center gap-2">
-                                <button className="w-full lg:w-1/4 text-base h-12 hover:scale-95 transition text-textSecondColor bg-primaryColor rounded-lg">
-                                    <Link className="w-full h-full" href={"#demos"}>Veja a demo</Link>
+                                <button onClick={() => setOpen(true)} className="w-full lg:w-1/4 text-base h-12 hover:scale-95 transition text-textSecondColor bg-primaryColor rounded-lg">
+                                    <p className="w-full flex items-center justify-center h-full" >Veja a demo</p>
                                 </button>
                                 <button className="w-full lg:w-2/4 text-base h-12 text-textSecondColor hover:scale-95 transition bg-secondColor rounded-lg">
                                     <Link className="w-full h-full" href={"#formulario"}>Fale com um especialista</Link>

@@ -4,7 +4,7 @@ import ContactForm from "../pages/home/components/contactFormPlano";
 import Footer from "../pages/home/components/footer";
 import Header from "../pages/home/components/header";
 import { useEffect, useMemo, useState } from "react";
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 export default function FormularioContratacao() {
     const [scrolled, setScrolled] = useState(false);
@@ -50,11 +50,12 @@ export default function FormularioContratacao() {
         }
     }, []);
 
+
     return (
         <QueryClientProvider client={queryClient}>
             <Header onScroll={scrolled} />
             <div className="h-auto bg-primaryColor pt-28 flex lg:w-full w-full flex-col items-center justify-center">
-                <div className="h-auto flex lg:w-full w-[90%] pb-10 flex-col items-center justify-center">
+                <motion.div initial={{ translateX: -100, opacity: 0 }} animate={{ opacity: 1, translateX: 0 }} transition={{ duration: 0.7, ease: "linear" }} className="h-auto flex lg:w-full w-[90%] pb-10 flex-col items-center justify-center">
 
 
                     <h1 className={`text-3xl lg:text-4xl text-left text-white lg:text-center  leading-tight   font-bold`}>
@@ -64,7 +65,7 @@ export default function FormularioContratacao() {
                         Nossos planos são do tamanho das necessidades do seu negócio.
                     </h2>
                     <ContactForm mediaPedidos={`${media}`} plano={`${plano}`} content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
-                </div>
+                </motion.div>
             </div>
 
             <Footer />

@@ -62,7 +62,7 @@ export function Home() {
                 <ControleTotalDaSuaCadeia />
                 <TransFormeSeuNegocio />
                 <Cta />
-                <AssitaNossaDemos />
+                {/* <AssitaNossaDemos /> */}
                 <ExperienciaDoCliente />
                 <Integracoes />
                 <EscolhaOMelhorPlano />

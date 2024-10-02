@@ -7,6 +7,7 @@ import recompraBanner from "@/app/pages/home/assets/transformeSeuNegocio/aumento
 import competitividadeBanner from "@/app/pages/home/assets/transformeSeuNegocio/competitividade.png";
 import ocorrenciasBanner from "@/app/pages/home/assets/transformeSeuNegocio/ocorrencias.png";
 import reducaoDeCustoBanner from "@/app/pages/home/assets/transformeSeuNegocio/reducao-de-custos.png";
+import ModalVideoDemo from "../assistaNossasDemos/modal";
 
 
 
@@ -87,11 +88,22 @@ export default function TransFormeSeuNegocio() {
         return () => clearInterval(interval);
     }, []);
 
+     const [open, setOpen] = useState(false);
+    const handleClose = () => {
+        setOpen(false);
+    }
 
+
+            
 
 
     return (
         <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
+            {
+                open && (
+                    <ModalVideoDemo closeModalFunc={() => handleClose()} urlVideo={""} />
+                )
+            }
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
                     <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[77%] h-full">
@@ -139,10 +151,10 @@ export default function TransFormeSeuNegocio() {
                                     <h2 className="text-black text-left text-[15px] w-full lg:w-[90%]">
                                         {JsonList[currentIndex].text}
                                     </h2>
-                                    <button className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
-                                        <Link href={"#demos"} className="w-full h-full">
+                                    <button onClick={() => setOpen(true)} className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
+                                        <p className="w-full flex items-center justify-center h-full">
                                             veja a demo
-                                        </Link>
+                                        </p>
 
                                     </button>
                                 </motion.div>
