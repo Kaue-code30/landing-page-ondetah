@@ -12,17 +12,17 @@ export default function Footer() {
         {
             index: 0,
             nameLink: "Funcionalidades",
-            link: ""
+            link: "/#funcionalidades"
         },
         {
             index: 1,
             nameLink: "Planos",
-            link: ""
+            link: "/#planos"
         },
         {
             index: 2,
             nameLink: "Integrações",
-            link: ""
+            link: "/#integracoes"
         },
     ]
 

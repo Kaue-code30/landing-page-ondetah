@@ -17,17 +17,17 @@ export default function Header({ onScroll }: PropsComponent) {
         {
             index: 0,
             nameLink: "Funcionalidades",
-            link: "#funcionalidades"
+            link: "/#funcionalidades"
         },
         {
             index: 1,
             nameLink: "Planos",
-            link: "#planos"
+            link: "/#planos"
         },
         {
             index: 2,
             nameLink: "Integrações",
-            link: "#integracoes"
+            link: "/#integracoes"
         },
     ]
 
