@@ -243,7 +243,7 @@ export default function ContactForm({
                             required
                         >
                             <option value="0" className="text-white">
-                                Quais tecnologias você já possui?*
+                                Qual tecnologia você já possui?*
                             </option>
                             <option value="ERP" className="text-black ">
                                 ERP
@@ -296,7 +296,7 @@ export default function ContactForm({
                             required
                         >
                             <option value="0" className="text-white">
-                                {"Qual o número de vezes que o mesmo link sera enviado?"}
+                                {"Qual o número de vezes que o mesmo link será enviado?"}
                             </option>
                             <option value="1" className="text-black ">
                                 1
