@@ -3,11 +3,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ContactForm from "../pages/home/components/contactFormPlano";
 import Footer from "../pages/home/components/footer";
 import Header from "../pages/home/components/header";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 
 export default function FormularioContratacao() {
     const [scrolled, setScrolled] = useState(false);
+    const [plano, setPlano] = useState("");
+    const [media, setMedia] = useState("");
     const { scrollY } = useScroll();
     const queryClient = useMemo(() => new QueryClient(), []);
     const valuesInput = [
@@ -35,8 +37,18 @@ export default function FormularioContratacao() {
         }
     });
 
-    const localPlano = localStorage.getItem("plano")
-    const localMedia = localStorage.getItem("media")
+
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            /* eslint-disable no-unused-vars */
+            const localPlano = localStorage.getItem("plano")
+            setPlano(`${localPlano}`)
+            const localMedia = localStorage.getItem("media")
+            setMedia(`${localMedia}`)
+            /* eslint-disable no-unused-vars */
+        }
+    }, []);
 
     return (
         <QueryClientProvider client={queryClient}>
@@ -51,7 +63,7 @@ export default function FormularioContratacao() {
                     <h2 className={`pt-3 leading-tight lg:text-center text-white text-left  w-full font-normal text-base`}>
                         Nossos planos são do tamanho das necessidades do seu negócio.
                     </h2>
-                    <ContactForm mediaPedidos={`${localMedia}`} plano={`${localPlano}`} content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
+                    <ContactForm mediaPedidos={`${media}`} plano={`${plano}`} content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
                 </div>
             </div>
 

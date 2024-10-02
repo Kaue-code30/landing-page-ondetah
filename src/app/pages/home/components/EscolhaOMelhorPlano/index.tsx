@@ -27,11 +27,16 @@ export default function EscolhaOMelhorPlano() {
         setIsExpanded(!isExpanded);
     };
 
-    /* eslint-disable no-unused-vars */
-    const localPlano = localStorage.setItem("plano", plano)
-    const localMedia = localStorage.setItem("media", `${value}`)
-    /* eslint-disable no-unused-vars */
 
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            /* eslint-disable no-unused-vars */
+            const localPlano = localStorage.setItem("plano", plano)
+            const localMedia = localStorage.setItem("media", `${value}`)
+            /* eslint-disable no-unused-vars */
+        }
+    }, []);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(Number(Number(e.target.value)));
@@ -127,8 +132,6 @@ export default function EscolhaOMelhorPlano() {
 
     const HandleComeceAgora = (plano: string) => {
         setPlano(plano);
-
-
     }
 
     const JsonList = [
