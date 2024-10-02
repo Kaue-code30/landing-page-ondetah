@@ -406,7 +406,7 @@ export default function EscolhaOMelhorPlano() {
 
 
     return (
-        <section id="planos" className={`  flex items-center pb-20 justify-center flex-col lg:h-auto max-w-[1996px] lg:pt-[20px] lg:pb-[60px]  w-full  `}>
+        <section id="planos" className={`  flex items-center pb-8 lg:pb-10 justify-center flex-col lg:h-auto max-w-[1996px] lg:pt-[20px]   w-full  `}>
             <motion.div initial={{ opacity: 0, y: 200 }}
                 animate={controlsOne} className="flex flex-col pt-16 lg:items-center items-start justify-center  lg:justify-start w-[90%] lg:w-[98%]  leading-normal">
                 <h1 className={`text-3xl lg:text-4xl text-left lg:text-center  leading-tight   font-bold`}>
