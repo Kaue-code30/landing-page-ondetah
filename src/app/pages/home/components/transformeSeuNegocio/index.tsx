@@ -129,7 +129,7 @@ export default function TransFormeSeuNegocio() {
 
 
                         </div>
-                        <div className="lg:w-[80%] w-full mt-5 flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
+                        <div className="lg:w-[85%] w-full mt-5 flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
 
                             <motion.div
                                 key={currentIndex}
