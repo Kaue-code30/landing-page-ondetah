@@ -254,6 +254,9 @@ export default function ContactForm({
                             <option value="TMS" className="text-black ">
                                 TMS
                             </option>
+                            <option value="Plataforma de E-commerce" className="text-black ">
+                                Plataforma de E-commerce
+                            </option>
                             <option value="Outras" className="text-black ">
                                 Outras
                             </option>

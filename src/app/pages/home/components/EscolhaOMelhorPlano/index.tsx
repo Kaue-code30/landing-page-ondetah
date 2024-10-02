@@ -514,7 +514,7 @@ export default function EscolhaOMelhorPlano() {
                                                     value >= 10000 ? (
                                                         <motion.div
                                                             className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
-                                                            <Link href={"/formulario"}><motion.h1
+                                                            <Link target="_blank" href={"/formulario"}><motion.h1
                                                                 className="flex items-center justify-center text-sm lg:text-[15px] gap-3"
                                                                 key={value}
                                                                 initial={{ opacity: 0, translateY: -5 }}
