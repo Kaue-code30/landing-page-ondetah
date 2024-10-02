@@ -34,7 +34,9 @@ export default function AssistaNossaDemo() {
                             </div>
                         </div>
                         <div id="demos" className="flex flex-col gap-3 lg:gap-5 justify-start h-[250px] lg:h-full items-end w-full lg:w-3/5 leading-normal">
-                            <iframe className="w-full object-cover h-full rounded-lg" src={`${initVideo ? "https://www.youtube.com/embed/LBWL6aUpKr8?autoplay=1" : "https://www.youtube.com/embed/LBWL6aUpKr8"}`} title="Demo Ondetah" frameBorder="0" allow={`accelerometer;  autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share`} referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+
+
+                            <iframe className="w-full shadow-lg object-cover h-full rounded-lg" src={`${initVideo ? "https://www.youtube.com/embed/-vYDbur_qoU?autoplay=1" : "https://www.youtube.com/embed/-vYDbur_qoU"}`} title="Demo Ondetah" frameBorder="0" allow={`accelerometer;  autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share`} referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
                     </div>
                 </div>
