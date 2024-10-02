@@ -54,8 +54,8 @@ export default function FormularioContratacao() {
     return (
         <QueryClientProvider client={queryClient}>
             <Header onScroll={scrolled} />
-            <div className="h-auto bg-primaryColor pt-28 flex lg:w-full w-full flex-col items-center justify-center">
-                <motion.div initial={{ translateX: -100, opacity: 0 }} animate={{ opacity: 1, translateX: 0 }} transition={{ duration: 0.7, ease: "linear" }} className="h-auto flex lg:w-full w-[90%] pb-10 flex-col items-center justify-center">
+            <div className="h-auto bg-primaryColor pt-28  flex lg:w-full w-full flex-col items-center justify-center">
+                <motion.div initial={{ translateX: -100, opacity: 0 }} animate={{ opacity: 1, translateX: 0 }} transition={{ duration: 0.7, ease: "linear" }} className="h-auto scale-95 flex lg:w-full w-[90%] pb-10 flex-col items-center justify-center">
 
 
                     <h1 className={`text-3xl lg:text-4xl text-left text-white lg:text-center  leading-tight   font-bold`}>

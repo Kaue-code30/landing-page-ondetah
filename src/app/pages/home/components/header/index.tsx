@@ -51,13 +51,16 @@ export default function Header({ onScroll }: PropsComponent) {
                 className={`h-[80px] fixed w-full z-40 flex items-center justify-center text-textSecondColor`}
             >
                 <div className="w-[90%] h-full justify-between items-center flex">
-                    <Image
-                        src={logoOndetah}
-                        className="w-32 lg:w-40"
-                        width={100}
-                        height={100}
-                        alt="logo ondetah"
-                    />
+                    <Link className="w-32 lg:w-40" href={"/"}>
+                        <Image
+                            src={logoOndetah}
+                            className="w-32 lg:w-40"
+                            width={100}
+                            height={100}
+                            alt="logo ondetah"
+                        />
+
+                    </Link>
 
                     <ul className={`lg:flex items-center justify-center hidden gap-5`}>
                         {jsonList.map((i, key) => (
@@ -78,7 +81,7 @@ export default function Header({ onScroll }: PropsComponent) {
                         {closeIcon && (
                             <motion.div
                                 initial={{ opacity: 0, translateY: -100 }}
-                                exit={{ opacity: 0, translateY: -100, transition: {ease:"linear", duration:0.3} }}
+                                exit={{ opacity: 0, translateY: -100, transition: { ease: "linear", duration: 0.3 } }}
                                 animate={{ opacity: 1, translateY: 0 }}
                                 transition={{ duration: 0.7, ease: "backInOut" }}
                                 className={`absolute top-[79px] left-0 w-full bg-primaryColor lg:hidden flex flex-col gap-8 pb-10 py-5`}
