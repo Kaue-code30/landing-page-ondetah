@@ -88,13 +88,13 @@ export default function TransFormeSeuNegocio() {
         return () => clearInterval(interval);
     }, []);
 
-     const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
     const handleClose = () => {
         setOpen(false);
     }
 
 
-            
+
 
 
     return (
@@ -137,52 +137,52 @@ export default function TransFormeSeuNegocio() {
 
                         </div>
                         <div className="lg:w-[80%] w-full mt-5 flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
-                            <AnimatePresence>
+
+                            <motion.div
+                                key={currentIndex}
+                                // exit={{ opacity: 0, translateY: side ? 50 : -50, transition: { duration: 0, ease: "easeInOut" } }}
+                                initial={{ opacity: 0.7, translateX: side ? 50 : -50 }}
+                                animate={{ opacity: 1, translateX: 0 }}
+                                transition={{ duration: 0.3, ease: "linear" }}
+                                className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-start lg:items-start justify-center">
+                                <h1 className="text-3xl lg:text-3xl text-left text-black font-bold">
+                                    {JsonList[currentIndex].title}
+                                </h1>
+                                <h2 className="text-black text-left text-[15px] w-full lg:w-[90%]">
+                                    {JsonList[currentIndex].text}
+                                </h2>
+                                <button onClick={() => setOpen(true)} className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
+                                    <p className="w-full flex items-center justify-center h-full">
+                                        veja a demo
+                                    </p>
+
+                                </button>
+                            </motion.div>
+                            <div className=" flex lg:hidden lg:mt-0 mt-3 relative  lg:gap-0 gap-10 justify-between w-full">
+                                <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
+                                    <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
+                                </button>
+                                <button onClick={() => handleNext()} className="w-10 h-10 flex hover:scale-95 transition rounded-lg hover: items-center justify-center  bg-[#CCCBE4]">
+                                    <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
+                                </button>
+
+
+                            </div>
+
+                            <AnimatePresence mode="sync" >
                                 <motion.div
-                                    key={currentIndex}
-                                    // exit={{ opacity: 0, translateY: side ? 50 : -50, transition: { duration: 0, ease: "easeInOut" } }}
+                                    key={currentIndex + 5}
+                                    exit={{ opacity: 0, translateY: side ? 50 : -50, transition: { duration: 0, ease: "easeInOut" } }}
                                     initial={{ opacity: 0.7, translateX: side ? 50 : -50 }}
                                     animate={{ opacity: 1, translateX: 0 }}
                                     transition={{ duration: 0.3, ease: "linear" }}
-                                    className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-start lg:items-start justify-center">
-                                    <h1 className="text-3xl lg:text-3xl text-left text-black font-bold">
-                                        {JsonList[currentIndex].title}
-                                    </h1>
-                                    <h2 className="text-black text-left text-[15px] w-full lg:w-[90%]">
-                                        {JsonList[currentIndex].text}
-                                    </h2>
-                                    <button onClick={() => setOpen(true)} className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
-                                        <p className="w-full flex items-center justify-center h-full">
-                                            veja a demo
-                                        </p>
 
-                                    </button>
+                                    className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center"
+                                >
+                                    <Image priority className="w-full object-cover rounded-2xl lg:rounded-2xl flex" width={1000} height={100} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
                                 </motion.div>
-                                {/* <div className=" flex lg:hidden lg:mt-0 mt-3 relative top-[180px]  lg:gap-0 gap-10 justify-between w-full">
-                                    <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
-                                        <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
-                                    </button>
-                                    <button onClick={() => handleNext()} className="w-10 h-10 flex hover:scale-95 transition rounded-lg hover: items-center justify-center  bg-[#CCCBE4]">
-                                        <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
-                                    </button>
-
-
-                                </div> */}
-
-                                <AnimatePresence mode="sync" >
-                                    <motion.div
-                                        key={currentIndex + 5}
-                                        exit={{ opacity: 0, translateY: side ? 50 : -50, transition: { duration: 0, ease: "easeInOut" } }}
-                                        initial={{ opacity: 0.7, translateX: side ? 50 : -50 }}
-                                        animate={{ opacity: 1, translateX: 0 }}
-                                        transition={{ duration: 0.3, ease: "linear" }}
-
-                                        className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center"
-                                    >
-                                        <Image priority className="w-full object-cover rounded-2xl lg:rounded-2xl flex" width={1000} height={100} src={JsonList[currentIndex].imagem} alt="Imagem ondetag"></Image>
-                                    </motion.div>
-                                </AnimatePresence>
                             </AnimatePresence>
+
                         </div>
                     </div>
                 </div>
