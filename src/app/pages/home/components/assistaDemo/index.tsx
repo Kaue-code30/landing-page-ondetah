@@ -22,7 +22,7 @@ export default function AssistaNossaDemo() {
                             <div className="flex w-full items-center gap-3 justify-start lg:flex-row flex-col">
                                 <button className="w-full lg:w-[220px] mt-2 text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-primaryColor">
                                     <Link href={"#planos"} className="w-full flex items-center justify-center h-full">
-                                        conheça nossos planos
+                                        Conheça nossos planos
                                     </Link>
                                 </button>
                                 <button onClick={() => setInitVideo(true)} className="w-full lg:w-[220px] mt-2 text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
