@@ -315,7 +315,7 @@ export default function EscolhaOMelhorPlano() {
 
         {
             title: "Expandir",
-            subtitle: "Insghts personalizados e controle absoluto.",
+            subtitle: "Insights personalizados e controle absoluto.",
             icon: FaStar,
             value: valueEnterprise,
             listBeneficios: [

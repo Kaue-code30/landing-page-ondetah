@@ -11,7 +11,7 @@ export default function AssistaNossaDemo() {
                     <div className="flex lg:flex-row-reverse lg:gap-20 flex-col-reverse gap-10 items-center pb-10 justify-start w-[90%] lg:w-[77%] h-full">
                         <div className="flex flex-col gap-3 lg:gap-2 justify-start items-start w-full lg:w-3/5 leading-normal">
                             <h1 className="text-3xl lg:text-4xl leading-tight text-textPrimaryColor font-bold">
-                                Assista às nossas demos:
+                                Assista à nossa demo:
                             </h1>
                             <h2 className="text-textPrimaryColor  leading-tight font-normal text-base lg:text-lg">
                                 Veja como o Ondetah ajuda o seu e-commerce
