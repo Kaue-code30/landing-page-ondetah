@@ -34,7 +34,7 @@ export default function ExperienciaDoCliente() {
             index: 0,
             icon: ApIcon,
             title: "Integração via API:",
-            text: "ERP, TMS Embarcador e TMS Transportador, conecte facilmente a sistemas essenciais para uma operação sem falhas. ",
+            text: "ERP, TMS, WMS, Plataforma de e-commerce, conecte facilmente a sistemas essenciais para uma operação sem falhas.",
             link: ""
         },
         {
