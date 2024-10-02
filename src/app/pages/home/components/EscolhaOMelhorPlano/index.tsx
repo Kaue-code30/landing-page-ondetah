@@ -408,7 +408,7 @@ export default function EscolhaOMelhorPlano() {
     return (
         <section id="planos" className={`  flex items-center pb-8 lg:pb-10 justify-center flex-col lg:h-auto max-w-[1996px] lg:pt-[20px]   w-full  `}>
             <motion.div initial={{ opacity: 0, y: 200 }}
-                animate={controlsOne} className="flex flex-col pt-16 lg:items-center items-start justify-center  lg:justify-start w-[90%] lg:w-[98%]  leading-normal">
+                animate={controlsOne} className="flex flex-col pt-5 lg:pt-16 lg:items-center items-start justify-center  lg:justify-start w-[90%] lg:w-[98%]  leading-normal">
                 <h1 className={`text-3xl lg:text-4xl text-left lg:text-center  leading-tight   font-bold`}>
                     Escolha o melhor plano para você:
                 </h1>
