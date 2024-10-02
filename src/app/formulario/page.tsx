@@ -5,6 +5,7 @@ import Footer from "../pages/home/components/footer";
 import Header from "../pages/home/components/header";
 import { useEffect, useMemo, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import Script from "next/script";
 
 export default function FormularioContratacao() {
     const [scrolled, setScrolled] = useState(false);
@@ -53,6 +54,18 @@ export default function FormularioContratacao() {
 
     return (
         <QueryClientProvider client={queryClient}>
+            {/* <!-- Google Tag Manager --> */}
+            <Script>{`(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TKFK2WW');`}</Script>
+            {/* <!-- End Google Tag Manager --> */}
+
+            {/* <!-- Google Tag Manager (noscript) --> */}
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKFK2WW"
+                height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+            {/* <!-- End Google Tag Manager (noscript) --> */}
             <Header onScroll={scrolled} />
             <div className="h-auto bg-primaryColor pt-28  flex lg:w-full w-full flex-col items-center justify-center">
                 <motion.div initial={{ translateX: -100, opacity: 0 }} animate={{ opacity: 1, translateX: 0 }} transition={{ duration: 0.7, ease: "linear" }} className="h-auto scale-95 flex lg:w-full w-[90%] pb-10 flex-col items-center justify-center">
