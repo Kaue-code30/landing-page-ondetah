@@ -5,7 +5,7 @@ export default function AssistaNossaDemo() {
     const [initVideo, setInitVideo] = useState(false);
 
     return (
-        <section className="bg-white overflow-auto lg:h-[50vh] h-auto lg:pt-10 pb-10  pt-14 lg:mb-10 max-w-[1996px] w-full " >
+        <section className="bg-white overflow-auto lg:h-[60vh] h-auto lg:pt-10 pb-10  pt-14 lg:mb-10 max-w-[1996px] w-full " >
             <div className="flex flex-col h-full w-full items-center justify-center">
                 <div className="flex  w-full justify-center h-full items-center">
                     <div className="flex lg:flex-row-reverse lg:gap-20 flex-col-reverse gap-10 items-center pb-10 justify-start w-[90%] lg:w-[77%] h-full">
