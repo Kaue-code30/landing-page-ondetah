@@ -7,7 +7,7 @@ interface Props {
     closeModalFunc: () => void;
 }
 
-export default function ModalVideoDemo({ urlVideo, closeModalFunc }: Props) {
+export default function ModalVideoDemo({ closeModalFunc }: Props) {
     const [closeModal, setCloseModal] = useState(false);
 
     // Função para fechar o modal
@@ -35,10 +35,7 @@ export default function ModalVideoDemo({ urlVideo, closeModalFunc }: Props) {
                             <CgClose className="lg:w-6 h-7 w-7 text-[#CB1919] hover:bg-[#CB1919] hover:text-[#FFDDDD] p-1 hover:scale-95 lg:h-6 duration-500 flex bg-[#FFDDDD] rounded-lg items-center justify-center" />
                         </button>
                         <div className="w-full h-full pt-2">
-                            <video controls preload="auto" autoPlay className="w-full shadow-md h-full object-cover  rounded-lg">
-                                <source src={urlVideo} type="video/mp4" />
-                                Seu navegador não suporta vídeos.
-                            </video>
+                        <iframe className="w-full h-full rounded-lg" width="1206" height="700" src="https://www.youtube.com/embed/LBWL6aUpKr8" title="Demo Ondetah" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
                     </motion.div>
                 </motion.div>
