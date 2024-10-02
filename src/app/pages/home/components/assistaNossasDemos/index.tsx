@@ -84,7 +84,7 @@ export default function AssitaNossaDemos() {
                     <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[77%] h-full">
                         <div className="flex flex-col gap-3 lg:gap-5 justify-center items-center w-full lg:w-3/5 leading-normal">
                             <h1 className="text-3xl lg:text-4xl leading-tight text-textPrimaryColor font-bold">
-                                Assista às nossas demos:
+                                Assista à nossa demo:
                             </h1>
                             <h2 className="text-textPrimaryColor  leading-tight font-normal text-base lg:text-lg">
                                 Veja como o Ondetah ajuda o seu e-commerce
@@ -125,10 +125,17 @@ export default function AssitaNossaDemos() {
                                                 <p className="text-base">
                                                     {item.text}
                                                 </p>
-                                                <button onClick={() => handleSetIndex(key)} className="flex lg:w-1/2 mt-10 hover:scale-95 transition items-center text-secondColor gap-2 text-base justify-start">
-                                                    <IoPlayCircleOutline className="text-xl" />
-                                                    Assistir vídeo
-                                                </button>
+                                                <div className="flex w-full items-start justify-center lg:flex-row flex-col">
+                                                    <button onClick={() => handleSetIndex(key)} className="flex lg:w-1/2 mt-10 hover:scale-95 transition items-center text-secondColor gap-2 text-base justify-start">
+                                                        <IoPlayCircleOutline className="text-xl" />
+                                                        Assistir vídeo
+                                                    </button>
+                                                    <button onClick={() => handleSetIndex(key)} className="flex lg:w-1/2 mt-10 hover:scale-95 transition items-center text-secondColor gap-2 text-base justify-start">
+                                                        <IoPlayCircleOutline className="text-xl" />
+                                                        Assistir vídeo
+                                                    </button>
+                                                </div>
+
                                             </div>
                                         </AnimatePresence>
                                     </div>

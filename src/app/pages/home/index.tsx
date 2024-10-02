@@ -13,6 +13,7 @@ import Faq from "./components/Faq";
 import Footer from "./components/footer";
 import ContactForm from "./components/contactForm";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AssistaNossaDemo from "./components/assistaDemo";
 
 
 export function Home() {
@@ -62,7 +63,9 @@ export function Home() {
                 <ControleTotalDaSuaCadeia />
                 <TransFormeSeuNegocio />
                 <Cta />
-                {/* <AssitaNossaDemos /> */}
+                {/* <AssitaNossaDemos />
+                 */}
+                 <AssistaNossaDemo/>
                 <ExperienciaDoCliente />
                 <Integracoes />
                 <EscolhaOMelhorPlano />
