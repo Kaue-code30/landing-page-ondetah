@@ -1,4 +1,4 @@
-import {  AnimationControls, motion, useAnimation, useInView } from "framer-motion";
+import { AnimationControls, motion, useAnimation, useInView } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward, } from "react-icons/io";
@@ -8,6 +8,7 @@ import logoShopify from "@/app/pages/home/assets/integracoes/integracao-shopify.
 import logoTray from "@/app/pages/home/assets/integracoes/integracao-tray.png"
 import logoTrux from "@/app/pages/home/assets/integracoes/integracao-trux.png"
 import maisIntegracoes from "@/app/pages/home/assets/integracoes/maisintegracoes.png";
+import logoVtex from "@/app/pages/home/assets/integracoes/vtex.png";
 import Image from "next/image";
 
 export default function Integracoes() {
@@ -65,6 +66,7 @@ export default function Integracoes() {
         { index: 2, title: "Shopify", type: "Marketplace", image: logoShopify.src },
         { index: 3, title: "Tray", type: "PDV", image: logoTray.src },
         { index: 4, title: "Trux", type: "CRM", image: logoTrux.src },
+        { index: 6, title: "Vtex", type: "E-commerce", image: logoVtex.src },
         { index: 5, title: "Em breve", type: "Novas integrações", image: maisIntegracoes.src },
     ];
 
@@ -127,6 +129,9 @@ export default function Integracoes() {
                             </div>
 
                             {/* Botões de categorias */}
+
+
+
                             <div ref={containerRef} className="lg:w-4/5 flex overflow-x-auto flex-row w-full pb-2 lg:flex-wrap gap-2 lg:pt-5 items-center justify-start lg:justify-center">
 
 
@@ -137,7 +142,7 @@ export default function Integracoes() {
                                             initial={{ opacity: 0, y: 100 }}
                                             animate={controls}
                                             key={index} className="w-[230px] min-w-[265px] shadow-md  lg:w-auto  flex flex-row  gap-4 items-center bg-white lg:items-center justify-start rounded-lg p-5 h-[130px] lg:h-[100px] border-[0.5px]">
-                                            <div className={` w-full lg:h-full ${i.index === 5 ? "lg:w-[70px]": "lg:w-[80px]"} lg:w-[80px]  rounded-2xl`}>
+                                            <div className={` w-full lg:h-full ${i.index === 5 ? "lg:w-[70px]" : "lg:w-[80px]"} lg:w-[80px]  rounded-2xl`}>
                                                 <Image className=" w-full lg:object-cover rounded-lg transition shadow-md " src={i.image} alt={`Logo da empresa ${i.title}`} quality={100} width={10000} height={10000} />
                                             </div>
                                             <div className="w-full  lg:w-3/4 flex items-center lg:items-start justify-center flex-col h-full">
@@ -162,6 +167,7 @@ export default function Integracoes() {
                                     </button>
                                 ))} */}
                             </div>
+
                         </motion.div>
 
 

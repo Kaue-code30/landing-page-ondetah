@@ -328,11 +328,11 @@ export default function ContactForm({
                         <label className="text-white" htmlFor="floating_funcoesDeComunicacao1">SMS</label>
                         <br />
 
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_funcoesDeComunicacao2" name="floating_funcoesDeComunicacao" value="WhatsApp não oficial" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_funcoesDeComunicacao2">WhatsApp não oficial</label>
+                        <input className="mr-2 mt-2" type="checkbox" id="floating_funcoesDeComunicacao2" name="floating_funcoesDeComunicacao" value="WhatsApp API não oficial" onChange={handleChange} />
+                        <label className="text-white" htmlFor="floating_funcoesDeComunicacao2">WhatsApp API não oficial</label>
                         <br />
-                        <input className="mr-2 mt-2" type="checkbox" id="floating_funcoesDeComunicacao3" name="floating_funcoesDeComunicacao" value="WhatsApp oficial" onChange={handleChange} />
-                        <label className="text-white" htmlFor="floating_funcoesDeComunicacao3">WhatsApp oficial</label>
+                        <input className="mr-2 mt-2" type="checkbox" id="floating_funcoesDeComunicacao3" name="floating_funcoesDeComunicacao" value="WhatsApp API oficial" onChange={handleChange} />
+                        <label className="text-white" htmlFor="floating_funcoesDeComunicacao3">WhatsApp API oficial</label>
                         <br />
 
                         <input className="mr-2 mt-2" type="checkbox" id="floating_funcoesDeComunicacao4" name="floating_funcoesDeComunicacao" value="Email" onChange={handleChange} />

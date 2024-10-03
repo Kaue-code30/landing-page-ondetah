@@ -43,7 +43,7 @@ export default function Cta() {
                             clique até o cliente:
                         </h1>
                         <button className="lg:w-[30%] w-full hover:scale-95 transition bg-secondColor text-textSecondColor rounded-lg h-12">
-                            <Link target="_blank" className="w-full flex items-center justify-center h-full" href={"https://calendly.com/naticamposux/ux-group-voce"}> Agendar reunião</Link>
+                            <Link  className="w-full flex items-center justify-center h-full" href={"#formulario"}> Agendar reunião</Link>
                         </button>
                     </div>
                 </div>
