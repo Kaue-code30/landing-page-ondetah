@@ -40,7 +40,7 @@ export default function ExperienciaDoCliente() {
         {
             index: 1,
             icon: headPhone,
-            title: "Estrutura única de SAC:",
+            title: "Suporte técnico",
             text: "Com suporte via Whatsapp e Chatbot 24x7: Atendimento instantâneo com suporte ágil e automatizado.",
             link: ""
         },
