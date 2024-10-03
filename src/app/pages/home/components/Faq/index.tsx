@@ -42,6 +42,11 @@ export default function Faq() {
             title: "Com o Ondetah consigo identificar qual o meu maior gargalo de entrega?",
             text: "Sim, o Ondetah permite identificar os maiores gargalos na sua operação de entrega. A plataforma oferece dashboards e relatórios detalhados com dados em tempo real sobre cada etapa do processo de entrega. Esses insights incluem métricas como tempo de processamento, atrasos, locais com maior incidência de problemas, e causas frequentes de falhas na entrega.",
         },
+        {
+            index: 8,
+            title: "Qual a diferença de comunicação via API Whatsapp oficial e não oficial?",
+            text: "A API oficial do WhatsApp, desenvolvida pela Meta, permite automatizar o envio de mensagens e gerenciar conversas com vários usuários ao mesmo tempo, garantindo o cumprimento de regras de privacidade e boas práticas definidas pela empresa. Existem também APIs não oficiais, criadas por outros provedores, que permitem enviar mensagens pelo WhatsApp. Embora não sejam feitas pela Meta, elas podem ser usadas sem restrições, desde que sigam os mesmos padrões de privacidade e boas práticas exigidos pelo WhatsApp",
+        },
     ]
     const handleOpen = (index: number) => {
         // Alterna o estado de aberto/fechado do item específico
@@ -69,7 +74,7 @@ export default function Faq() {
                             {JsonList.map((i, key) => {
                                 return (
                                     <motion.div transition={{ duration: 0.3, ease: "linear" }}
-                                        animate={{ height: openStates[key] ? "190px" : "70px" }} key={key} onClick={() => handleOpen(key)} className={`w-full cursor-pointer items-start justify-center flex flex-col rounded-lg ${openStates[key] ? "h-[180] bg-white text-textPrimaryColor" : "h-80px]"}  p-5 border`}>
+                                        animate={{ height: openStates[key] ? "195px" : "70px" }} key={key} onClick={() => handleOpen(key)} className={`w-full cursor-pointer items-start justify-center flex flex-col rounded-lg ${openStates[key] ? "h-[180] bg-white text-textPrimaryColor" : "h-80px]"}  p-5 border`}>
                                         <div className={`w-full flex justify-between h-10  ${openStates[key] ? "border-b-[0.5px] pb-3 mb-2" : ""}  border-secondColor `}>
                                             <h1 className="text-lg font-semibold">{i.title}</h1>
                                             <div className={`${openStates[key] ? "rotate-180" : "text-primaryColor"} w-7 transition duration-300 hover:scale-95 text-primaryColor h-7 flex items-center bg-[#BDF5EC] rounded-lg justify-center`}>
