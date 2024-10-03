@@ -515,7 +515,7 @@ export default function EscolhaOMelhorPlano() {
                                                         <motion.div
                                                             className={`w-full transition h-14 p-2 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
                                                             <Link target="_blank" href={"/formulario"}><motion.h1
-                                                                className="flex items-center justify-center text-sm lg:text-[15px] gap-3"
+                                                                className="flex items-center h-14 justify-center text-sm lg:text-[15px] gap-3"
                                                                 key={value}
                                                                 initial={{ opacity: 0, translateY: -5 }}
                                                                 animate={{ translateY: 0, opacity: 1 }}

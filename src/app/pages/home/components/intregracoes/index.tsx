@@ -7,6 +7,7 @@ import logoMirakl from "@/app/pages/home/assets/integracoes/integracao-mirakl.pn
 import logoShopify from "@/app/pages/home/assets/integracoes/integracao-shopify.png"
 import logoTray from "@/app/pages/home/assets/integracoes/integracao-tray.png"
 import logoTrux from "@/app/pages/home/assets/integracoes/integracao-trux.png"
+import maisIntegracoes from "@/app/pages/home/assets/integracoes/maisintegracoes.png";
 import Image from "next/image";
 
 export default function Integracoes() {
@@ -42,7 +43,7 @@ export default function Integracoes() {
     const handleScrollLeft = () => {
         if (containerRef.current) {
             containerRef.current.scrollTo({
-                left: containerRef.current.scrollLeft - 1000,
+                left: containerRef.current.scrollLeft - 10000,
                 behavior: "smooth",
             });
         }
@@ -64,6 +65,7 @@ export default function Integracoes() {
         { index: 2, title: "Shopify", type: "Marketplace", image: logoShopify.src },
         { index: 3, title: "Tray", type: "PDV", image: logoTray.src },
         { index: 4, title: "Trux", type: "CRM", image: logoTrux.src },
+        { index: 5, title: "Em breve", type: "Novas integrações", image: maisIntegracoes.src },
     ];
 
     // Filtrar a lista com base no termo de pesquisa e na categoria selecionada
@@ -134,15 +136,15 @@ export default function Integracoes() {
                                             ref={ref}
                                             initial={{ opacity: 0, y: 100 }}
                                             animate={controls}
-                                            key={index} className="lg:min-w-[230px] min-w-[250px] shadow-md w-auto lg:w-auto  flex flex-row  gap-4 items-center bg-white lg:items-center justify-start rounded-lg p-5 h-[130px] lg:h-[100px] border-[0.5px]">
-                                            <div className=" w-full lg:h-full lg:w-[80px]  rounded-2xl">
+                                            key={index} className="w-[230px] min-w-[265px] shadow-md  lg:w-auto  flex flex-row  gap-4 items-center bg-white lg:items-center justify-start rounded-lg p-5 h-[130px] lg:h-[100px] border-[0.5px]">
+                                            <div className={` w-full lg:h-full ${i.index === 5 ? "lg:w-[70px]": "lg:w-[80px]"} lg:w-[80px]  rounded-2xl`}>
                                                 <Image className=" w-full lg:object-cover rounded-lg transition shadow-md " src={i.image} alt={`Logo da empresa ${i.title}`} quality={100} width={10000} height={10000} />
                                             </div>
                                             <div className="w-full  lg:w-3/4 flex items-center lg:items-start justify-center flex-col h-full">
                                                 <p className="font-bold text-textPrimaryColor">
                                                     {i.title}
                                                 </p>
-                                                <p className="text-sm text-textPrimaryColor">
+                                                <p className="text-xs lg:text-sm lg:text-left text-center text-textPrimaryColor">
                                                     {i.type}
                                                 </p>
                                             </div>

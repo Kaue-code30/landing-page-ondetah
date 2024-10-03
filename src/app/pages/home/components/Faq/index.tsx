@@ -23,9 +23,24 @@ export default function Faq() {
             text: "No link de rastreio enviado pela loja onde a compra foi realizada, você consegue localizar o transportador.",
         },
         {
-            index: 3,
-            title: "Como consigo rastrear o meu pedido?",
-            text: "Acesse a área de “Rastrear pedido” e insira o número do pedido que consta no e-mail enviado pela loja ou você pode localizar logo abaixo do seu nome no link de rastreio como exemplo abaixo.",
+            index: 4,
+            title: "Como o Ondetah reduz o número de contatos no SAC?",
+            text: "O Ondetah oferece uma solução integrada de rastreamento e comunicação que fornece informações em tempo real para os clientes. Isso permite que eles acompanhem o status de suas entregas e recebam notificações automáticas sobre atualizações importantes, como mudanças no prazo de entrega ou eventuais problemas. Com essas informações acessíveis e transparentes, o cliente não precisa entrar em contato com o SAC para esclarecer dúvidas, reduzindo significativamente o número de interações.",
+        },
+        {
+            index: 5,
+            title: "Como o Ondetah permite a redução de ocorrências?",
+            text: "O Ondetah centraliza a gestão da cadeia de entrega, permitindo a visualização em tempo real das entregas e antecipando possíveis problemas. A plataforma envia alertas preventivos antes que uma ocorrência precise ser registrada. Dessa forma, problemas como atrasos, falhas na entrega ou informações desencontradas podem ser resolvidos rapidamente, antes de gerar insatisfação e a necessidade de abrir ocorrências formais.",
+        },
+        {
+            index: 6,
+            title: "Como é feita a compensação de CO2 da minha entrega através do Ondetah?",
+            text: "A compensação de CO2 é realizada por meio de parcerias com programas certificados de sustentabilidade que calculam a pegada de carbono gerada durante o processo de entrega. A cada entrega rastreada, o Ondetah estima a quantidade de CO2 emitido com base em fatores como distância percorrida, peso do produto e tipo de transporte utilizado. Para neutralizar essas emissões, o Ondetah contribui para projetos de compensação, como o plantio de árvores ou investimentos em energias renováveis, que removem ou evitam a emissão de CO2 na atmosfera.",
+        },
+        {
+            index: 7,
+            title: "Com o Ondetah consigo identificar qual o meu maior gargalo de entrega?",
+            text: "Sim, o Ondetah permite identificar os maiores gargalos na sua operação de entrega. A plataforma oferece dashboards e relatórios detalhados com dados em tempo real sobre cada etapa do processo de entrega. Esses insights incluem métricas como tempo de processamento, atrasos, locais com maior incidência de problemas, e causas frequentes de falhas na entrega.",
         },
     ]
     const handleOpen = (index: number) => {
@@ -54,7 +69,7 @@ export default function Faq() {
                             {JsonList.map((i, key) => {
                                 return (
                                     <motion.div transition={{ duration: 0.3, ease: "linear" }}
-                                        animate={{ height: openStates[key] ? "180px" : "70px" }} key={key} onClick={() => handleOpen(key)} className={`w-full cursor-pointer items-start justify-center flex flex-col rounded-lg ${openStates[key] ? "h-[180] bg-white text-textPrimaryColor" : "h-80px]"}  p-5 border`}>
+                                        animate={{ height: openStates[key] ? "190px" : "70px" }} key={key} onClick={() => handleOpen(key)} className={`w-full cursor-pointer items-start justify-center flex flex-col rounded-lg ${openStates[key] ? "h-[180] bg-white text-textPrimaryColor" : "h-80px]"}  p-5 border`}>
                                         <div className={`w-full flex justify-between h-10  ${openStates[key] ? "border-b-[0.5px] pb-3 mb-2" : ""}  border-secondColor `}>
                                             <h1 className="text-lg font-semibold">{i.title}</h1>
                                             <div className={`${openStates[key] ? "rotate-180" : "text-primaryColor"} w-7 transition duration-300 hover:scale-95 text-primaryColor h-7 flex items-center bg-[#BDF5EC] rounded-lg justify-center`}>
