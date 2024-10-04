@@ -204,7 +204,7 @@ export default function EscolhaOMelhorPlano() {
 
                 {
                     icon: FaRegCircleCheck,
-                    title: "Histórico, compartivo, variação",
+                    title: "Histórico, comparativo, variação",
                     available: false
 
                 },
@@ -293,7 +293,7 @@ export default function EscolhaOMelhorPlano() {
 
                 {
                     icon: FaRegCircleCheck,
-                    title: "Histórico, compartivo, variação",
+                    title: "Histórico, comparativo, variação",
                     available: false
 
                 },
@@ -382,7 +382,7 @@ export default function EscolhaOMelhorPlano() {
 
                 {
                     icon: FaRegCircleCheck,
-                    title: "Histórico, compartivo, variação",
+                    title: "Histórico, comparativo, variação",
                     available: true
 
                 },
