@@ -52,7 +52,8 @@ export default function Footer() {
             <div className="w-full flex items-center lg:justify-center bg-custom-linear flex-col h-[150px] lg:h-20 border-t border-t-white lg:flex-row gap-5 justify-between text-textSecondColor ">
                 <div className="w-[90%] lg:py-5 py-5  h-full lg:flex-row flex-col flex lg:items-center justify-around lg:justify-between">
                     <Link target="_blank" href={"https://uxgroup.com.br/politica-de-privacidade"}>Politica de Privacidade</Link>
-                    <Image className="w-32 flex mr-5" width={1000} quality={100} height={1000} alt="" src={poweredUX} />
+                    <Link target="_blank" href={"https://uxgroup.com.br/"}><Image className="w-32 flex mr-5" width={1000} quality={100} height={1000} alt="" src={poweredUX} /></Link>
+
                 </div>
             </div>
         </footer>
