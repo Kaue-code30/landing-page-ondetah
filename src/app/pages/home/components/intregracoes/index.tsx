@@ -65,7 +65,7 @@ export default function Integracoes() {
         { index: 1, title: "Mirakl", type: "Marketing", image: logoMirakl.src },
         { index: 2, title: "Shopify", type: "Marketplace", image: logoShopify.src },
         { index: 3, title: "Tray", type: "PDV", image: logoTray.src },
-        { index: 4, title: "Trux", type: "CRM", image: logoTrux.src },
+        { index: 4, title: "Trux", type: "TMS", image: logoTrux.src },
         { index: 6, title: "Vtex", type: "E-commerce", image: logoVtex.src },
         { index: 5, title: "Em breve", type: "Novas integrações", image: maisIntegracoes.src },
     ];
