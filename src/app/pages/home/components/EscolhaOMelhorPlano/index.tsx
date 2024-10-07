@@ -561,7 +561,7 @@ export default function EscolhaOMelhorPlano() {
 
                                                     )
                                                 }
-                                                <div className="flex lg:hidden mt-3 w-[150px] items-center justify-start ">
+                                                <div className="flex lg:hidden mt-3 w-full items-center justify-start ">
                                                     <button
                                                         className={`flex items-center hover:shadow-md transition duration-300 gap-2 text-xs justify-center ${key === 1 ? "bg-[#bdf5ec]" : "bg-[#CCCBE4]"}  text-primaryColor rounded-lg w-[130px] px-2 h-10 hover:scale-95 transition`} onClick={toggleExpand}
                                                     >
