@@ -7,17 +7,22 @@ import { ClientData } from "@/app/pages/home/interfaces/clientData";
 import { useClientData } from "../../hooks/clientPlano";
 
 export default function ContactForm({
-    plano,
-    mediaPedidos,
+
     page,
     nameForm,
 }: contactFormDataPlano) {
     const [showSuccess, setShowSuccess] = useState(false);
+    const media = typeof window !== 'undefined' ? localStorage.getItem('media') : null
+    const plano = typeof window !== 'undefined' ? localStorage.getItem('plano') : null
+    
+ 
+    console.log(media);
+
     const [formData, setFormData] = useState({
 
         floating_first_name: "",
-        floating_plano: plano,
-        floating_mediaPedidos: mediaPedidos,
+        floating_plano: `${plano}`,
+        floating_mediaPedidos: `${media}`,
         floating_email: "",
         floating_site: "",
         floating_company: "",
@@ -30,6 +35,9 @@ export default function ContactForm({
         conversion_identifier: nameForm,
         page_name: page,
     });
+
+
+
 
     const { mutate, isSuccess } = useClientData();
     const handleChange = (
@@ -77,8 +85,6 @@ export default function ContactForm({
     };
 
 
-
-
     useEffect(() => {
         if (isSuccess) {
             setShowSuccess(true);
@@ -90,10 +96,10 @@ export default function ContactForm({
                 floating_first_name: "",
                 floating_email: "",
                 floating_company: "",
-                floating_plano: plano,
+                floating_plano: ``,
                 floating_site: "",
                 floating_linkEnviados: "",
-                floating_mediaPedidos: mediaPedidos,
+                floating_mediaPedidos: ``,
                 floating_cnpj: "",
                 floating_tecnologiasQuePossui: "",
                 floating_QuantasTransportadoras: "",

@@ -65,6 +65,6 @@ export interface contactFormDataPlano{
     inputAlternative?: contactFormInputAlternative[]
     page:string;
     nameForm: string;
-    plano:string;
-    mediaPedidos:string;
+    // plano:string;
+    // mediaPedidos:string;
 }

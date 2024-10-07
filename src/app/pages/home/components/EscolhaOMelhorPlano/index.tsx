@@ -29,14 +29,8 @@ export default function EscolhaOMelhorPlano() {
 
 
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            /* eslint-disable no-unused-vars */
-            const localPlano = localStorage.setItem("plano", plano)
-            const localMedia = localStorage.setItem("media", `${value}`)
-            /* eslint-disable no-unused-vars */
-        }
-    }, []);
+
+
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(Number(Number(e.target.value)));
@@ -403,6 +397,14 @@ export default function EscolhaOMelhorPlano() {
         },
 
     ]
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            /* eslint-disable no-unused-vars */
+            const localPlano = localStorage.setItem("plano", `${plano}`);
+            const localMedia = localStorage.setItem("media", `${value}`)
+            /* eslint-disable no-unused-vars */
+        }
+    },);
 
 
     return (
@@ -551,7 +553,7 @@ export default function EscolhaOMelhorPlano() {
                                                 <ul className="flex  items-start gap-0 lg:gap-0  cursor-default flex-col pt-5">
                                                     {i.listBeneficios.map((dataList, index) => {
                                                         return (
-                                                            <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} ${isExpanded === false ? "mt-4" : ""} ${ isExpanded === false && value >= 10000 && key === 1 ? "mt-4" : ""} h-12 gap-4 items-center justify-center`}>
+                                                            <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} ${isExpanded === false ? "mt-4" : ""} ${isExpanded === false && value >= 10000 && key === 1 ? "mt-4" : ""} h-12 gap-4 items-center justify-center`}>
                                                                 <dataList.icon className="lg:w-5 lg:h-5 w-5 h-5 flex text-lef justify-start items-start" ></dataList.icon>
                                                                 <p className="lg:text-sm  text-[12.7px]">{dataList.title}</p>
                                                             </li>
