@@ -73,8 +73,8 @@ export default function Faq() {
                         <div className="h-auto  flex-col lg:flex hidden text-textSecondColor w-full gap-3 mt-10 ">
                             {JsonList.map((i, key) => {
                                 return (
-                                    <motion.div transition={{ duration: 0.3, ease: "linear" }}
-                                        animate={{ height: openStates[key] ? "195px" : "70px" }} key={key} onClick={() => handleOpen(key)} className={`w-full cursor-pointer items-start justify-center flex flex-col rounded-lg ${openStates[key] ? "h-[180] bg-white text-textPrimaryColor" : "h-80px]"}  p-5 border`}>
+                                    <motion.div transition={{ duration: 0.1, ease: "linear" }}
+                                        animate={{ height: openStates[key] ? "auto" : "70px" }} key={key} onClick={() => handleOpen(key)} className={`w-full cursor-pointer items-start justify-center flex flex-col rounded-lg ${openStates[key] ? "h-[180] bg-white text-textPrimaryColor" : "h-80px]"}  p-5 border`}>
                                         <div className={`w-full flex justify-between h-10  ${openStates[key] ? "border-b-[0.5px] pb-3 mb-2" : ""}  border-secondColor `}>
                                             <h1 className="text-lg font-semibold">{i.title}</h1>
                                             <div className={`${openStates[key] ? "rotate-180" : "text-primaryColor"} w-7 transition duration-300 hover:scale-95 text-primaryColor h-7 flex items-center bg-[#BDF5EC] rounded-lg justify-center`}>
@@ -83,7 +83,7 @@ export default function Faq() {
 
                                         </div>
 
-                                        <p className={`w-4/5 text-base ${openStates[key] ? "flex" : "hidden"}`}>{i.text}</p>
+                                        <p className={`w-full text-base ${openStates[key] ? "flex" : "hidden"}`}>{i.text}</p>
                                     </motion.div>
                                 )
                             })}
@@ -94,7 +94,7 @@ export default function Faq() {
                                     <motion.div
                                         initial={false}  // Remove a animação inicial
                                         animate={{ height: openStates[key] ? "auto" : "120px" }} // Alterna entre "auto" e "120px"
-                                        transition={{ duration: 0.2 }}  // Anima instantaneamente, sem transição
+                                        transition={{ duration: 0 }}  // Anima instantaneamente, sem transição
                                         key={key}
                                         onClick={() => handleOpen(key)}
                                         className={`w-full cursor-pointer items-start justify-center flex flex-col rounded-lg ${openStates[key] ? "bg-white text-textPrimaryColor" : "bg-[#ffffff06]"
