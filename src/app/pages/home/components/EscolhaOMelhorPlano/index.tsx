@@ -226,7 +226,7 @@ export default function EscolhaOMelhorPlano() {
 
         {
             title: "Gerir",
-            subtitle: "Visibilidade e gestão detalhada.",
+            subtitle: "Visibilidade e gestão altamente detalhada.",
             icon: FaStarHalfAlt,
             value: valueStandard,
             listBeneficios: [

@@ -2,7 +2,7 @@ import { AnimatePresence, AnimationControls, motion, useAnimation, useInView } f
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { FaRegBell, FaRegClock } from "react-icons/fa"
+import { FaRegClock } from "react-icons/fa"
 import { HiOutlineChartBarSquare } from "react-icons/hi2"
 import { IoIosArrowForward, IoIosArrowUp } from "react-icons/io"
 import { TfiTarget } from "react-icons/tfi"
@@ -11,6 +11,7 @@ import gestaoDeRiscosBanner from "@/app/pages/home/assets/controleTotalDaSuaCade
 import performanceBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-performance.png";
 import rastreamentoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-rastreamento.png"
 import ModalVideoDemo from "../assistaNossasDemos/modal"
+import { MdOutlineComment } from "react-icons/md"
 
 
 export default function ControleTotalDaSuaCadeia() {
@@ -26,7 +27,8 @@ export default function ControleTotalDaSuaCadeia() {
             controlsOne.start({
                 opacity: 1,
                 x: 0,
-                transition: { duration: 0.6, ease: "linear" }
+                transition: { duration: 0.6, ease: "linear",bounce:true }
+                
 
             });
             controlsTwo.start({
@@ -41,12 +43,12 @@ export default function ControleTotalDaSuaCadeia() {
     const JsonList = [
         {
             index: 0,
-            icon: FaRegClock
+            icon: MdOutlineComment
 
         },
         {
             index: 1,
-            icon: FaRegBell
+            icon: HiOutlineChartBarSquare
         },
         {
             index: 2,
@@ -54,7 +56,7 @@ export default function ControleTotalDaSuaCadeia() {
         },
         {
             index: 3,
-            icon: HiOutlineChartBarSquare
+            icon: FaRegClock
 
         },
 
@@ -211,14 +213,14 @@ export default function ControleTotalDaSuaCadeia() {
                                 initial={{ opacity: 0, translateX: -100 }}
                                 transition={{ duration: 0.5, easing: 'linear' }}
                                 animate={{ opacity: 1, translateX: 0 }} className="w-[100%]  lg:flex hidden justify-start items-center  left-0 relative h-[800px] rounded-r-2xl">
-                                < Image priority key={ListContente[currentIndex].index} className=" object-cover shadow-md rounded-r-2xl h-full" alt="" src={ListContente[currentIndex].image} quality={100} width={1000} height={1000} />
+                                <Image priority key={ListContente[currentIndex].index} className=" object-cover shadow-md rounded-r-2xl h-full" alt="" src={ListContente[currentIndex].image} quality={100} width={1000} height={1000} />
                             </motion.div>
                             <ul className=" relative lg:flex hidden  gap-5 flex-col left-[-3%] top-[250px]">
                                 {JsonList.map((i, key) => {
                                     return (
                                         <li key={key} className={`w-12 shadow-md h-12 hover:scale-95 border-[0.5px] border-primaryColor transition duration-500  hover:bg-custom-linear hover:border-none ${currentIndex === key ? "bg-custom-linear border-none scale-95 text-textSecondColor" : "bg-textSecondColor text-primaryColor"}  rounded-lg`}>
                                             <button onClick={() => { handleTeste(key) }} className="w-full hover:text-textSecondColor  h-full flex items-center justify-center">
-                                                <i.icon fontSize={key === 3 && 2 ? 25 : 20}></i.icon>
+                                                <i.icon fontSize={key === 1 && 2 ? 25 : 20}></i.icon>
                                             </button>
                                         </li>
                                     )

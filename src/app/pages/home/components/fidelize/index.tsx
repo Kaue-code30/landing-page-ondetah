@@ -68,7 +68,7 @@ export function FidelizeSeuCliente() {
                     transition={{ duration: 0.8, ease: "backInOut" }}
                     className="w-full lg:w-1/2 flex flex-col items-center justify-center h-2/5 lg:h-auto"
                 >
-                    <Image className="w-3/4 lg:w-3/4" src={gif.src} width={150} height={150} alt="Logo Grande" />
+                    <Image priority className="w-3/4 lg:w-2/3" src={gif.src} width={150} quality={100} height={150} alt="Logo Grande" />
                 </motion.div>
             </div>
         </section>

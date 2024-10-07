@@ -136,7 +136,7 @@ export default function TransFormeSeuNegocio() {
                                 // exit={{ opacity: 0, translateY: side ? 50 : -50, transition: { duration: 0, ease: "easeInOut" } }}
                                 initial={{ opacity: 0.7, translateX: side ? 50 : -50 }}
                                 animate={{ opacity: 1, translateX: 0 }}
-                                transition={{ duration: 0.3, ease: "linear" }}
+                                transition={{ duration: 0.2, ease: "linear" }}
                                 className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-start lg:items-start justify-center">
                                 <h1 className="text-3xl lg:text-3xl text-left text-black font-bold">
                                     {JsonList[currentIndex].title}
@@ -168,7 +168,7 @@ export default function TransFormeSeuNegocio() {
                                     exit={{ opacity: 0, translateY: side ? 50 : -50, transition: { duration: 0, ease: "easeInOut" } }}
                                     initial={{ opacity: 0.7, translateX: side ? 50 : -50 }}
                                     animate={{ opacity: 1, translateX: 0 }}
-                                    transition={{ duration: 0.3, ease: "linear" }}
+                                    transition={{ duration: 0.2, ease: "linear" }}
 
                                     className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-center justify-center"
                                 >

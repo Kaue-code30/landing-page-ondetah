@@ -84,7 +84,7 @@ export default function ExperienciaDoCliente() {
     }
 
     return (
-        <section className="bg-custom-linear lg:h-auto max-w-[1996px] pt-20 pb-20 lg:pt-[2%] lg:pb-[300px] w-full  ">
+        <section className="bg-custom-linear lg:h-auto max-w-[1996px] pt-16 pb-20 lg:pt-[2%] lg:pb-[200px] w-full  ">
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:pt-16 h-1/4 items-center">
                     <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[76.5%] h-full">
