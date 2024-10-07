@@ -77,7 +77,7 @@ export default function FormularioContratacao() {
                     <h2 className={`pt-3 leading-tight lg:text-center text-white text-left  w-full font-normal text-base`}>
                         Nossos planos são do tamanho das necessidades do seu negócio.
                     </h2>
-                    <ContactForm mediaPedidos={`${media}`} plano={`${plano}`} content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
+                    <ContactForm  content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
                 </motion.div>
             </div>
 
