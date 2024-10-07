@@ -585,7 +585,7 @@ export default function EscolhaOMelhorPlano() {
                                                     *R$0.10 por SMS |  R$ 0.25 por WhatsApp  API não oficial ou R$ 0.55 por WhatsApp API oficial
                                                 </span>
                                                 <button onClick={() => HandleComeceAgora(i.title)} className={`w-full unique ${isExpanded ? "flex" : "hidden"} hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
-                                                    <Link target="_blank" href={"/formulario"} className="w-full h-full text-center flex items-center justify-center gap-3" >
+                                                    <Link  href={"/formulario"} className="w-full h-full text-center flex items-center justify-center gap-3" >
                                                         Faça seu orçamento
                                                     </Link>
                                                 </button>
