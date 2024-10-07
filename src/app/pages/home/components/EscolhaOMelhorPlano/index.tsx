@@ -2,10 +2,10 @@ import { AnimationControls, motion, useAnimation, useInView } from "framer-motio
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react";
 import { BsChatRightText } from "react-icons/bs"
-import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
+import { FaPlus, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 import { FaRegCircleCheck } from "react-icons/fa6"
 import style from "./style.module.scss"
-import { IoIosArrowBack, IoIosArrowForward, IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoIosArrowUp, IoMdRemove } from "react-icons/io";
 
 export default function EscolhaOMelhorPlano() {
 
@@ -406,6 +406,20 @@ export default function EscolhaOMelhorPlano() {
         }
     },);
 
+    const handleAumentar = () => {
+        if (value >= 10000) {
+            setValue(10000)
+        } else {
+            setValue(value + 100)
+        }
+    }
+    const handleDiminuir = () => {
+        if (value <= 0) {
+            setValue(0)
+        } else {
+            setValue(value - 100)
+        }
+    }
 
     return (
         <section id="planos" className={`  flex items-center pb-8 lg:pb-10 justify-center flex-col lg:h-auto max-w-[1996px] lg:pt-[20px]   w-full  `}>
@@ -428,45 +442,47 @@ export default function EscolhaOMelhorPlano() {
                         <motion.div
                             className="flex flex-col items-center justify-start w-[98%]  leading-normal">
                             <div className="w-[98%] gap-20 items-center justify-center flex pb-6 pt-5 lg:h-24 ">
-                                <div className="relative flex flex-col items-end  gap-2 justify-center w-full lg:w-[50%] ">
-
-                                    <motion.div animate={{ opacity: 1, left: 0 }} initial={{ opacity: 0, left: -100 }} className="relative  w-full">
-                                        <label htmlFor="labels-range-input" className="sr-only">Labels range</label>
-
-                                        <div style={{ left: `${porcent}%`, boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)" }} className={`relative bg-custom-linear transition float-start border  border-[#ededed] teste ${porcent <= 50 ? "-translate-x-[5px]" : "-translate-x-[43.5px]"}  rotate-45 w-12  flex items-center rounded-t-full rounded-bl-full justify-center h-12 `}>
-                                            <h1 className="relative transition text-textSecondColor text-xs  font-medium -rotate-45 ">
-                                                {value}
-                                            </h1>
-
-                                        </div>
-
-                                        <input
-                                            onMouseLeave={() => setValueView(!viewValue)}
-                                            id="labels-range-input"
-                                            type="range"
-                                            min={min}
-                                            max={max}
-                                            step={100}
-                                            value={value}
-                                            onChange={handleInputChange}
-                                            className={`w-full transition ${style.range}`}
-                                            style={rangeStyle}
-                                        ></input>
+                                <div className="relative flex flex-col items-end  gap-2 justify-center w-full lg:w-[60%] ">
+                                    <div className="w-full flex items-center gap-3 justify-center">
 
 
-                                        <span className="text-sm text-gray-500 absolute start-0 -bottom-6">0</span>
-                                        <span className="text-base text-gray-500 absolute lg:left-[26%] hidden lg:flex  start-0 -bottom-6">Informe o limite de pedidos por mês</span>
-                                        <span className="text-sm text-gray-500 absolute end-0 -bottom-6">+10.000</span>
-                                    </motion.div>
+                                        <button onClick={() => handleDiminuir()} className="w-8 h-8 relative hover:bg-[#d9d9d9] hover:scale-95 duration-300 transition items-center justify-center lg:flex hidden top-5 rounded-lg border">
+                                            <IoMdRemove fontSize={20} />
+                                        </button>
+                                        <motion.div animate={{ opacity: 1, left: 0 }} initial={{ opacity: 0, left: -100 }} className="relative w-full lg:w-[80%]">
+                                            <label htmlFor="labels-range-input" className="sr-only">Labels range</label>
+
+                                            <div style={{ left: `${porcent}%`, boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)" }} className={`relative bg-custom-linear transition float-start border  border-[#ededed] teste ${porcent <= 50 ? "-translate-x-[5px]" : "-translate-x-[43.5px]"}  rotate-45 w-12  flex items-center rounded-t-full rounded-bl-full justify-center h-12 `}>
+                                                <h1 className="relative transition text-textSecondColor text-xs  font-medium -rotate-45 ">
+                                                    {value}
+                                                </h1>
+                                            </div>
+
+                                            <input
+                                                onMouseLeave={() => setValueView(!viewValue)}
+                                                id="labels-range-input"
+                                                type="range"
+                                                min={min}
+                                                max={max}
+                                                step={100}
+                                                value={value}
+                                                onChange={handleInputChange}
+                                                className={`w-full transition ${style.range}`}
+                                                style={rangeStyle}
+                                            ></input>
+                                            <span className="text-sm text-gray-500 absolute start-0 -bottom-6">0</span>
+                                            <span className="text-base text-gray-500 absolute lg:left-[26%] hidden lg:flex  start-0 -bottom-6">Informe o limite de pedidos por mês</span>
+                                            <span className="text-sm text-gray-500 absolute end-0 -bottom-6">+10.000</span>
+                                        </motion.div>
+                                        <button onClick={() => handleAumentar()} className="w-8 h-8 relative hover:bg-[#d9d9d9] hover:scale-95 duration-300 transition items-center justify-center lg:flex hidden top-5 rounded-lg border">
+                                            <FaPlus fontSize={15} />
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-
-
                         </motion.div>
                         <motion.div ref={ref}
-
                             className="w-full flex-col overflow-y-hidden overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5  h-full flex">
-
                             <div className="lg:hidden flex items-center w-full justify-between">
                                 <button
                                     className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
@@ -481,11 +497,8 @@ export default function EscolhaOMelhorPlano() {
                                     <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={26} />
                                 </div>
                             </div>
-
                             <motion.div ref={containerRef}
-
                                 className="w-full lg:flex-row overflow-y-hidden pb-4 overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-3 flex">
-
                                 {
                                     JsonList.map((i, key) => {
                                         return (
@@ -503,8 +516,6 @@ export default function EscolhaOMelhorPlano() {
 
                                                             </h2>
                                                         </div>
-
-
                                                     </div>
 
                                                     <span className="w-full text-left">
