@@ -36,15 +36,17 @@ export default function Cta() {
                 animate={controls}
                 style={{ backgroundImage: `url(${bannerCta.src})` }}
                 className="w-full lg:flex-row flex-col bg-cover bg-[75%] flex justify-center lg:gap-0 gap-5 lg:justify-center items-start lg:items-center px-5 lg:px-32  h-full ">
-                <div className="w-[85%] h-full flex items-center justify-center">
-                    <div className="w-full flex lg:flex-row flex-col gap-5 items-center justify-center h-full">
-                        <h1 className={`text-2xl ${windows ? "text-xl" : "lg:text-[38px] lg:pr-10"} lg:pl-5 leading-normal lg:w-[63%] text-white font-bold`}>
-                            Agilidade e informação desde o
-                            clique até o cliente:
-                        </h1>
-                        <button className="lg:w-[30%] w-full hover:scale-95 transition bg-secondColor text-textSecondColor rounded-lg h-12">
-                            <Link  className="w-full flex items-center justify-center h-full" href={"#formulario"}> Agendar reunião</Link>
-                        </button>
+                <div className="w-full h-full flex items-center justify-center">
+                    <div className="w-full flex items-center justify-center h-full">
+                        <div className="w-[1896px] flex lg:flex-row flex-col gap-5 items-center justify-center h-full">
+                            <h1 className={`text-2xl ${windows ? "text-2xl" : "lg:text-[38px] lg:pr-10"} lg:pl-5 leading-normal lg:w-[60%] text-white font-bold`}>
+                                Agilidade e informação desde o
+                                clique até o cliente:
+                            </h1>
+                            <button className="lg:w-[30%] w-full hover:scale-95 transition bg-secondColor text-textSecondColor rounded-lg h-12">
+                                <Link className="w-full flex items-center justify-center h-full" href={"#formulario"}> Agendar reunião</Link>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </motion.div>

@@ -489,7 +489,7 @@ export default function EscolhaOMelhorPlano() {
                                 {
                                     JsonList.map((i, key) => {
                                         return (
-                                            <motion.div key={key} className={` ${isExpanded ? "h-auto transition duration-300 " : " h-[290px] transition duration-300 overflow-hidden "} flex flex-col cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32.5%] p-5 lg:p-5 border rounded-2xl`}>
+                                            <motion.div key={key} className={` ${isExpanded ? "h-auto transition duration-300 " : " h-[290px] justify-center items-center transition duration-300 overflow-hidden "} flex flex-col transition  cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32.5%] p-5 lg:p-5 border rounded-2xl`}>
 
                                                 <div className="flex items-center flex-col gap-5 w-full justify-between">
 
@@ -528,7 +528,7 @@ export default function EscolhaOMelhorPlano() {
                                                         </motion.div>
                                                     ) : (
                                                         <motion.div
-                                                            className={`w-full transition h-14 p-3 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
+                                                            className={`w-full transition h-14 lg:pl-5 p-3 flex items-center justify-center lg:justify-between text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
                                                             <motion.h1
                                                                 key={valueBasic}
 
@@ -537,12 +537,22 @@ export default function EscolhaOMelhorPlano() {
                                                                 transition={{ duration: 0.2, ease: 'linear' }}>
                                                                 R${i.value}/mês
                                                             </motion.h1>
+                                                            <div className="lg:flex hidden w-[150px] items-center justify-end ">
+                                                                <button
+                                                                    className={`flex items-center hover:shadow-md transition duration-300 gap-2 text-xs justify-center ${key === 1 ? "bg-[#bdf5ec]" : "bg-[#CCCBE4]"}  text-primaryColor rounded-lg w-[130px] px-2 h-10 hover:scale-95 transition`} onClick={toggleExpand}
+                                                                >
+                                                                    ver detalhes
+                                                                    <IoIosArrowUp className={`${isExpanded ? "rotate-180" : ""} transition duration-200`} fontSize={26} />
+
+                                                                </button>
+                                                            </div>
                                                         </motion.div>
+
                                                     )
                                                 }
-                                                <div className="flex w-full mt-3 items-end justify-start ">
+                                                <div className="flex lg:hidden mt-3 w-[150px] items-center justify-start ">
                                                     <button
-                                                        className={`flex items-center gap-2 text-xs justify-center ${key === 1 ? "bg-[#bdf5ec]" : "bg-[#CCCBE4]"}  text-primaryColor rounded-lg w-[130px] px-2 h-10 hover:scale-95 transition`} onClick={toggleExpand}
+                                                        className={`flex items-center hover:shadow-md transition duration-300 gap-2 text-xs justify-center ${key === 1 ? "bg-[#bdf5ec]" : "bg-[#CCCBE4]"}  text-primaryColor rounded-lg w-[130px] px-2 h-10 hover:scale-95 transition`} onClick={toggleExpand}
                                                     >
                                                         ver detalhes
                                                         <IoIosArrowUp className={`${isExpanded ? "rotate-180" : ""} transition duration-200`} fontSize={26} />
@@ -550,7 +560,7 @@ export default function EscolhaOMelhorPlano() {
                                                     </button>
                                                 </div>
 
-                                                <ul className="flex  items-start gap-0 lg:gap-0  cursor-default flex-col pt-5">
+                                                <ul className={`flex ${isExpanded ? "flex" : "hidden"} items-start gap-0 lg:gap-0  cursor-default flex-col pt-5`}>
                                                     {i.listBeneficios.map((dataList, index) => {
                                                         return (
                                                             <li key={index} className={`flex ${dataList.available ? `${key === 1 ? "text-white" : "text-textPrimaryColor"}` : `${key === 1 ? "text-[#ffffff62]" : "text-[#1e1e1e63]"}`} ${isExpanded === false ? "mt-4" : ""} ${isExpanded === false && value >= 10000 && key === 1 ? "mt-4" : ""} h-12 gap-4 items-center justify-center`}>
@@ -560,10 +570,10 @@ export default function EscolhaOMelhorPlano() {
                                                         );
                                                     })}
                                                 </ul>
-                                                <span className="w-full text-left mt-5 flex items-center text-sm justify-start gap-3" >
+                                                <span className={`w-full ${isExpanded ? "flex" : "hidden"} text-left mt-5 flex items-center text-sm justify-start gap-3`} >
                                                     *R$0.10 por SMS |  R$ 0.25 por WhatsApp  API não oficial ou R$ 0.55 por WhatsApp API oficial
                                                 </span>
-                                                <button onClick={() => HandleComeceAgora(i.title)} className={`w-full unique hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
+                                                <button onClick={() => HandleComeceAgora(i.title)} className={`w-full unique ${isExpanded ? "flex" : "hidden"} hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
                                                     <Link target="_blank" href={"/formulario"} className="w-full h-full text-center flex items-center justify-center gap-3" >
                                                         Faça seu orçamento
                                                     </Link>
