@@ -100,7 +100,7 @@ export default function EscolhaOMelhorPlano() {
             controlsOne.start({
                 opacity: 1,
                 y: 0,
-                transition: { duration: 1 },
+                transition: { duration: 0.5 },
             });
 
         }
@@ -422,9 +422,10 @@ export default function EscolhaOMelhorPlano() {
     }
 
     return (
-        <section id="planos" className={`  flex items-center pb-8 lg:pb-10 justify-center flex-col lg:h-auto max-w-[1996px] lg:pt-[20px]   w-full  `}>
-            <motion.div initial={{ opacity: 0, y: 200 }}
-                animate={controlsOne} className="flex flex-col pt-5 lg:pt-16 lg:items-center items-start justify-center  lg:justify-start w-[90%] lg:w-[98%]  leading-normal">
+        <motion.section ref={ref}
+            initial={{ opacity: 0, y: 200 }}
+            animate={controlsOne} id="planos" className={`  flex items-center pb-8 lg:pb-10 justify-center flex-col lg:h-auto max-w-[1996px] lg:pt-[20px]   w-full  `}>
+            <motion.div className="flex flex-col pt-5 lg:pt-16 lg:items-center items-start justify-center  lg:justify-start w-[90%] lg:w-[98%]  leading-normal">
                 <h1 className={`text-3xl lg:text-4xl text-left lg:text-center  leading-tight   font-bold`}>
                     Escolha o melhor plano para você:
                 </h1>
@@ -527,7 +528,7 @@ export default function EscolhaOMelhorPlano() {
                                                     value >= 10000 ? (
                                                         <motion.div
                                                             className={`w-full transition h-14 p-2 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
-                                                            <Link target="_blank" href={"/formulario"}><motion.h1
+                                                            <Link href={"/formulario"}><motion.h1
                                                                 className="flex items-center h-14 justify-center text-sm lg:text-[15px] gap-3"
                                                                 key={value}
                                                                 initial={{ opacity: 0, translateY: -5 }}
@@ -585,7 +586,7 @@ export default function EscolhaOMelhorPlano() {
                                                     *R$0.10 por SMS |  R$ 0.25 por WhatsApp  API não oficial ou R$ 0.55 por WhatsApp API oficial
                                                 </span>
                                                 <button onClick={() => HandleComeceAgora(i.title)} className={`w-full unique ${isExpanded ? "flex" : "hidden"} hover:scale-95 transition duration-300 mt-5 text-white rounded-lg h-12 ${key === 1 ? "bg-primaryColor" : "bg-secondColor"}`}>
-                                                    <Link  href={"/formulario"} className="w-full h-full text-center flex items-center justify-center gap-3" >
+                                                    <Link href={"/formulario"} className="w-full h-full text-center flex items-center justify-center gap-3" >
                                                         Faça seu orçamento
                                                     </Link>
                                                 </button>
@@ -598,6 +599,6 @@ export default function EscolhaOMelhorPlano() {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }

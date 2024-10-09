@@ -28,7 +28,7 @@ export default function Integracoes() {
             controls.start({
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.7 },
+                transition: { duration: 0.5 },
             });
         }
     }, [inView, controls]);

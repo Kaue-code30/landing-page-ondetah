@@ -29,7 +29,7 @@ export function FidelizeSeuCliente() {
                 <motion.div
                     initial={{ opacity: 0, translateX: -100 }}
                     animate={{ opacity: 1, translateX: 0 }}
-                    transition={{ duration: 0.8, ease: "backInOut" }}
+                    transition={{ duration: 0.5, ease: "backInOut" }}
                     className="w-full lg:w-1/2 flex flex-col items-start gap-5 justify-center"
                 >
                     {/* Logo no Topo */}
@@ -65,7 +65,7 @@ export function FidelizeSeuCliente() {
                 <motion.div
                     initial={{ opacity: 0, translateX: 100 }}
                     animate={{ opacity: 1, translateX: 0 }}
-                    transition={{ duration: 0.8, ease: "backInOut" }}
+                    transition={{ duration: 0.5, ease: "backInOut" }}
                     className="w-full lg:w-1/2 flex flex-col items-center justify-center h-2/5 lg:h-auto"
                 >
                     <Image priority className="w-3/4 lg:w-2/3" src={gif.src} width={150} quality={100} height={150} alt="Logo Grande" />

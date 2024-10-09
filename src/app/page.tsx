@@ -12,7 +12,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* <!-- Google Tag Manager --> */}
-      
+
       <Script>{`(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -24,6 +24,8 @@ export default function App() {
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKFK2WW"
         height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
       {/* <!-- End Google Tag Manager (noscript) --> */}
+
+      <Script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/139aadf5-b7d4-4ce5-b117-ddb828aef384-loader.js" ></Script>
       <main className="w-full flex items-center justify-center bg-white h-auto">
         <Home />
       </main>

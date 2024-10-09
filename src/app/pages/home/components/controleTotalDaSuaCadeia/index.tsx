@@ -27,18 +27,18 @@ export default function ControleTotalDaSuaCadeia() {
             controlsOne.start({
                 opacity: 1,
                 x: 0,
-                transition: { duration: 0.6, ease: "linear",bounce:true }
+                transition: { duration: 0, ease: "linear" }
                 
 
             });
             controlsTwo.start({
                 opacity: 1,
                 x: 0,
-                transition: { duration: 0.6, ease: "linear" },
+                transition: { duration: 0, ease: "linear" },
             });
 
         }
-    }, [inView, controlsOne]);
+    }, [inView, controlsOne,controlsTwo]);
 
     const JsonList = [
         {
@@ -205,9 +205,7 @@ export default function ControleTotalDaSuaCadeia() {
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:justify-start lg:pt-28 h-1/4 items-start">
                     <div className="flex items-center justify-center lg:justify-start w-full lg:w-[95%] h-full">
-                        <motion.div ref={ref}
-                            initial={{ opacity: 0, x: -200 }}
-                            animate={controlsOne} className="lg:w-1/2 lg:flex hidden  w-full h-full">
+                        <motion.div  className="lg:w-1/2 lg:flex hidden  w-full h-full">
                             <motion.div
                                 key={ListContente[currentIndex].index}
                                 initial={{ opacity: 0, translateX: -100 }}
@@ -226,10 +224,9 @@ export default function ControleTotalDaSuaCadeia() {
                                     )
                                 })}
                             </ul>
-
                         </motion.div>
                         <motion.div ref={ref}
-                            initial={{ opacity: 0, x: 200 }}
+                            initial={{ opacity: 0, x: 100 }}
                             animate={controlsOne} className="w-[90%] lg:w-1/2 transition-all lg:pl-10 pr-0 flex flex-col justify-center h-full">
                             <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
                                 Controle total da sua cadeia de entregas em um só lugar.
@@ -243,7 +240,6 @@ export default function ControleTotalDaSuaCadeia() {
                                 <Image className="w-full lg:hidden flex shadow-lg rounded-2xl h-full" alt="" src={ListContente[currentIndex].image} quality={100} width={1000} height={1000} />
                             </motion.div>
                             <ul className="flex gap-5 pt-4 flex-col pb-4 left-[87%] -top-3/4">
-
                                 {ListContente.map((i) => {
                                     return (
                                         <motion.li
