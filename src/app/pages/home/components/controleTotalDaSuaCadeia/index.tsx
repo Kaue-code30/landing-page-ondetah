@@ -10,7 +10,6 @@ import comunicacaoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/
 import gestaoDeRiscosBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-gestaoderiscos.png";
 import performanceBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-performance.png";
 import rastreamentoBanner from "@/app/pages/home/assets/controleTotalDaSuaCadeia/funcionalidade-rastreamento.png"
-import ModalVideoDemo from "../assistaNossasDemos/modal"
 import { MdOutlineComment } from "react-icons/md"
 
 

@@ -6,7 +6,7 @@ import Cta from "./components/cta";
 import AssitaNossaDemos from "./components/assistaNossasDemos";
 import TransFormeSeuNegocio from "./components/transformeSeuNegocio";
 import ExperienciaDoCliente from "./components/experienciaDoCliente";
-import ControleTotalDaSuaCadeia from "./components/controleTotalDaSuaCadeia";
+import ControleTotalDaSuaCadeia from "./components/controleTotalDaSuaCadeiaNew";
 import Integracoes from "./components/intregracoes";
 import EscolhaOMelhorPlano from "./components/EscolhaOMelhorPlano";
 import Faq from "./components/Faq";

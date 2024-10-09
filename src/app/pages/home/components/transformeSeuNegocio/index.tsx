@@ -88,7 +88,7 @@ export default function TransFormeSeuNegocio() {
         return () => clearInterval(interval);
     }, []);
 
-    
+
 
 
 
@@ -96,7 +96,7 @@ export default function TransFormeSeuNegocio() {
 
     return (
         <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
-            
+
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
                     <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[77%] h-full">
@@ -104,7 +104,7 @@ export default function TransFormeSeuNegocio() {
                             <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
                                 Transforme o seu negócio.
                             </h1>
-                            <h2 className="text-textPrimaryColor pt-2 leading-tight lg:text-center text-left w-full font-normal text-base lg:text-lg">
+                            <h2 className="text-textPrimaryColor pt-2 lg:pt-0 leading-tight lg:text-center text-left w-full font-normal text-base lg:text-lg">
                                 Confira os benefícios do Ondetah.
                             </h2>
                         </div>
@@ -144,7 +144,7 @@ export default function TransFormeSeuNegocio() {
                                 <h2 className="text-black text-left text-[15px] w-full lg:w-[90%]">
                                     {JsonList[currentIndex].text}
                                 </h2>
-                                <button  className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
+                                <button className="w-full lg:w-[200px] text-textSecondColor hover:scale-95 transition h-12 rounded-lg bg-secondColor">
                                     <Link href={"#demos"} className="w-full flex items-center justify-center h-full">
                                         conheça a solução
                                     </Link>
