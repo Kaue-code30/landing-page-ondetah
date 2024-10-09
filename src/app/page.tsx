@@ -26,6 +26,19 @@ export default function App() {
       {/* <!-- End Google Tag Manager (noscript) --> */}
 
       <Script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/139aadf5-b7d4-4ce5-b117-ddb828aef384-loader.js" ></Script>
+
+
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-400476575">
+      </Script>
+      <Script>
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-400476575');`}
+      </Script>
       <main className="w-full flex items-center justify-center bg-white h-auto">
         <Home />
       </main>
