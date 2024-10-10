@@ -89,7 +89,14 @@ export default function TransFormeSeuNegocio() {
     }, []);
 
 
-
+    const handleNextMob = (index: number) => {
+        setCurrentIndex(index)
+        // if (index >= 2) {
+        //     setIncrement(true)
+        // } else {
+        //     setIncrement(false)
+        // }
+    }
 
 
 
@@ -99,7 +106,7 @@ export default function TransFormeSeuNegocio() {
 
             <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
-                    <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[77%] h-full">
+                    <div className="flex  lg:flex-col flex-col items-center lg:pb-10 justify-start w-[90%] lg:w-[77%] h-full">
                         <div className="flex flex-col items-center gap-5 w-full lg:w-3/5 leading-normal">
                             <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
                                 Transforme o seu negócio.
@@ -130,14 +137,19 @@ export default function TransFormeSeuNegocio() {
 
                         </div>
                         <div className="lg:w-[85%] w-full mt-5 flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
-
-                            <motion.div
+                            <div className="w-full h-12 lg:hidden flex justify-center items-center gap-4">
+                                {
+                                    ButtonList.map((i, key) => {
+                                        return (
+                                            <button key={key} onClick={() => handleNextMob(i.index)} className={`w-5 h-5 transition duration-300 rounded-full ${currentIndex === i.index ? "bg-secondColor" : "bg-[#d9d9d9]"} `}>
+                                            </button>
+                                        )
+                                    })
+                                }
+                            </div>
+                            <div
                                 key={currentIndex}
-                                // exit={{ opacity: 0, translateY: side ? 50 : -50, transition: { duration: 0, ease: "easeInOut" } }}
-                                initial={{ opacity: 0.7, translateX: side ? 50 : -50 }}
-                                animate={{ opacity: 1, translateX: 0 }}
-                                transition={{ duration: 0.2, ease: "linear" }}
-                                className="lg:w-1/2 w-full h-full flex flex-col gap-5 items-start lg:items-start justify-center">
+                                className="lg:w-1/2 w-full h-[370px] flex flex-col gap-5 items-start lg:items-start justify-center">
                                 <h1 className="text-3xl lg:text-3xl text-left text-black font-bold">
                                     {JsonList[currentIndex].title}
                                 </h1>
@@ -150,17 +162,11 @@ export default function TransFormeSeuNegocio() {
                                     </Link>
 
                                 </button>
-                            </motion.div>
-                            <div className=" flex lg:hidden lg:mt-0 mt-3 relative  lg:gap-0 gap-10 justify-between w-full">
-                                <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
-                                    <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
-                                </button>
-                                <button onClick={() => handleNext()} className="w-10 h-10 flex hover:scale-95 transition rounded-lg hover: items-center justify-center  bg-[#CCCBE4]">
-                                    <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
-                                </button>
 
 
                             </div>
+
+
 
                             <AnimatePresence mode="sync" >
                                 <motion.div

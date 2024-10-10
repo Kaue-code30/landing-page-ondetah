@@ -113,20 +113,7 @@ export default function Integracoes() {
                                 />
                             </div> */}
 
-                            <div className="lg:hidden  my-2 flex items-center w-full justify-between">
-                                <div
-                                    className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
-                                    onClick={handleScrollLeft}
-                                >
-                                    <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={26} />
-                                </div>
-                                <div
-                                    className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
-                                    onClick={handleScrollRight}
-                                >
-                                    <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={26} />
-                                </div>
-                            </div>
+
 
                             {/* Botões de categorias */}
 
@@ -166,6 +153,20 @@ export default function Integracoes() {
                                         {i.text}
                                     </button>
                                 ))} */}
+                            </div>
+                            <div className="lg:hidden  my-2 flex items-center w-full justify-start gap-4">
+                                <div
+                                    className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
+                                    onClick={handleScrollLeft}
+                                >
+                                    <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={26} />
+                                </div>
+                                <div
+                                    className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
+                                    onClick={handleScrollRight}
+                                >
+                                    <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={26} />
+                                </div>
                             </div>
 
                         </motion.div>

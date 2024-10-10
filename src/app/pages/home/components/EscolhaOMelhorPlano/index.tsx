@@ -484,7 +484,7 @@ export default function EscolhaOMelhorPlano() {
                         </motion.div>
                         <motion.div ref={ref}
                             className="w-full flex-col overflow-y-hidden overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5  h-full flex">
-                            <div className="lg:hidden flex items-center w-full justify-between">
+                            <div className="lg:hidden flex items-center w-full justify-start gap-4">
                                 <button
                                     className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
                                     onClick={handleScrollLeft}
