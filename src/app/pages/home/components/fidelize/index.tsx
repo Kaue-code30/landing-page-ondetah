@@ -34,7 +34,7 @@ export function FidelizeSeuCliente() {
                 >
                     {/* Logo no Topo */}
                     <div className="hidden lg:flex h-14 w-14 lg:h-24 lg:w-24 p-3 lg:p-6 bg-custom-linear rounded-xl shadow-md items-center justify-center">
-                        <Image className="w-full" src={iconLogo} width={100} height={100} alt="Logo" />
+                        <Image lazyRoot="" className="w-full" src={iconLogo} width={100} height={100} alt="Logo" />
                     </div>
 
                     {/* Texto */}

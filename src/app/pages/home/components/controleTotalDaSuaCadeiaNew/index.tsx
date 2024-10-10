@@ -184,7 +184,7 @@ export default function ControleTotalDaSuaCadeia() {
         }
     }
 
-    
+
 
     return (
         <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
@@ -207,7 +207,7 @@ export default function ControleTotalDaSuaCadeia() {
                             key={currentIndex}
                             className="w-full h-[580px] p-5 flex-col flex lg:hidden mt-8 rounded-2xl gap-5 border items-center mb-2 justify-start shadow-md">
                             <div className="h-[35%] rounded-2xl shadow-md w-full flex">
-                                <Image className="w-full h-full object-cover rounded-2xl" src={ListContente[currentIndex].image} alt="" width={100} height={100} />
+                                <Image lazyRoot="" lazyBoundary="Aguarde um momento" priority className="w-full h-full object-cover rounded-2xl" src={ListContente[currentIndex].image} alt="" width={100} height={100} />
                             </div>
                             <div className="w-full flex justify-between items-center flex-col h-full">
 

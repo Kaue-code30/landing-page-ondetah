@@ -130,7 +130,7 @@ export default function Integracoes() {
                                             animate={controls}
                                             key={index} className="w-[230px] min-w-[265px] shadow-md  lg:w-auto  flex flex-row  gap-4 items-center bg-white lg:items-center justify-start rounded-lg p-5 h-[130px] lg:h-[100px] border-[0.5px]">
                                             <div className={` w-full lg:h-full ${i.index === 5 ? "lg:w-[70px]" : "lg:w-[80px]"} lg:w-[80px]  rounded-2xl`}>
-                                                <Image className=" w-full lg:object-cover rounded-lg transition shadow-md " src={i.image} alt={`Logo da empresa ${i.title}`} quality={100} width={10000} height={10000} />
+                                                <Image lazyRoot="" className=" w-full lg:object-cover rounded-lg transition shadow-md " src={i.image} alt={`Logo da empresa ${i.title}`} quality={100} width={10000} height={10000} />
                                             </div>
                                             <div className="w-full  lg:w-3/4 flex items-center lg:items-start justify-center flex-col h-full">
                                                 <p className="font-bold text-textPrimaryColor">
