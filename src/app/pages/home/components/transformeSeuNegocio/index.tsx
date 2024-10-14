@@ -133,20 +133,9 @@ export default function TransFormeSeuNegocio() {
                             <button onClick={() => handleNext()} className="w-10 h-10 flex hover:scale-95 transition rounded-lg hover: items-center justify-center  bg-[#CCCBE4]">
                                 <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
                             </button>
-
-
                         </div>
                         <div className="lg:w-[85%] w-full mt-5 flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
-                            <div className="w-full h-12 lg:hidden flex justify-center items-center gap-4">
-                                {
-                                    ButtonList.map((i, key) => {
-                                        return (
-                                            <button key={key} onClick={() => handleNextMob(i.index)} className={`w-5 h-5 transition duration-300 rounded-full ${currentIndex === i.index ? "bg-secondColor" : "bg-[#d9d9d9]"} `}>
-                                            </button>
-                                        )
-                                    })
-                                }
-                            </div>
+
                             <div
                                 key={currentIndex}
                                 className="lg:w-1/2 w-full h-[370px] flex flex-col gap-5 items-start lg:items-start justify-center">
@@ -167,7 +156,16 @@ export default function TransFormeSeuNegocio() {
                             </div>
 
 
-
+                            <div className="w-full h-12 lg:hidden flex justify-center items-center gap-4">
+                                {
+                                    ButtonList.map((i, key) => {
+                                        return (
+                                            <button key={key} onClick={() => handleNextMob(i.index)} className={`w-5 h-5 transition duration-300 rounded-full ${currentIndex === i.index ? "bg-secondColor" : "bg-[#d9d9d9]"} `}>
+                                            </button>
+                                        )
+                                    })
+                                }
+                            </div>
                             <AnimatePresence mode="sync" >
                                 <motion.div
                                     key={currentIndex + 5}
