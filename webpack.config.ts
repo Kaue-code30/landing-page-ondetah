@@ -1,6 +1,9 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+
+
 
 module.exports = {
   mode: 'production',  // 'production' ativa automaticamente a minificação no Webpack
@@ -41,4 +44,14 @@ module.exports = {
       new CssMinimizerPlugin(),  // Minifica CSS
     ],
   },
+  plugins: [
+    new ImageminPlugin({
+      pngquant: {
+        quality: '65-80',
+      },
+      jpegtran: {
+        progressive: true,
+      },
+    }),
+  ]
 };
