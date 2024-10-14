@@ -91,12 +91,43 @@ export default function TransFormeSeuNegocio() {
 
     const handleNextMob = (index: number) => {
         setCurrentIndex(index)
-        // if (index >= 2) {
-        //     setIncrement(true)
-        // } else {
-        //     setIncrement(false)
-        // }
     }
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    const handleTouchStart = (event: any) => {
+        // Pega as coordenadas do ponto inicial do toque
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (event: any) => {
+        // Pega as coordenadas do ponto final do toque
+        touchEndX = event.changedTouches[0].clientX;
+        touchEndY = event.changedTouches[0].clientY;
+
+        // Calcula a diferença entre o ponto inicial e final
+        handleSwipeGesture();
+    };
+
+    const handleSwipeGesture = () => {
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            // Deslize horizontal
+            if (diffX > 0) {
+                setCurrentIndex(currentIndex === 0 ? 3 : currentIndex - 1)
+            } else {
+                setCurrentIndex(currentIndex === 3 ? 0 : currentIndex + 1)
+            }
+        }
+    };
+
+
 
 
 
@@ -134,8 +165,8 @@ export default function TransFormeSeuNegocio() {
                                 <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
                             </button>
                         </div>
-                        <div className="lg:w-[85%] w-full mt-5 flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
-
+                        <div onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd} className="lg:w-[85%] w-full mt-5 flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
                             <div
                                 key={currentIndex}
                                 className="lg:w-1/2 w-full h-[370px] flex flex-col gap-5 items-start lg:items-start justify-center">

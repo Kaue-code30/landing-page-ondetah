@@ -184,6 +184,43 @@ export default function ControleTotalDaSuaCadeia() {
         }
     }
 
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    const handleTouchStart = (event: any) => {
+        // Pega as coordenadas do ponto inicial do toque
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (event: any) => {
+        // Pega as coordenadas do ponto final do toque
+        touchEndX = event.changedTouches[0].clientX;
+        touchEndY = event.changedTouches[0].clientY;
+
+        // Calcula a diferença entre o ponto inicial e final
+        handleSwipeGesture();
+    };
+
+    const handleSwipeGesture = () => {
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            // Deslize horizontal
+            if (diffX > 0) {
+                setCurrentIndex(currentIndex === 0 ? 3 : currentIndex - 1)
+
+                setIncrement(false)
+            } else {
+                setCurrentIndex(currentIndex === 3 ? 0 : currentIndex + 1)
+                setIncrement(true)
+            }
+        }
+    };
+
 
 
     return (
@@ -205,6 +242,8 @@ export default function ControleTotalDaSuaCadeia() {
                             animate={{ translateX: 0, opacity: 1 }}
                             transition={{ duration: 0.3, ease: 'linear' }}
                             key={currentIndex}
+                            onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}
                             className="w-full h-[580px] p-5 flex-col flex lg:hidden mt-8 rounded-2xl gap-5 border items-center mb-2 justify-start shadow-md">
                             <div className="h-[35%] rounded-2xl shadow-md w-full flex">
                                 <Image lazyRoot="" lazyBoundary="Aguarde um momento" priority className="w-full h-full object-cover rounded-2xl" src={ListContente[currentIndex].image} alt="" width={100} height={100} />
