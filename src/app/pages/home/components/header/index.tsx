@@ -49,7 +49,7 @@ export default function Header({ onScroll }: PropsComponent) {
                 }}
                 transition={{ duration: 0.4, ease: "linear" }}
                 className="w-full flex fixed top-0 z-50 items-center text-white justify-center h-20 lg:h-24 bg-white  ">
-                <div className="max-w-[1200px] flex items-center justify-between h-full w-[80%] lg:w-full ">
+                <div className="lg:max-w-[1300px] max-w-[1200px] flex items-center justify-between h-full w-[80%] lg:w-full ">
                     <Link className="w-32 lg:w-40" href={"/"}>
                         <Image
                             src={logoOndetah}

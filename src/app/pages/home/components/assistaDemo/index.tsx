@@ -6,7 +6,7 @@ export default function AssistaNossaDemo() {
 
     return (
         <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-[100px] pb-[100px] ">
-            <div className="w-4/5 lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-auto flex lg:flex-row flex-col-reverse items-center justify-between">
+            <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-auto flex lg:flex-row flex-col-reverse items-center justify-between">
                 <div className="flex flex-col gap-3 lg:gap-2 justify-start items-start w-full lg:w-3/5 leading-normal">
                     <h1 className="text-3xl lg:text-4xl leading-tight text-textPrimaryColor font-bold">
                         Assista a nossa demo:

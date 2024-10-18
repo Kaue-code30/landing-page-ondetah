@@ -32,7 +32,7 @@ export default function Footer() {
             {localizarPedido && (
                 <PedidoOndetah />
             )}
-            <div className="w-[90%] lg:w-full max-w-[1200px] lg:pb-0 pb-7 gap-5 lg:gap-10 h-full flex text-white flex-col lg:flex-row lg:items-center justify-between">
+            <div className="w-[90%] lg:w-full lg:max-w-[1300px] max-w-[1200px] lg:pb-0 pb-7 gap-5 lg:gap-10 h-full flex text-white flex-col lg:flex-row lg:items-center justify-between">
                 <Image className="w-36" width={100} height={100} alt="" src={logo} />
                 <div className="w-1/2 lg:flex-row flex-col flex items-center justify-end h-auto lg:h-[150px]">
                     <ul className={`lg:flex lg:items-center flex lg:flex-row flex-col w-full justify-end gap-5`}>
@@ -51,7 +51,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="w-full flex items-center lg:justify-center bg-custom-linear flex-col h-[150px] lg:h-20 border-t border-t-white lg:flex-row gap-5 justify-between text-textSecondColor ">
-                <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-full flex text-white flex-col lg:flex-row lg:items-center items-start lg:justify-between justify-center">
+                <div className="w-[90%] lg:w-full lg:max-w-[1300px] max-w-[1200px] gap-5 lg:gap-10 h-full flex text-white flex-col lg:flex-row lg:items-center items-start lg:justify-between justify-center">
                     <Link target="_blank" href={"https://uxgroup.com.br/politica-de-privacidade"}>Politica de Privacidade</Link>
                     <Link target="_blank" href={"https://uxgroup.com.br/"}><Image className="w-32 flex " width={1000} quality={100} height={1000} alt="" src={poweredUX} /></Link>
 

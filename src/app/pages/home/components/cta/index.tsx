@@ -34,7 +34,7 @@ export default function Cta() {
             <motion.div ref={ref}
                 initial={{ opacity: 0, y: 100 }}
                 animate={controls}
-                className="w-4/5 lg:w-full max-w-[1200px] h-full lg:flex-row flex-col flex items-center justify-between">
+                className="w-[90%] lg:w-full max-w-[1200px] h-full lg:flex-row flex-col flex items-center justify-between">
                 <div className="w-full flex items-center justify-between h-full">
                     <div className="w-[1896px] flex lg:flex-row flex-col gap-5 items-center justify-between h-full">
                         <h1 className={`text-4xl leading-normal lg:w-[50%] text-white font-bold`}>

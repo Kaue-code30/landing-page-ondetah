@@ -85,7 +85,7 @@ export default function ExperienciaDoCliente() {
 
     return (
         <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-custom-linear h-auto pt-[100px] pb-[100px] ">
-            <div className="w-4/5 lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-full flex flex-col items-center justify-between">
+            <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-full flex flex-col items-center justify-between">
 
                 <div className="flex flex-col gap-5 w-full lg:w-full leading-normal">
                     <h1 className="text-3xl lg:text-4xl text-left lg:w-1/2 leading-tight text-textSecondColor font-bold">

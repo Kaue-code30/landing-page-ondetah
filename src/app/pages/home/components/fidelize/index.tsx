@@ -23,7 +23,7 @@ export function FidelizeSeuCliente() {
                     <ModalVideoDemo closeModalFunc={() => handleClose()} urlVideo={""} />
                 )
             }
-            <div className="w-4/5 lg:w-full max-w-[1200px] gap-5 h-full flex lg:flex-row flex-col-reverse  items-center justify-center">
+            <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 h-full flex lg:flex-row flex-col-reverse  items-center justify-center">
 
                 {/* Coluna Esquerda (Texto e Botões) */}
                 <motion.div

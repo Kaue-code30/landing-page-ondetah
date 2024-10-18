@@ -430,7 +430,7 @@ export default function EscolhaOMelhorPlano() {
         <motion.section ref={ref}
             initial={{ opacity: 0, y: 200 }}
             animate={controlsOne} id="planos" className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-[60px] pb-[100px] ">
-            <div className="w-4/5 lg:w-full max-w-[1200px] gap-3 h-auto flex flex-col items-center justify-between">
+            <div className="w-w-[90%] lg:w-full max-w-[1200px] gap-3 h-auto flex flex-col items-center justify-between">
 
                 <h1 className={`text-3xl lg:text-4xl text-left lg:text-center  leading-tight   font-bold`}>
                     Escolha o melhor plano para você:
