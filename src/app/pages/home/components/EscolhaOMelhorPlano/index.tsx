@@ -19,18 +19,12 @@ export default function EscolhaOMelhorPlano() {
     const [viewValue, setValueView] = useState(false)
     const porcent = value / 100
     const containerRef = useRef<HTMLDivElement>(null);
-
     const [plano, setPlano] = useState("");
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleExpand = () => {
         setIsExpanded(!isExpanded);
     };
-
-
-
-
-
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(Number(Number(e.target.value)));
@@ -402,6 +396,17 @@ export default function EscolhaOMelhorPlano() {
             /* eslint-disable no-unused-vars */
             const localPlano = localStorage.setItem("plano", `${plano}`);
             const localMedia = localStorage.setItem("media", `${value}`)
+            let valorPlano = "";
+            if (plano === "Comunicar") {
+                console.log(valueBasic);
+
+                valorPlano = `${valueBasic}`;
+            } else if (plano === "Gerir") {
+                valorPlano = `${valueStandard}`;
+            } else {
+                valorPlano = `${valueEnterprise}`;
+            }
+            const localValue = localStorage.setItem("valor", `${valorPlano}`)
             /* eslint-disable no-unused-vars */
         }
     },);
@@ -424,22 +429,23 @@ export default function EscolhaOMelhorPlano() {
     return (
         <motion.section ref={ref}
             initial={{ opacity: 0, y: 200 }}
-            animate={controlsOne} id="planos" className={`  flex items-center pb-8 lg:pb-10 justify-center flex-col lg:h-auto max-w-[1996px] lg:pt-[20px]   w-full  `}>
-            <motion.div className="flex flex-col pt-5 lg:pt-16 lg:items-center items-start justify-center  lg:justify-start w-[90%] lg:w-[98%]  leading-normal">
+            animate={controlsOne} id="planos" className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-[60px] pb-[100px] ">
+            <div className="w-4/5 lg:w-full max-w-[1200px] gap-3 h-auto flex flex-col items-center justify-between">
+
                 <h1 className={`text-3xl lg:text-4xl text-left lg:text-center  leading-tight   font-bold`}>
                     Escolha o melhor plano para você:
                 </h1>
-                <h2 className={`pt-3 leading-tight lg:text-center text-left  w-full font-normal text-base`}>
+                <h2 className={`leading-tight lg:text-center text-left  w-full font-normal text-base`}>
                     Nossos planos são do tamanho das necessidades do seu negócio.
                 </h2>
                 <h2 className={` pt-3 lg:hidden leading-tight lg:text-center text-left  w-full font-normal text-sm  `}>
                     Informe o limite de pedidos por mês que você deseja em seu plano.
                 </h2>
-            </motion.div>
 
-            <div className="flex flex-col w-full items-center justify-center">
-                <div className="flex w-full justify-center lg:pt-2 h-1/4 items-center">
-                    <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[78%] h-full">
+
+                <div className="flex flex-col w-full items-center justify-center">
+
+                    <div className="flex w-full lg:flex-col flex-col items-center justify-start h-full">
                         <motion.div
                             className="flex flex-col items-center justify-start w-[98%]  leading-normal">
                             <div className="w-[98%] gap-20 items-center justify-center flex pb-6 pt-5 lg:h-24 ">
@@ -499,11 +505,11 @@ export default function EscolhaOMelhorPlano() {
                                 </div>
                             </div>
                             <motion.div ref={containerRef}
-                                className="w-full lg:flex-row overflow-y-hidden pb-4 overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-3 flex">
+                                className="w-full lg:flex-row overflow-y-hidden overflow-x-scroll  scroll-smooth lg:overflow-auto mt-5 lg:mt-10 h-full gap-1 flex">
                                 {
                                     JsonList.map((i, key) => {
                                         return (
-                                            <motion.div key={key} className={` ${isExpanded ? "h-auto transition duration-300 " : " h-[290px] justify-center items-center transition duration-300 overflow-hidden "} flex flex-col transition  cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[32.5%] p-5 lg:p-5 border rounded-2xl`}>
+                                            <motion.div key={key} className={` ${isExpanded ? "h-auto transition duration-300 " : " h-[290px] justify-center items-center transition duration-300 overflow-hidden "} flex flex-col transition  cursor-default shrink-0 ${key === 1 ? "shadow-md bg-secondColor  text-textSecondColor" : "lg:mt-2 lg:scale-95"} shadow-md w-[320px] lg:w-[33%] p-5 lg:p-5 border rounded-2xl`}>
 
                                                 <div className="flex items-center flex-col gap-5 w-full justify-between">
 
@@ -554,7 +560,7 @@ export default function EscolhaOMelhorPlano() {
                                                                     className={`flex items-center hover:shadow-md transition duration-300 gap-2 text-xs justify-center ${key === 1 ? "bg-[#bdf5ec]" : "bg-[#CCCBE4]"}  text-primaryColor rounded-lg w-[130px] px-2 h-10 hover:scale-95 transition`} onClick={toggleExpand}
                                                                 >
                                                                     ver detalhes
-                                                                    <IoIosArrowUp className={`${isExpanded ? "rotate-180" : ""} transition duration-200`} fontSize={26} />
+                                                                    <IoIosArrowUp className={`${isExpanded ? "" : "rotate-180"} transition duration-200`} fontSize={26} />
 
                                                                 </button>
                                                             </div>
@@ -567,7 +573,7 @@ export default function EscolhaOMelhorPlano() {
                                                         className={`flex items-center hover:shadow-md transition duration-300 gap-2 text-xs justify-center ${key === 1 ? "bg-[#bdf5ec]" : "bg-[#CCCBE4]"}  text-primaryColor rounded-lg w-[130px] px-2 h-10 hover:scale-95 transition`} onClick={toggleExpand}
                                                     >
                                                         ver detalhes
-                                                        <IoIosArrowUp className={`${isExpanded ? "rotate-180" : ""} transition duration-200`} fontSize={26} />
+                                                        <IoIosArrowUp className={`${isExpanded ? "" : "rotate-180"} transition duration-200`} fontSize={26} />
 
                                                     </button>
                                                 </div>

@@ -2,9 +2,12 @@
 import { ClientDataPlano, contactFormDataPlano } from "@/app/pages/home/interfaces/clientData";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { FaLongArrowAltLeft, FaRegCheckCircle, FaStar } from "react-icons/fa";
 import { ClientData } from "@/app/pages/home/interfaces/clientData";
 import { useClientData } from "../../hooks/clientPlano";
+import { IoIosArrowUp } from "react-icons/io";
+import { MdOutlineShoppingBag } from "react-icons/md";
+import Link from "next/link";
 
 export default function ContactForm({
 
@@ -14,8 +17,10 @@ export default function ContactForm({
     const [showSuccess, setShowSuccess] = useState(false);
     const media = typeof window !== 'undefined' ? localStorage.getItem('media') : null
     const plano = typeof window !== 'undefined' ? localStorage.getItem('plano') : null
-    
- 
+    const valorPlano = typeof window !== 'undefined' ? localStorage.getItem('valor') : null
+    const [isExpanded, setIsExpanded] = useState(false);
+
+
     console.log(media);
 
     const [formData, setFormData] = useState({
@@ -141,11 +146,48 @@ export default function ContactForm({
         async
         src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/139aadf5-b7d4-4ce5-b117-ddb828aef384-loader.js"
       ></Script> */}
-            <div id="formulario" className="bg-primaryColor  flex items-start justify-start pt-[20px] w-full">
+            <div id="formulario" className="bg-primaryColor  flex flex-col items-center justify-center pt-[20px] w-full">
+                <div className={`lg:max-w-md w-full flex items-start ${isExpanded ? "h-[180px] " : "h-24 "} transition duration-300 rounded-2xl lg:justify-start  lg:w-[90%] mx-auto   `}>
+                    <div className={`lg:w-[91%] w-full gap-5 flex flex-col justify-between items-center rounded-2xl p-5 h-full bg-transparent border`}>
+                        <div className="w-full flex justify-between items-center">
+                            <div className={`w-1/2 h-full  items-center gap-3 justify-start flex`}>
+                                <div className="w-12 h-12 flex items-center justify-center border rounded-md">
+                                    <FaStar fontSize={30} color="#FFF" />
+
+                                    
+                                </div>
+                                <h1 className="text-xl text-white font-medium">
+                                    {plano}
+                                </h1>
+                            </div>
+                            <div onClick={() => setIsExpanded(!isExpanded)} className="w-7 h-7 hover:scale-95 transition duration-300 flex items-center justify-center rounded-lg bg-[#BDF5EC]">
+                                <IoIosArrowUp className={`${isExpanded ? "" : "rotate-180"} transition duration-200`} fontSize={26} />
+                            </div>
+                        </div>
+                        <div className={` ${isExpanded ? "flex" : "hidden"} w-full h-32 `}>
+                            <div className="w-full h-8 flex justify-between items-center  gap-3 ">
+                                <div className="flex w-auto gap-2 items-center h-full">
+                                    <MdOutlineShoppingBag fontSize={30} color="#FFF" />
+                                    <p className="text-white text-sm">{media} pedidos por mês </p>
+                                </div>
+                                <div className="w-[0.8px] h-full bg-white">
+                                </div>
+                                <div className="w-auto flex text-white font-medium h-full items-center justify-end">
+                                    R${valorPlano}/mês
+                                </div>
+                            </div>
+                        </div>
+                        <Link className={`w-full ${isExpanded ? "flex" : "hidden"}  items-center gap-3 justify-start text-[#BDF5EC]`} href={"/#planos"}>
+                        <FaLongArrowAltLeft fontSize={20}/> Alterar plano
+                        </Link>
+
+                    </div>
+                </div>
+
                 <form
                     id={nameForm}
                     name={nameForm}
-                    className="lg:max-w-md w-full lg:w-[90%] lg:pr-10 mx-auto"
+                    className="lg:max-w-md w-full pt-5 lg:w-[90%] lg:pr-10 mx-auto"
                     onSubmit={handleSubmit}
                 >
                     <div className="relative z-0 w-full mb-5 group">

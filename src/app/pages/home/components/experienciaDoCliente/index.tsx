@@ -84,63 +84,60 @@ export default function ExperienciaDoCliente() {
     }
 
     return (
-        <section className="bg-custom-linear lg:h-auto max-w-[1996px] pt-16 pb-20 lg:pt-[2%] lg:pb-[200px] w-full  ">
-            <div className="flex flex-col w-full items-center justify-center">
-                <div className="flex w-full justify-center lg:pt-16 h-1/4 items-center">
-                    <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[76.5%] h-full">
-                        <div className="flex flex-col gap-5 w-full lg:w-full leading-normal">
-                            <h1 className="text-3xl lg:text-4xl text-left lg:w-1/2 leading-tight text-textSecondColor font-bold">
-                                Uma solução completa focada na
-                                experiência do cliente.
-                            </h1>
-                            <h2 className="text-textSecondColor pt-2 leading-tight text-left w-full font-normal text-base lg:text-lg">
-                                Projetada para oferecer suporte e gestão de ponta para o gestor de e-commerce.
-                            </h2>
-                        </div>
+        <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-custom-linear h-auto pt-[100px] pb-[100px] ">
+            <div className="w-4/5 lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-full flex flex-col items-center justify-between">
 
-                        <motion.div ref={ref}
-                            initial={{ opacity: 0, y: 100 }}
-                            animate={controls} className="w-full flex lg:flex-row flex-col lg:flex-wrap gap-5 items-start justify-start h-full lg:h-auto pt-10">
-                            {
-                                JsonList.map((item, index) => (
-                                    <motion.div
-                                        key={index}
-                                        className={`w-full lg:w-[31%]  ${openStates[index] ? "lg:h-[300px] h-[500px] bg-[#ffffff08] backdrop-blur-sm" : ""}  transition duration-500 flex ${openStates[index] ? "scale-[0.99]" : ""} shadow-xl backdrop-blur-3xl flex-col  gap-5 border rounded-2xl p-5`}
-                                        transition={{ duration: 0.3, ease: "linear" }}
-                                        animate={{ height: openStates[index] ? "370px" : "200px" }}
-                                    >
-                                        <Image className={`w-12 ${index === 0 ? "mt-5" : "mt-2"} h-12 `} src={item.icon} alt="icones representativos" width={100} height={100} />
-                                        <div className="flex w-full justify-between items-center">
-                                            <h1 className="text-textSecondColor text-[22px] w-[60%] font-semibold">
-                                                {item.title}
-                                            </h1>
-                                            <button
-                                                onClick={() => handleOpen(index)}
-                                                className="w-7 flex items-center hover:scale-90 transition justify-center rounded-lg h-7 bg-[#BDF5EC]"
-                                            >
-                                                <IoIosArrowUp className={`${openStates[index] ? "" : "rotate-180"} duration-500 transition-all`} fontSize={22} />
-                                            </button>
-                                        </div>
-                                        <motion.div transition={{ duration: 0.35, ease: "linear" }}
-
-                                            animate={{ opacity: openStates[index] ? 1 : 0, height: openStates[index] ? "auto" : "0px" }}
-                                            className={`overflow-hidden transition-all duration-500 ${openStates[index] ? "flex flex-col gap-5" : ""}`}
-                                        >
-
-                                            <p className="text-textSecondColor">
-                                                {item.text}
-                                            </p>
-                                            <button className="w-full  h-12 bg-textSecondColor rounded-lg">
-                                                <Link className="w-full h-full" href={"#formulario"}>Saiba mais</Link>
-
-                                            </button>
-                                        </motion.div>
-                                    </motion.div>
-                                ))
-                            }
-                        </motion.div>
-                    </div>
+                <div className="flex flex-col gap-5 w-full lg:w-full leading-normal">
+                    <h1 className="text-3xl lg:text-4xl text-left lg:w-1/2 leading-tight text-textSecondColor font-bold">
+                        Uma solução completa focada na
+                        experiência do cliente.
+                    </h1>
+                    <h2 className="text-textSecondColor pt-2 leading-tight text-left w-full font-normal text-base lg:text-lg">
+                        Projetada para oferecer suporte e gestão de ponta para o gestor de e-commerce.
+                    </h2>
                 </div>
+
+                <motion.div ref={ref}
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={controls} className="w-full  flex lg:flex-row  flex-col lg:flex-wrap gap-5 items-start justify-start h-auto pb-10 lg:pb-[100px] ">
+                    {
+                        JsonList.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                className={`w-full lg:w-[32.1%]  ${openStates[index] ? "lg:h-[300px] h-[500px] bg-[#ffffff08] backdrop-blur-sm" : ""}  transition duration-500 flex ${openStates[index] ? "scale-[0.99]" : ""} shadow-xl backdrop-blur-3xl flex-col  gap-5 border rounded-2xl p-5`}
+                                transition={{ duration: 0.3, ease: "linear" }}
+                                animate={{ height: openStates[index] ? "370px" : "200px" }}
+                            >
+                                <Image className={`w-12 ${index === 0 ? "mt-5" : "mt-2"} h-12 `} src={item.icon} alt="icones representativos" width={100} height={100} />
+                                <div className="flex w-full justify-between items-center">
+                                    <h1 className="text-textSecondColor text-[22px] w-[60%] font-semibold">
+                                        {item.title}
+                                    </h1>
+                                    <button
+                                        onClick={() => handleOpen(index)}
+                                        className="w-7 flex items-center hover:scale-90 transition justify-center rounded-lg h-7 bg-[#BDF5EC]"
+                                    >
+                                        <IoIosArrowUp className={`${openStates[index] ? "" : "rotate-180"} duration-500 transition-all`} fontSize={22} />
+                                    </button>
+                                </div>
+                                <motion.div transition={{ duration: 0.35, ease: "linear" }}
+
+                                    animate={{ opacity: openStates[index] ? 1 : 0, height: openStates[index] ? "auto" : "0px" }}
+                                    className={`overflow-hidden transition-all duration-500 ${openStates[index] ? "flex flex-col gap-5" : ""}`}
+                                >
+
+                                    <p className="text-textSecondColor">
+                                        {item.text}
+                                    </p>
+                                    <button className="w-full  h-12 bg-textSecondColor rounded-lg">
+                                        <Link className="w-full h-full" href={"#formulario"}>Saiba mais</Link>
+
+                                    </button>
+                                </motion.div>
+                            </motion.div>
+                        ))
+                    }
+                </motion.div>
             </div>
         </section>
     );

@@ -64,7 +64,7 @@ export default function Integracoes() {
         { index: 0, title: "Bling", type: "E-commerce", image: logoBling.src },
         { index: 1, title: "Mirakl", type: "Marketing", image: logoMirakl.src },
         { index: 2, title: "Shopify", type: "Marketplace", image: logoShopify.src },
-        { index: 3, title: "Tray", type: "PDV", image: logoTray.src },
+        { index: 3, title: "Tray", type: "E-commerce", image: logoTray.src },
         { index: 4, title: "Trux", type: "TMS", image: logoTrux.src },
         { index: 6, title: "Vtex", type: "E-commerce", image: logoVtex.src },
         { index: 5, title: "Em breve", type: "Novas integrações", image: maisIntegracoes.src },
@@ -78,28 +78,27 @@ export default function Integracoes() {
     // );
 
     return (
-        <section id="integracoes" className="bg-white lg:h-auto max-w-[1996px] lg:pb-0 pb-5 pt-[2%] w-full">
-            <div className="flex flex-col w-full items-center justify-center">
+        <section id="integracoes" className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-[100px] pb-[50px] ">
+            <div className="w-4/5 lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-auto flex lg:flex-row flex-col-reverse items-center justify-between">
                 <motion.div ref={ref}
                     initial={{ opacity: 0, y: 100 }}
+                    animate={controls} className="flex w-full flex-col justify-center  h-1/4 items-center">
 
-                    animate={controls} className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
-                    <div className="w-[90%] lg:w-[90%] flex items-center gap-2 justify-start lg:justify-start pb-10 flex-col h-full">
-                        <motion.div
-                            ref={ref}
-                            initial={{ opacity: 0, y: 100 }}
-                            animate={controls}
-                            className="lg:w-[85%] shadow-md w-full flex lg:gap-0 gap-3 items-center justify-start py-10 p-5 lg:p-20 flex-col rounded-2xl -mt-[20%] h-[55%] lg:h-[28%] bg-[#EDEDED]"
-                        >
-                            <h1 className="text-3xl lg:text-4xl text-center lg:w-1/2 leading-tight text-textPrimaryColor font-bold">
-                                Integrações
-                            </h1>
-                            <h2 className="text-textPrimaryColor pt-3 lg:w-4/5 leading-tight text-center w-full font-normal text-base lg:text-lg">
-                                Conectamos facilmente a outras ferramentas para potencializar os ganhos da sua operação
-                            </h2>
+                    <motion.div
+                        ref={ref}
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={controls}
+                        className=" shadow-md w-full flex lg:gap-0 gap-3 items-center justify-start py-10 p-5 lg:p-20 flex-col rounded-2xl -mt-[50%] lg:-mt-[20%] h-[55%] lg:h-[28%] bg-[#EDEDED]"
+                    >
+                        <h1 className="text-3xl lg:text-4xl text-center lg:w-1/2 leading-tight text-textPrimaryColor font-bold">
+                            Integrações
+                        </h1>
+                        <h2 className="text-textPrimaryColor pt-3 lg:w-4/5 leading-tight text-center w-full font-normal text-base lg:text-lg">
+                            Conectamos facilmente a outras ferramentas para potencializar os ganhos da sua operação
+                        </h2>
 
-                            {/* Input de busca */}
-                            {/* <div className="relative rounded-2xl shadow-md pt-3 flex items-center justify-center w-full lg:w-[700px]">
+                        {/* Input de busca */}
+                        {/* <div className="relative rounded-2xl shadow-md pt-3 flex items-center justify-center w-full lg:w-[700px]">
                                 <label htmlFor="search" className="absolute w-20 left-3 top-[60%] transform -translate-y-1/2">
                                     <IoMdSearch fontSize={30} className="p-1 bg-[#BDF5EC] text-secondColor rounded-md" />
                                 </label>
@@ -115,36 +114,36 @@ export default function Integracoes() {
 
 
 
-                            {/* Botões de categorias */}
+                        {/* Botões de categorias */}
 
 
 
-                            <div ref={containerRef} className="lg:w-4/5 flex overflow-x-auto flex-row w-full pb-2 lg:flex-wrap gap-2 lg:pt-5 items-center justify-start lg:justify-center">
+                        <div ref={containerRef} className="lg:w-full flex overflow-x-auto flex-row w-full pb-2 lg:flex-wrap gap-2 lg:pt-5 items-center justify-start lg:justify-center">
 
 
-                                {
-                                    JsonList.map((i, index) => (
-                                        <motion.div
-                                            ref={ref}
-                                            initial={{ opacity: 0, y: 100 }}
-                                            animate={controls}
-                                            key={index} className="w-[230px] min-w-[265px] shadow-md  lg:w-auto  flex flex-row  gap-4 items-center bg-white lg:items-center justify-start rounded-lg p-5 h-[130px] lg:h-[100px] border-[0.5px]">
-                                            <div className={` w-full lg:h-full ${i.index === 5 ? "lg:w-[70px]" : "lg:w-[80px]"} lg:w-[80px]  rounded-2xl`}>
-                                                <Image lazyRoot="" className=" w-full lg:object-cover rounded-lg transition shadow-md " src={i.image} alt={`Logo da empresa ${i.title}`} quality={100} width={10000} height={10000} />
-                                            </div>
-                                            <div className="w-full  lg:w-3/4 flex items-center lg:items-start justify-center flex-col h-full">
-                                                <p className="font-bold text-textPrimaryColor">
-                                                    {i.title}
-                                                </p>
-                                                <p className="text-xs lg:text-sm lg:text-left text-center text-textPrimaryColor">
-                                                    {i.type}
-                                                </p>
-                                            </div>
-                                        </motion.div>
-                                    ))}
+                            {
+                                JsonList.map((i, index) => (
+                                    <motion.div
+                                        ref={ref}
+                                        initial={{ opacity: 0, y: 100 }}
+                                        animate={controls}
+                                        key={index} className="w-[230px] min-w-[265px] shadow-md  lg:w-auto  flex flex-row  gap-4 items-center bg-white lg:items-center justify-start rounded-lg p-5 h-[130px] lg:h-[100px] border-[0.5px]">
+                                        <div className={` w-full lg:h-full ${i.index === 5 ? "lg:w-[70px]" : "lg:w-[80px]"} lg:w-[80px]  rounded-2xl`}>
+                                            <Image lazyRoot="" className=" w-full lg:object-cover rounded-lg transition shadow-md " src={i.image} alt={`Logo da empresa ${i.title}`} quality={100} width={10000} height={10000} />
+                                        </div>
+                                        <div className="w-full  lg:w-3/4 flex items-center lg:items-start justify-center flex-col h-full">
+                                            <p className="font-bold text-textPrimaryColor">
+                                                {i.title}
+                                            </p>
+                                            <p className="text-xs lg:text-sm lg:text-left text-center text-textPrimaryColor">
+                                                {i.type}
+                                            </p>
+                                        </div>
+                                    </motion.div>
+                                ))}
 
 
-                                {/* {ButtonList.map((i) => (
+                            {/* {ButtonList.map((i) => (
                                     <button
                                         key={i.index}
                                         onClick={() => setSelectedCategory(i.text)}
@@ -153,27 +152,27 @@ export default function Integracoes() {
                                         {i.text}
                                     </button>
                                 ))} */}
+                        </div>
+                        <div className="lg:hidden  my-2 flex items-center w-full justify-start gap-4">
+                            <div
+                                className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
+                                onClick={handleScrollLeft}
+                            >
+                                <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={26} />
                             </div>
-                            <div className="lg:hidden  my-2 flex items-center w-full justify-start gap-4">
-                                <div
-                                    className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
-                                    onClick={handleScrollLeft}
-                                >
-                                    <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={26} />
-                                </div>
-                                <div
-                                    className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
-                                    onClick={handleScrollRight}
-                                >
-                                    <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={26} />
-                                </div>
+                            <div
+                                className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]"
+                                onClick={handleScrollRight}
+                            >
+                                <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={26} />
                             </div>
+                        </div>
 
-                        </motion.div>
+                    </motion.div>
 
 
 
-                        {/* <motion.div
+                    {/* <motion.div
                             ref={containerRef}
 
                             className="w-full lg:w-[80%] flex gap-5 overflow-x-auto pb-3 lg:overflow-x-visible lg:flex-wrap lg:pt-10 "
@@ -209,13 +208,12 @@ export default function Integracoes() {
                             </AnimatePresence>
                         </motion.div> */}
 
-                        {/* Botão de não encontrar a integração */}
-                        <button className="mt-5 w-full lg:w-1/2 text-secondColor font-medium hover:scale-95 duration-300 rounded-lg bg-[#BDF5EC] h-12">
-                            <Link href={"#formulario"}>
-                                Não encontrei a integração que preciso
-                            </Link>
-                        </button>
-                    </div>
+                    {/* Botão de não encontrar a integração */}
+                    <button className="mt-5 w-full lg:w-1/2 text-secondColor font-medium hover:scale-95 duration-300 rounded-lg bg-[#BDF5EC] h-12">
+                        <Link href={"#formulario"}>
+                            Não encontrei a integração que preciso
+                        </Link>
+                    </button>
                 </motion.div>
             </div>
         </section>

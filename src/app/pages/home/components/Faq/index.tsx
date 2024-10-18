@@ -58,19 +58,17 @@ export default function Faq() {
     }
 
     return (
-        <section className="bg-custom-linear lg:h-auto max-w-[1996px] lg:pt-10 pt-14 lg:pb-12 pb-10 w-full  ">
-            <div className="flex flex-col w-full items-center justify-center">
-                <div className="flex w-full justify-center lg:pt-16 h-1/4 items-center">
-                    <div className="flex  lg:flex-col flex-col items-center pb-10 justify-start w-[90%] lg:w-[78%] h-full">
-                        <div className="flex flex-col gap-5 w-full lg:w-ful leading-normal">
+        <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-custom-linear h-auto pt-[100px] pb-[100px] ">
+            <div className="w-4/5 lg:w-full max-w-[1200px] gap-5 lg:gap-3 h-full flex flex-col items-center justify-between">
+                        <div className="flex flex-col gap-3 w-full lg:w-ful leading-normal">
                             <h1 className="text-3xl lg:text-4xl text-left lg:text-left  leading-tight text-textSecondColor font-bold">
                                 FAQ
                             </h1>
-                            <h2 className="text-textSecondColor  pt-2 leading-tight text-left  w-full font-normal text-base">
+                            <h2 className="text-textSecondColor  leading-tight text-left  w-full font-normal text-base">
                                 Aqui você encontra as respostas para as dúvidas mais comuns sobre o Ondetah.
                             </h2>
                         </div>
-                        <div className="h-auto  flex-col lg:flex hidden text-textSecondColor w-full gap-3 mt-10 ">
+                        <div className="h-auto  flex-col lg:flex hidden text-textSecondColor w-full gap-3 pt-3 ">
                             {JsonList.map((i, key) => {
                                 return (
                                     <motion.div transition={{ duration: 0.1, ease: "linear" }}
@@ -88,7 +86,7 @@ export default function Faq() {
                                 )
                             })}
                         </div>
-                        <div className="h-auto  flex-col lg:hidden flex text-textSecondColor w-full gap-3 mt-10 ">
+                        <div className="h-auto  flex-col lg:hidden flex text-textSecondColor w-full gap-3  ">
                             {JsonList.map((i, key) => {
                                 return (
                                     <motion.div
@@ -114,8 +112,7 @@ export default function Faq() {
                             })}
                         </div>
                     </div>
-                </div>
-            </div>
+
         </section>
     )
 }

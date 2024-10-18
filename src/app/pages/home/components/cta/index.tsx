@@ -30,25 +30,23 @@ export default function Cta() {
 
 
     return (
-        <section className="w-full h-[60vh] lg:h-[50vh] pt-14 lg:pt-[5%] pb-[5%]  flex items-center justify-center">
+        <section style={{ backgroundImage: `url(${bannerCta.src})` }} className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-primary pt-[100px] pb-[100px] h-auto">
             <motion.div ref={ref}
                 initial={{ opacity: 0, y: 100 }}
                 animate={controls}
-                style={{ backgroundImage: `url(${bannerCta.src})` }}
-                className="w-full lg:flex-row flex-col bg-cover bg-[75%] flex justify-center lg:gap-0 gap-5 lg:justify-center items-start lg:items-center px-5 lg:px-32  h-full ">
-                <div className="w-full h-full flex items-center justify-center">
-                    <div className="w-full flex items-center justify-center h-full">
-                        <div className="w-[1896px] flex lg:flex-row flex-col gap-5 items-center justify-center h-full">
-                            <h1 className={`text-2xl ${windows ? "text-2xl" : "lg:text-[38px] lg:pr-10"} lg:pl-5 leading-normal lg:w-[60%] text-white font-bold`}>
-                                Agilidade e informação desde o
-                                clique até o cliente:
-                            </h1>
-                            <button className="lg:w-[30%] w-full hover:scale-95 transition bg-secondColor text-textSecondColor rounded-lg h-12">
-                                <Link className="w-full flex items-center justify-center h-full" href={"#formulario"}> Agendar reunião</Link>
-                            </button>
-                        </div>
+                className="w-4/5 lg:w-full max-w-[1200px] h-full lg:flex-row flex-col flex items-center justify-between">
+                <div className="w-full flex items-center justify-between h-full">
+                    <div className="w-[1896px] flex lg:flex-row flex-col gap-5 items-center justify-between h-full">
+                        <h1 className={`text-4xl leading-normal lg:w-[50%] text-white font-bold`}>
+                            Agilidade e informação desde o
+                            clique até o cliente:
+                        </h1>
+                        <button className="lg:w-[30%] w-full hover:scale-95 transition bg-secondColor text-textSecondColor rounded-lg h-12">
+                            <Link className="w-full flex items-center justify-center h-full" href={"#formulario"}> Agendar reunião</Link>
+                        </button>
                     </div>
                 </div>
+
             </motion.div>
         </section>
     )

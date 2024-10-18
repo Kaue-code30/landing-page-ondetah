@@ -133,11 +133,9 @@ export default function TransFormeSeuNegocio() {
 
 
     return (
-        <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
-
-            <div className="flex flex-col w-full items-center justify-center">
-                <div className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
-                    <div className="flex  lg:flex-col flex-col items-center lg:pb-10 justify-start w-[90%] lg:w-[77%] h-full">
+        <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-[60px] pb-[60px] ">
+            <div className="w-4/5 lg:w-full max-w-[1200px] gap-5 lg:gap-4 h-full flex flex-col items-center justify-between">
+                
                         <div className="flex flex-col items-center gap-5 w-full lg:w-3/5 leading-normal">
                             <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
                                 Transforme o seu negócio.
@@ -146,7 +144,7 @@ export default function TransFormeSeuNegocio() {
                                 Confira os benefícios do Ondetah.
                             </h2>
                         </div>
-                        <div className="mt-3 lg:flex w-full hidden justify-center items-center gap-5 h-16 ">
+                        <div className="lg:flex w-full hidden justify-center items-center gap-5 h-16 ">
                             {ButtonList.map((i, key) => {
                                 return (
                                     <span className={`${currentIndex === key ? "bg-primaryColor text-white" : "text-textPrimaryColor"} border ${key === 1 ? "w-[280px]" : ""} h-12 w-[230px] hover:scale-95 hover:bg-primaryColor transition hover:text-textSecondColor  rounded-lg px-3`} key={key}>
@@ -157,7 +155,7 @@ export default function TransFormeSeuNegocio() {
                                 )
                             })}
                         </div>
-                        <div className="  lg:flex hidden lg:mt-0 mt-3 relative top-[180px]  lg:gap-0 gap-10 justify-between w-full">
+                        <div className="  lg:flex hidden lg:mt-0  relative top-[180px]  lg:gap-0 gap-10 justify-between w-full">
                             <button onClick={() => handlePrevious()} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
                                 <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
                             </button>
@@ -166,7 +164,7 @@ export default function TransFormeSeuNegocio() {
                             </button>
                         </div>
                         <div onTouchStart={handleTouchStart}
-                            onTouchEnd={handleTouchEnd} className="lg:w-[85%] w-full mt-5 flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
+                            onTouchEnd={handleTouchEnd} className="lg:w-[85%] w-full  flex justify-center items-center lg:flex-row gap-5 lg:gap-10 flex-col-reverse  h-auto">
                             <div
                                 key={currentIndex}
                                 className="lg:w-1/2 w-full h-[370px] flex flex-col gap-5 items-start lg:items-start justify-center">
@@ -212,8 +210,6 @@ export default function TransFormeSeuNegocio() {
                             </AnimatePresence>
 
                         </div>
-                    </div>
-                </div>
             </div>
         </section>
     )

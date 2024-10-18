@@ -33,7 +33,7 @@ export default function ControleTotalDaSuaCadeia() {
             color: "29265B"
         },
         {
-            title: "Análise de dados:",
+            title: "Análise de dados",
             index: 1,
             icon: ImStatsBars,
             color: "BDF5EC"
@@ -82,7 +82,7 @@ export default function ControleTotalDaSuaCadeia() {
 
         {
             index: 1,
-            title: "Análise de dados:",
+            title: "Análise de dados",
             text: "Avalie o desempenho em cada etapa e otimize suas operações.",
             image: performanceBanner.src,
 
@@ -224,66 +224,66 @@ export default function ControleTotalDaSuaCadeia() {
 
 
     return (
-        <section className="bg-white lg:h-auto max-w-[1996px] pt-[15%] lg:pt-0 w-full  ">
-            <div className="flex flex-col w-full items-center justify-center">
-                <div className="flex w-full justify-center lg:pt-28 h-1/4 items-center">
-                    <div className="flex lg:flex-col flex-col items-center  justify-start w-[90%] lg:w-[77%] h-full">
-                        <div className="flex flex-col items-center gap-3 w-full leading-normal">
-                            <h1 className="text-3xl lg:text-4xl lg:text-center text-left  leading-tight text-textPrimaryColor font-bold">
-                                Controle total da sua cadeia de entregas em um só lugar.
+        <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-[100px] pb-[60px] ">
+            <div className="w-4/5 lg:w-full max-w-[1200px] gap-5 lg:gap-4 h-full flex flex-col items-center justify-between">
+
+                <div className="flex flex-col items-center gap-3 w-full leading-normal">
+                    <h1 className="text-3xl lg:text-4xl lg:text-center text-left  leading-tight text-textPrimaryColor font-bold">
+                        Controle total da sua cadeia de entregas em um só lugar.
+                    </h1>
+                    <h2 className="text-textPrimaryColor leading-tight lg:text-center text-left w-full font-normal text-base lg:text-lg">
+                        A gestão completa em uma única plataforma para facilitar o dia a dia do seu e-commerce.
+                    </h2>
+                </div>
+
+                <motion.div
+                    initial={{ translateX: isIncrement ? 100 : -100, opacity: 0 }}
+                    animate={{ translateX: 0, opacity: 1 }}
+                    transition={{ duration: 0.3, ease: 'linear' }}
+                    key={currentIndex}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                    className="w-full h-[630px] p-5 flex-col flex lg:hidden  rounded-2xl gap-5 border items-center mb-2 justify-start shadow-md">
+                    <div className="h-[35%] rounded-2xl shadow-md w-full flex">
+                        <Image lazyRoot="" lazyBoundary="Aguarde um momento" priority className="w-full h-full object-cover rounded-2xl" src={ListContente[currentIndex].image} alt="" width={100} height={100} />
+                    </div>
+
+                    <div className="w-full flex justify-between items-center flex-col h-full">
+
+
+                        <div className="flex h-full gap-3 flex-col w-full">
+                            <h1 className="text-2xl font-semibold">
+                                {ListContente[currentIndex].title}
                             </h1>
-                            <h2 className="text-textPrimaryColor lg:pt-0 pt-2 leading-tight lg:text-center text-left w-full font-normal text-base lg:text-lg">
-                                A gestão completa em uma única plataforma para facilitar o dia a dia do seu e-commerce.
-                            </h2>
+                            {ListContente[currentIndex].list.map((data, key) => {
+                                return (
+                                    <ul className="" key={key}>
+                                        <li className="text-black flex w-full text- justify-start items-center gap-2 ">
+                                            <span className="text-primaryColor text-xs font-bold">.</span>
+                                            {data.text}
+                                        </li>
+                                    </ul>
+                                )
+                            })}
+
                         </div>
+                        <button className="w-full text-secondColor bg-[#bdf5ec] text-sm mt-2 gap-2 font-medium flex items-center justify-center h-14 rounded-lg">
+                            <PiChatTextBold fontSize={18} /> Falar com um especialista
+                        </button>
+                    </div>
 
-                        <motion.div
-                            initial={{ translateX: isIncrement ? 100 : -100, opacity: 0 }}
-                            animate={{ translateX: 0, opacity: 1 }}
-                            transition={{ duration: 0.3, ease: 'linear' }}
-                            key={currentIndex}
-                            onTouchStart={handleTouchStart}
-                            onTouchEnd={handleTouchEnd}
-                            className="w-full h-[580px] p-5 flex-col flex lg:hidden mt-8 rounded-2xl gap-5 border items-center mb-2 justify-start shadow-md">
-                            <div className="h-[35%] rounded-2xl shadow-md w-full flex">
-                                <Image lazyRoot="" lazyBoundary="Aguarde um momento" priority className="w-full h-full object-cover rounded-2xl" src={ListContente[currentIndex].image} alt="" width={100} height={100} />
-                            </div>
-                            <div className="w-full flex justify-between items-center flex-col h-full">
-
-
-                                <div className="flex h-full gap-3 flex-col w-full">
-                                    <h1 className="text-2xl font-semibold">
-                                        {ListContente[currentIndex].title}
-                                    </h1>
-                                    {ListContente[currentIndex].list.map((data, key) => {
-                                        return (
-                                            <ul className="" key={key}>
-                                                <li className="text-black flex w-full text- justify-start items-center gap-2 ">
-                                                    <span className="text-primaryColor text-xs font-bold">.</span>
-                                                    {data.text}
-                                                </li>
-                                            </ul>
-                                        )
-                                    })}
-
-                                </div>
-                                <button className="w-full text-secondColor bg-[#bdf5ec] mt-2 gap-2 font-medium flex items-center justify-center h-14 rounded-lg">
-                                    <PiChatTextBold fontSize={18} /> Falar com um especialista
+                </motion.div>
+                <div className="w-1/2 lg:hidden h-12 flex justify-center  items-center gap-4">
+                    {
+                        ButtonList.map((i, key) => {
+                            return (
+                                <button key={key} onClick={() => handleNext(i.index)} className={`w-5 h-5 transition duration-300 rounded-full ${currentIndex === i.index ? "bg-secondColor" : "bg-[#d9d9d9]"} `}>
                                 </button>
-                            </div>
-
-                        </motion.div>
-                        <div className="w-1/2 lg:hidden h-12 flex justify-center mt-3 items-center gap-4">
-                            {
-                                ButtonList.map((i, key) => {
-                                    return (
-                                        <button key={key} onClick={() => handleNext(i.index)} className={`w-5 h-5 transition duration-300 rounded-full ${currentIndex === i.index ? "bg-secondColor" : "bg-[#d9d9d9]"} `}>
-                                        </button>
-                                    )
-                                })
-                            }
-                        </div>
-                        {/* <div className="w-2/5 lg:hidden flex mb-10 h-12 justify-between">
+                            )
+                        })
+                    }
+                </div>
+                {/* <div className="w-2/5 lg:hidden flex mb-10 h-12 justify-between">
                             <button onClick={() => handlePrevious(currentIndex)} className="w-10 h-10 hover:scale-95 transition flex rounded-lg items-center justify-center  bg-[#CCCBE4]">
                                 <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
                             </button>
@@ -294,58 +294,57 @@ export default function ControleTotalDaSuaCadeia() {
 
 
 
-                        <div className="lg:flex hidden  w-full h-auto mt-5 justify-center items-center lg:flex-row gap-5  flex-col-reverse  h-">
-                            {ButtonList.map((buttonData, key) => {
+                <div className="lg:flex hidden  w-full h-auto mt-5 justify-center items-center lg:flex-row gap-5  flex-col-reverse  h-">
+                    {ButtonList.map((buttonData, key) => {
+                        return (
+                            <button key={key} onClick={() => handleCurrentIndex(buttonData.index)} className={`w-[30%] p-5  gap-0 ${currentIndex === buttonData.index ? `-translate-y-3  ${currentIndex === buttonData.index ? "bg-primaryColor text-white" : "bg-transparent text-primaryColor"} border shadow-lg hover:scale-100  text-primaryColor` : ` bg-transparent shadow`} border gap-2 flex text-black flex-col items-start hover:scale-95 justify-center  h-[120px]  transition duration-300 rounded-xl `}>
+                                <div className={`w-10 h-10 flex items-center ${currentIndex === 0} ${currentIndex === buttonData.index ? "bg-[#cccbe4] text-primaryColor" : " text-primaryColor border"}  justify-center p-2 rounded-lg`}>
+                                    <buttonData.icon fontSize={buttonData.index === 1 ? 20 : 20} />
+                                </div>
+
+                                <h1 className="text-[18px] font-medium text-left">
+                                    {buttonData.title}
+                                </h1>
+
+                            </button>
+                        )
+                    })}
+                </div>
+                <div className=" lg:flex hidden w-full h-auto mt-5  justify-center items-center  lg:flex-row gap-5  flex-col-reverse">
+                    <div className="h-[400px] border flex shadow items-center justify-start rounded-2xl w-full">
+                        <div className="w-1/2 h-full flex  items-center justify-center rounded-l-2xl bg-primaryColor">
+                            <Image priority className="w-full transition duration-300 h-full rounded-l-2xl object-cover" src={ListContente[currentIndex].image} alt="" width={100} height={100} />
+                        </div>
+                        <motion.div
+                            initial={{ translateX: 100, }}
+                            animate={{ translateX: 0, opacity: [0, 0.5, 1] }}
+                            transition={{ duration: 0.4 }}
+                            key={currentIndex}
+                            className="w-1/2 rounded-r-2xl flex-col pl-10 bg-primaryColor justify-center items-start gap-2 flex h-full p-5 ">
+                            <h1 className="text-3xl text-white font-semibold">
+                                {ListContente[currentIndex].title}
+                            </h1>
+                            {ListContente[currentIndex].list.map((data, key) => {
                                 return (
-                                    <button key={key} onClick={() => handleCurrentIndex(buttonData.index)} className={`w-[30%] p-5  gap-0 ${currentIndex === buttonData.index ? `-translate-y-3  ${currentIndex === buttonData.index ? "bg-primaryColor text-white" : "bg-transparent text-primaryColor"} border shadow-lg hover:scale-100  text-primaryColor` : ` bg-transparent shadow`} border gap-2 flex text-black flex-col items-start hover:scale-95 justify-center  h-[120px]  transition duration-300 rounded-xl `}>
-                                        <div className={`w-10 h-10 flex items-center ${currentIndex === 0} ${currentIndex === buttonData.index ? "bg-[#cccbe4] text-primaryColor" : " text-primaryColor border"}  justify-center p-2 rounded-lg`}>
-                                            <buttonData.icon fontSize={buttonData.index === 1 ? 20 : 20} />
-                                        </div>
-
-                                        <h1 className="text-[18px] font-medium text-left">
-                                            {buttonData.title}
-                                        </h1>
-
-                                    </button>
+                                    <ul key={key}>
+                                        <li className="text-white text-base">
+                                            <span className="font-bold">.</span> {data.text}
+                                        </li>
+                                    </ul>
                                 )
                             })}
-                        </div>
-                        <div className=" lg:flex hidden w-full h-auto mt-5  justify-center items-center  lg:flex-row gap-5  flex-col-reverse">
-                            <div className="h-[400px] border flex shadow items-center justify-start rounded-2xl w-full">
-                                <div className="w-1/2 h-full flex  items-center justify-center rounded-l-2xl bg-primaryColor">
-                                    <Image priority className="w-full transition duration-300 h-full rounded-l-2xl object-cover" src={ListContente[currentIndex].image} alt="" width={100} height={100} />
-                                </div>
-                                <motion.div
-                                    initial={{ translateX: 100, }}
-                                    animate={{ translateX: 0, opacity: [0, 0.5, 1] }}
-                                    transition={{ duration: 0.4 }}
-                                    key={currentIndex}
-                                    className="w-1/2 rounded-r-2xl flex-col pl-10 bg-primaryColor justify-center items-start gap-2 flex h-full p-5 ">
-                                    <h1 className="text-3xl text-white font-semibold">
-                                        {ListContente[currentIndex].title}
-                                    </h1>
-                                    {ListContente[currentIndex].list.map((data, key) => {
-                                        return (
-                                            <ul key={key}>
-                                                <li className="text-white text-base">
-                                                    <span className="font-bold">.</span> {data.text}
-                                                </li>
-                                            </ul>
-                                        )
-                                    })}
-                                    <div className="w-auto h-16 pt-3 gap-3 flex items-center justify-start">
-                                        <button className="h-full rounded-lg text-base hover:scale-95 transition duration-300 w-[200px] bg-white flex items-center justify-center">
-                                            Veja a demo
-                                        </button>
-                                        <button className="h-full rounded-lg text-base hover:scale-95 transition duration-300 w-[250px] bg-secondColor text-white flex items-center justify-center">
-                                            Fale com um especialista
-                                        </button>
-                                    </div>
-                                </motion.div>
+                            <div className="w-auto h-16 pt-3 gap-3 flex items-center justify-start">
+                                <button className="h-full rounded-lg text-base hover:scale-95 transition duration-300 w-[200px] bg-white flex items-center justify-center">
+                                    Veja a demo
+                                </button>
+                                <button className="h-full rounded-lg text-base hover:scale-95 transition duration-300 w-[250px] bg-secondColor text-white flex items-center justify-center">
+                                    Fale com um especialista
+                                </button>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
+
             </div>
         </section>
     )
