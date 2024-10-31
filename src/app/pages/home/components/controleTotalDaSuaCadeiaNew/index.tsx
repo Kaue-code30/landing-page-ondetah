@@ -224,7 +224,7 @@ export default function ControleTotalDaSuaCadeia() {
 
 
     return (
-        <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-[100px] pb-[60px] ">
+        <section id="funcionalidades" className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-[100px] pb-[60px] ">
             <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 lg:gap-4 h-full flex flex-col items-center justify-between">
 
                 <div className="flex flex-col items-center gap-3 w-full leading-normal">

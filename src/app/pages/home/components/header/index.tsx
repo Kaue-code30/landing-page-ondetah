@@ -49,7 +49,7 @@ export default function Header({ onScroll }: PropsComponent) {
                 }}
                 transition={{ duration: 0.4, ease: "linear" }}
                 className="w-full flex fixed top-0 z-50 items-center text-white justify-center h-20 lg:h-24 bg-white  ">
-                <div className="lg:max-w-[1300px] max-w-[1200px] flex items-center justify-between h-full w-[80%] lg:w-full ">
+                <div className="lg:max-w-[1300px] max-w-[1200px] flex items-center justify-between h-full w-[90%] lg:w-full ">
                     <Link className="w-32 lg:w-40" href={"/"}>
                         <Image
                             src={logoOndetah}
@@ -85,7 +85,7 @@ export default function Header({ onScroll }: PropsComponent) {
                                 transition={{ duration: 0.7, ease: "backInOut" }}
                                 className={`absolute top-[79px] left-0 w-full items-center justify-center bg-primaryColor lg:hidden flex flex-col gap-8 pb-10 py-5`}
                             >
-                                <div className="w-4/5 flex gap-5 justify-start items-start flex-col">
+                                <div className="w-[90%] flex gap-5 justify-start items-start flex-col">
 
 
                                     <ul className="flex flex-col gap-5">

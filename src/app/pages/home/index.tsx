@@ -14,6 +14,7 @@ import Footer from "./components/footer";
 import ContactForm from "./components/contactForm";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AssistaNossaDemo from "./components/assistaDemo";
+import Clientes from "./components/clientes";
 
 
 export function Home() {
@@ -59,15 +60,18 @@ export function Home() {
             <div className="h-auto flex overflow-hidden flex-col items-center w-full">
                 <Header onScroll={scrolled} />
                 <FidelizeSeuCliente />
+
                 {/* <ModalVideoDemo/> */}
                 <ControleTotalDaSuaCadeia />
+                <Clientes />
                 <TransFormeSeuNegocio />
                 <Cta />
                 {/* <AssitaNossaDemos />
                  */}
-                 <AssistaNossaDemo/>
+                <AssistaNossaDemo />
                 <ExperienciaDoCliente />
                 <Integracoes />
+
                 <EscolhaOMelhorPlano />
                 <Faq />
                 <ContactForm content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
