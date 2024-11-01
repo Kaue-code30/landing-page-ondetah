@@ -398,7 +398,7 @@ export default function EscolhaOMelhorPlano() {
             const localMedia = localStorage.setItem("media", `${value}`)
             let valorPlano = "";
             if (plano === "Comunicar") {
-                console.log(valueBasic);
+                valorPlano = `${valueBasic}`;
 
                 valorPlano = `${valueBasic}`;
             } else if (plano === "Gerir") {
