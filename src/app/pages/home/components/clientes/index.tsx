@@ -68,7 +68,7 @@ export default function Clientes() {
                         Clientes que fazem a diferença
                     </h1>
                     <h2 className="text-textPrimaryColor text-center leading-tight font-normal text-base lg:text-lg">
-                        Parceiros que confiam na nossa expertise e visão de futuro.
+                        E-commerces que confiam na nossa expertise e visão de futuro
                     </h2>
                     <div className="w-full h-[120px] lg:h-auto flex pt-5 items-center justify-center gap-3">
                         <button onClick={handlePrevious} className="w-10 h-10 hover:scale-90 transition flex rounded-lg items-center justify-center bg-[#CCCBE4]">
