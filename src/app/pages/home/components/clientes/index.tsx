@@ -61,7 +61,7 @@ export default function Clientes() {
     };
 
     return (
-        <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-10 pb-10 lg:pt-[80px] lg:pb-[80px]">
+        <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-20  lg:pt-[80px] lg:pb-[40px]">
             <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-auto flex lg:flex-row flex-col-reverse items-center justify-between">
                 <div className="flex flex-col gap-3 lg:gap-3 justify-center items-center w-full leading-normal">
                     <h1 className="text-3xl lg:text-4xl text-center leading-tight text-textPrimaryColor font-bold">

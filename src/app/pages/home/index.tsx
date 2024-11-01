@@ -60,10 +60,10 @@ export function Home() {
             <div className="h-auto flex overflow-hidden flex-col items-center w-full">
                 <Header onScroll={scrolled} />
                 <FidelizeSeuCliente />
-
+                <Clientes />
                 {/* <ModalVideoDemo/> */}
                 <ControleTotalDaSuaCadeia />
-                <Clientes />
+
                 <TransFormeSeuNegocio />
                 <Cta />
                 {/* <AssitaNossaDemos />
