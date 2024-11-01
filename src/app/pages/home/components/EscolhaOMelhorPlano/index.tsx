@@ -409,6 +409,10 @@ export default function EscolhaOMelhorPlano() {
             const localValue = localStorage.setItem("valor", `${valorPlano}`)
             /* eslint-disable no-unused-vars */
         }
+
+
+
+
     },);
 
     const handleAumentar = () => {
@@ -532,7 +536,8 @@ export default function EscolhaOMelhorPlano() {
                                                 </div>
                                                 {
                                                     value >= 10000 ? (
-                                                        <motion.div
+                                                        <motion.button
+                                                            onClick={() => HandleComeceAgora(i.title)}
                                                             className={`w-full transition h-14 p-2 flex items-center justify-center text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>
                                                             <Link href={"/formulario"}><motion.h1
                                                                 className="flex items-center h-14 justify-center text-sm lg:text-[15px] gap-3"
@@ -543,7 +548,7 @@ export default function EscolhaOMelhorPlano() {
                                                                 <BsChatRightText /> Fale com um consultor
                                                             </motion.h1></Link>
 
-                                                        </motion.div>
+                                                        </motion.button>
                                                     ) : (
                                                         <motion.div
                                                             className={`w-full transition h-14 lg:pl-5 p-3 flex items-center justify-center lg:justify-between text-[22px] font-bold text-primaryColor rounded-lg mt-5 ${key === 1 ? "bg-[#BDF5EC]" : "bg-[#CCCBE4]"}`}>

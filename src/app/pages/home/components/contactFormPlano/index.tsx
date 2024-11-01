@@ -17,6 +17,8 @@ export default function ContactForm({
     const [showSuccess, setShowSuccess] = useState(false);
     const media = typeof window !== 'undefined' ? localStorage.getItem('media') : null
     const plano = typeof window !== 'undefined' ? localStorage.getItem('plano') : null
+    console.log(plano);
+    
     const valorPlano = typeof window !== 'undefined' ? localStorage.getItem('valor') : null
     const [isExpanded, setIsExpanded] = useState(false);
 
