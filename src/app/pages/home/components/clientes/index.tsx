@@ -29,28 +29,25 @@ export default function Clientes() {
         { id: 10, logo: acioly.src, alt: "Logo Acioly" },
     ];
 
-    const [visibleCount, setVisibleCount] = useState(window.innerWidth < 768 ? 2 : 7);
-
-
+    const [visibleCount, setVisibleCount] = useState(7); // Set a default for SSR
     const [startIndex, setStartIndex] = useState(0);
 
-    // Adjust the number of visible logos based on screen width
+    // Adjust visibleCount based on screen width (client-side only)
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            const handleResize = () => {
-                setVisibleCount(window.innerWidth < 768 ? 2 : 8);
-            };
+        const handleResize = () => {
+            setVisibleCount(window.innerWidth < 768 ? 2 : 7);
+        };
 
-            window.addEventListener("resize", handleResize);
+        // Set initial visibleCount on mount and listen for resize events
+        handleResize();
+        window.addEventListener("resize", handleResize);
 
-            return () => {
-                window.removeEventListener("resize", handleResize);
-            };
-        }
-
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
-    // Update the displayed clients based on the start index and visible count
+    // Update the displayed clients based on the startIndex and visibleCount
     const displayedClientes = initialClientes.slice(startIndex, startIndex + visibleCount).concat(
         initialClientes.slice(0, Math.max(0, startIndex + visibleCount - initialClientes.length))
     );
