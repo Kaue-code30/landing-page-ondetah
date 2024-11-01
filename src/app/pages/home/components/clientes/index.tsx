@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useState } from "react";
 import carrefour from "@/app/pages/home/assets/logosOndetah/carrefour.png";
 import dafiti from "@/app/pages/home/assets/logosOndetah/dafiti.png";
 import curta from "@/app/pages/home/assets/logosOndetah/curta.png";
@@ -12,104 +12,84 @@ import whp from "@/app/pages/home/assets/logosOndetah/whp.png";
 import ginger from "@/app/pages/home/assets/logosOndetah/ginger.png";
 import Image from "next/image";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import iconeLogo from "@/app/pages/home/assets/iconLogo.svg"
-
-const images = [
-    carrefour,
-    dafiti,
-    consul,
-    brastemp,
-    kitchenaid,
-    compraCerta,
-    whp,
-    curta,
-    ginger,
-    acioly,
-    dorel,
-];
+import { motion } from "framer-motion";
 
 export default function Clientes() {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const initialClientes = [
+        { id: 0, logo: carrefour.src, alt: "Logo Carrefour" },
+        { id: 1, logo: dafiti.src, alt: "Logo Dafiti" },
+        { id: 2, logo: consul.src, alt: "Logo Consul" },
+        { id: 3, logo: brastemp.src, alt: "Logo Brastemp" },
+        { id: 4, logo: kitchenaid.src, alt: "Logo Kitchenaid" },
+        { id: 5, logo: compraCerta.src, alt: "Logo Compra Certa" },
+        { id: 6, logo: whp.src, alt: "Logo Whirpool" },
+        { id: 7, logo: curta.src, alt: "Logo Curta" },
+        { id: 8, logo: ginger.src, alt: "Logo Ginger" },
+        { id: 9, logo: dorel.src, alt: "Logo Dorel" },
+        { id: 10, logo: acioly.src, alt: "Logo Acioly" },
+    ];
 
-    const handleScrollLeft = () => {
-        if (containerRef.current) {
-            containerRef.current.scrollTo({
-                left: containerRef.current.scrollLeft - 1000,
-                behavior: "smooth",
-            });
+    const [visibleCount, setVisibleCount] = useState(window.innerWidth < 768 ? 2 : 7);
+
+
+    const [startIndex, setStartIndex] = useState(0);
+
+    // Adjust the number of visible logos based on screen width
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const handleResize = () => {
+                setVisibleCount(window.innerWidth < 768 ? 2 : 8);
+            };
+
+            window.addEventListener("resize", handleResize);
+
+            return () => {
+                window.removeEventListener("resize", handleResize);
+            };
         }
+
+    }, []);
+
+    // Update the displayed clients based on the start index and visible count
+    const displayedClientes = initialClientes.slice(startIndex, startIndex + visibleCount).concat(
+        initialClientes.slice(0, Math.max(0, startIndex + visibleCount - initialClientes.length))
+    );
+
+    const handleNext = () => {
+        setStartIndex((prevIndex) => (prevIndex + 1) % initialClientes.length);
     };
 
-    const handleScrollRight = () => {
-        if (containerRef.current) {
-            containerRef.current.scrollTo({
-                left: containerRef.current.scrollLeft + 1000,
-                behavior: "smooth",
-            });
-        }
+    const handlePrevious = () => {
+        setStartIndex((prevIndex) => (prevIndex - 1 + initialClientes.length) % initialClientes.length);
     };
 
     return (
-        <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-[50px] pb-[30px]">
-            <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 lg:gap-6 h-auto flex  flex-col items-center justify-center">
-                <div className="lg:flex w-full gap-10 lg:flex-row-reverse lg:items-center">
-                    <div className="w-full ">
-                        <div className="lg:w-[65%]">
-                            <h1 className="text-black text-4xl lg:text-4xl pb-2 font-bold h-auto lg:w-[90%]">
-                                Titulo
-                            </h1>
-                            <p className="text-black w-full lg:w-[90%]">
-                                Ou seja, uma experiência única, pensada no cliente final, com
-                                soluções personalizadas, que conectam tecnologias e operações.
-                            </p>
-                        </div>
+        <section className="w-full bg-cover flex items-center justify-center bg-center bg-no-repeat bg-white h-auto pt-10 pb-10 lg:pt-[80px] lg:pb-[80px]">
+            <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-auto flex lg:flex-row flex-col-reverse items-center justify-between">
+                <div className="flex flex-col gap-3 lg:gap-3 justify-center items-center w-full leading-normal">
+                    <h1 className="text-3xl lg:text-4xl leading-tight text-textPrimaryColor font-bold">
+                        Clientes que fazem a diferença
+                    </h1>
+                    <h2 className="text-textPrimaryColor text-center leading-tight font-normal text-base lg:text-lg">
+                        Parceiros que confiam na nossa expertise e visão de futuro.
+                    </h2>
+                    <div className="w-full h-[120px] lg:h-auto flex pt-5 items-center justify-center gap-3">
+                        <button onClick={handlePrevious} className="w-10 h-10 hover:scale-90 transition flex rounded-lg items-center justify-center bg-[#CCCBE4]">
+                            <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
+                        </button>
+                        <motion.div initial={{ translateX: 100 }} animate={{ translateX: 0 }} className="w-4/5 lg:w-full flex justify-center gap-4 h-full">
+                            {displayedClientes.map((cliente) => (
+                                <motion.div initial={{ translateX: 10 }} transition={{ ease: "easeInOut", duration: 0.1 }} animate={{ translateX: 0 }} key={cliente.id} className={`w-24 h-24 lg:w-[130px] transition-all p-2 flex items-center justify-center lg:h-[130px] rounded-md shadow-md border-[0.5px]`}>
+                                    <Image className="w-full lg:w-full rounded-lg" src={cliente.logo} alt={cliente.alt} width={100} height={100} />
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                        <button onClick={handleNext} className="w-10 h-10 flex hover:scale-90 transition rounded-lg items-center justify-center bg-[#CCCBE4]">
+                            <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
+                        </button>
                     </div>
-
-                    <div className="hidden h-2/4 rounded-2xl bg-custom-linear p-6 w-[15%] lg:flex items-center justify-center">
-                        <Image
-                            className=" "
-                            alt="Clientes Ondetah"
-                            width={100}
-                            height={100}
-                            src={iconeLogo}
-                        />
-                    </div>
-                </div>
-
-                <hr className=" border-[#bfbfbf9b] border-1 w-full " />
-
-                <div className="w-full flex-row gap-4 pb-2 md:[display:flex] [display:none] justify-center md:justify-end">
-                    <div
-                        className="w-10 h-10 flex items-center justify-center shadow-md transition-all rounded-lg bg-[#cccbe4] cursor-pointer"
-                        onClick={handleScrollLeft}
-                    >
-                        <IoIosArrowBack className="-ml-1 text-primaryColor" fontSize={27} />
-                    </div>
-                    <div
-                        className="w-10 h-10 flex items-center justify-center shadow-md transition-all rounded-lg bg-[#cccbe4] cursor-pointer"
-                        onClick={handleScrollRight}
-                    >
-                        <IoIosArrowForward className="ml-1 text-primaryColor font-bold" fontWeight={700} fontSize={27} />
-                    </div>
-                </div>
-
-                <div
-                    className="flex w-full lg:flex-row flex-row items-center gap-5 pb-5 transition lg:flex  lg:pl-[0%] overflow-auto"
-                    ref={containerRef}
-                >
-                    {images.map((image, index) => (
-                        <Image
-                            className="w-24 transition border-transparent lg:rounded-2xl hover:border-2 hover:border-transparent hover:shadow-xl lg:p-2  text-black lg:w-[130px]"
-                            key={index}
-                            src={image.src}
-                            alt="Logo dos clientes UX"
-                            width={100}
-                            height={100}
-                        />
-                    ))}
                 </div>
             </div>
         </section>
     );
 }
-
