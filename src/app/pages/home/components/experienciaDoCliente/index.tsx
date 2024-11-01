@@ -90,7 +90,7 @@ export default function ExperienciaDoCliente() {
                 <div className="flex flex-col gap-5 w-full lg:w-full leading-normal">
                     <h1 className="text-3xl lg:text-4xl text-left lg:w-1/2 leading-tight text-textSecondColor font-bold">
                         Uma solução completa focada na
-                        experiência do cliente.
+                        experiência do cliente
                     </h1>
                     <h2 className="text-textSecondColor pt-2 leading-tight text-left w-full font-normal text-base lg:text-lg">
                         Projetada para oferecer suporte e gestão de ponta para o gestor de e-commerce.

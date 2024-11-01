@@ -138,7 +138,7 @@ export default function TransFormeSeuNegocio() {
                 
                         <div className="flex flex-col items-center gap-5 w-full lg:w-3/5 leading-normal">
                             <h1 className="text-3xl lg:text-4xl text-left  leading-tight text-textPrimaryColor font-bold">
-                                Transforme o seu negócio.
+                                Transforme o seu negócio
                             </h1>
                             <h2 className="text-textPrimaryColor pt-2 lg:pt-0 leading-tight lg:text-center text-left w-full font-normal text-base lg:text-lg">
                                 Confira os benefícios do Ondetah.

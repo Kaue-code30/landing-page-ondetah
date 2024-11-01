@@ -40,7 +40,7 @@ export function FidelizeSeuCliente() {
                     {/* Texto */}
                     <div className="flex flex-col w-full gap-2 lg:gap-4">
                         <h1 className="text-3xl lg:text-4xl leading-tight text-textSecondColor font-bold">
-                            Fidelize seu cliente com informações em tempo real.
+                            Fidelize seu cliente com informações em tempo real
                         </h1>
                         <h2 className="text-textSecondColor text-base lg:text-xl lg:w-full lg:font-semibold">
                             Transforme a gestão da cadeia de entrega no diferencial que seu e-commerce precisa para crescer.

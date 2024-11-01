@@ -229,7 +229,7 @@ export default function ControleTotalDaSuaCadeia() {
 
                 <div className="flex flex-col items-center gap-3 w-full leading-normal">
                     <h1 className="text-3xl lg:text-4xl lg:text-center text-left  leading-tight text-textPrimaryColor font-bold">
-                        Controle total da sua cadeia de entregas em um só lugar.
+                        Controle total da sua cadeia de entregas em um só lugar
                     </h1>
                     <h2 className="text-textPrimaryColor leading-tight lg:text-center text-left w-full font-normal text-base lg:text-lg">
                         A gestão completa em uma única plataforma para facilitar o dia a dia do seu e-commerce.

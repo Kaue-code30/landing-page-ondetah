@@ -122,7 +122,7 @@ export default function ContactForm({
             <section id="formulario" className="bg-primaryColor pt-[80px] w-full">
                 <div className="w-full md:w-full text-white gap-3 pb-5 flex text-center items-center justify-center flex-col">
                     <h1 className="w-[90%] text-3xl font-bold md:w-full text-center">
-                        Fale diretamente com o nosso time.
+                        Fale diretamente com o nosso time
                     </h1>
                     <p className="w-4/5 md:w-full">
                         Nos informe qual tipo de contato gostaria de fazer.

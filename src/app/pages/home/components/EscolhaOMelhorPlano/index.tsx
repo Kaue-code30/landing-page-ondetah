@@ -437,7 +437,7 @@ export default function EscolhaOMelhorPlano() {
             <div className="w-[90%] lg:w-full max-w-[1200px] gap-3 h-auto flex flex-col items-center justify-between">
 
                 <h1 className={`text-3xl lg:text-4xl text-left lg:text-center  leading-tight   font-bold`}>
-                    Escolha o melhor plano para você:
+                    Escolha o melhor plano para você
                 </h1>
                 <h2 className={`leading-tight lg:text-center text-left  w-full font-normal text-base`}>
                     Nossos planos são do tamanho das necessidades do seu negócio.
