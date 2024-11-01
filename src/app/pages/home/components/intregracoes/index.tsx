@@ -94,7 +94,7 @@ export default function Integracoes() {
                             Integrações
                         </h1>
                         <h2 className="text-textPrimaryColor pt-3 lg:w-4/5 leading-tight text-center w-full font-normal text-base lg:text-lg">
-                            Conectamos facilmente a outras ferramentas para potencializar os ganhos da sua operação
+                            Conectamos facilmente a outras ferramentas para potencializar os ganhos da sua operação.
                         </h2>
 
                         {/* Input de busca */}
