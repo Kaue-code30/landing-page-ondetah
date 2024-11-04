@@ -65,7 +65,7 @@ export default function Clientes() {
             <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-auto flex lg:flex-row flex-col-reverse items-center justify-between">
                 <div className="flex flex-col gap-3 lg:gap-3 justify-center items-center w-full leading-normal">
                     <h1 className="text-3xl lg:text-4xl text-center leading-tight text-textPrimaryColor font-bold">
-                        Clientes que fazem a diferença.
+                        Clientes que fazem a diferença
                     </h1>
                     <h2 className="text-textPrimaryColor text-center leading-tight font-normal text-base lg:text-lg">
                         E-commerces que confiam na nossa expertise e visão de futuro.

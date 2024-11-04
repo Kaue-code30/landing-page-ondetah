@@ -33,7 +33,7 @@ export default function ExperienciaDoCliente() {
         {
             index: 0,
             icon: ApIcon,
-            title: "Integração via API:",
+            title: "Integração via API",
             text: "ERP, TMS, WMS, Plataforma de e-commerce, conecte facilmente a sistemas essenciais para uma operação sem falhas.",
             link: ""
         },
@@ -47,28 +47,28 @@ export default function ExperienciaDoCliente() {
         {
             index: 2,
             icon: cloud,
-            title: "Infraestrutura 100% na nuvem:",
+            title: "Infraestrutura 100% na nuvem",
             text: "Com acessibilidade garantida e backups automáticos.",
             link: ""
         },
         {
             index: 3,
             icon: computer,
-            title: "Rápida Implantação:",
+            title: "Rápida Implantação",
             text: "A solução pronta para uso  sem complicações e com suporte especializado.",
             link: ""
         },
         {
             index: 4,
             icon: security,
-            title: "Segurança da informação:",
+            title: "Segurança da informação",
             text: "Proteja os dados da sua empresa e clientes com o mais alto nível de segurança digital.",
             link: ""
         },
         {
             index: 5,
             icon: co2,
-            title: "Compensação de CO2:",
+            title: "Compensação de CO2",
             text: "Opere de maneira sustentável com certificação de compensação nominal.",
             link: ""
         },

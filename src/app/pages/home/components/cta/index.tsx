@@ -39,7 +39,7 @@ export default function Cta() {
                     <div className="w-[1896px] flex lg:flex-row flex-col gap-5 items-center justify-between h-full">
                         <h1 className={`text-4xl leading-normal lg:w-[50%] text-white font-bold`}>
                             Agilidade e informação desde o
-                            clique até o cliente:
+                            clique até o cliente
                         </h1>
                         <button className="lg:w-[30%] w-full hover:scale-95 transition bg-secondColor text-textSecondColor rounded-lg h-12">
                             <Link className="w-full flex items-center justify-center h-full" href={"#formulario"}> Agendar reunião</Link>

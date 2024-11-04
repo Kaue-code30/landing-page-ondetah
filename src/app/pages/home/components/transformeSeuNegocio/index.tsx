@@ -38,7 +38,7 @@ export default function TransFormeSeuNegocio() {
     const JsonList = [
         {
             index: 0,
-            title: "Competitividade em prazos de entrega:",
+            title: "Competitividade em prazos de entrega",
             text: "Com dados históricos e previsões detalhadas, nossa plataforma permite a análise de risco de atrasos por transportadora, região e sub-região. Antecipe problemas com a matriz de risco e ajuste prazos de forma estratégica, garantindo uma experiência de entrega superior e alinhada com as expectativas dos clientes.",
             imagem: competitividadeBanner.src
         },

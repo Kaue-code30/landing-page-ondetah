@@ -72,7 +72,7 @@ export default function FormularioContratacao() {
 
 
                     <h1 className={`text-3xl lg:text-4xl text-left text-white lg:text-center  leading-tight   font-bold`}>
-                        Escolha o melhor plano para você:
+                        Escolha o melhor plano para você
                     </h1>
                     <h2 className={`pt-3 leading-tight lg:text-center text-white text-left  w-full font-normal text-base`}>
                         Nossos planos são do tamanho das necessidades do seu negócio.
