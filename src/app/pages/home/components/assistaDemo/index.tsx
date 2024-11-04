@@ -12,7 +12,7 @@ export default function AssistaNossaDemo() {
                         Assista a nossa demo
                     </h1>
                     <h2 className="text-textPrimaryColor  leading-tight font-normal text-base lg:text-lg">
-                        Veja como o Ondetah ajuda o seu e-commerce
+                        Veja como o Ondetah ajuda o seu e-commerce.
                     </h2>
                     <h3 className="text-textPrimaryColor  leading-tight font-normal text-base lg:text-base">
                         Assista ao vídeo e descubra como a nossa solução completa combina rastreamento em tempo real, comunicação automatizada com seus clientes e ferramentas robustas para gestão de riscos, tudo em uma única plataforma.

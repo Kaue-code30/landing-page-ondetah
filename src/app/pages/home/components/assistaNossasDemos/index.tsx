@@ -87,7 +87,7 @@ export default function AssitaNossaDemos() {
                                 Assista à nossa demo:
                             </h1>
                             <h2 className="text-textPrimaryColor  leading-tight font-normal text-base lg:text-lg">
-                                Veja como o Ondetah ajuda o seu e-commerce
+                                Veja como o Ondetah ajuda o seu e-commerce.
                             </h2>
                         </div>
                         <div className="lg:hidden  my-2 flex items-center w-full justify-between">
