@@ -335,10 +335,15 @@ export default function ControleTotalDaSuaCadeia() {
                             })}
                             <div className="w-auto h-16 pt-3 gap-3 flex items-center justify-start">
                                 <button className="h-full rounded-lg text-base hover:scale-95 transition duration-300 w-[200px] bg-white flex items-center justify-center">
-                                    Veja a demo
+                                    <Link className="w-full h-full flex items-center justify-center" href={"#demos"}>
+                                        Veja a demo
+                                    </Link>
+
                                 </button>
                                 <button className="h-full rounded-lg text-base hover:scale-95 transition duration-300 w-[250px] bg-secondColor text-white flex items-center justify-center">
-                                    Fale com um especialista
+                                    <Link className="w-full h-full flex items-center justify-center" href={"#formulario"}>
+                                        Fale com um especialista
+                                    </Link>
                                 </button>
                             </div>
                         </motion.div>
