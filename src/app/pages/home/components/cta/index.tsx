@@ -37,7 +37,7 @@ export default function Cta() {
                 className="w-[90%] lg:w-full max-w-[1200px] h-full lg:flex-row flex-col flex items-center justify-between">
                 <div className="w-full flex items-center justify-between h-full">
                     <div className="w-[1896px] flex lg:flex-row flex-col gap-5 items-center justify-between h-full">
-                        <h1 className={`text-4xl lg:leading-normal lg:w-[50%] text-white font-bold`}>
+                        <h1 className={`text-4xl leading-tight lg:leading-normal lg:w-[50%] text-white font-bold`}>
                             Agilidade e informação desde o
                             clique até o cliente
                         </h1>

@@ -88,7 +88,7 @@ export default function ExperienciaDoCliente() {
             <div className="w-[90%] lg:w-full max-w-[1200px] gap-5 lg:gap-10 h-full flex flex-col items-center justify-between">
 
                 <div className="flex flex-col gap-5 w-full lg:w-full leading-normal">
-                    <h1 className="text-3xl lg:text-4xl text-left lg:w-1/2 leading-tight text-textSecondColor font-bold">
+                    <h1 className="text-3xl lg:leading-normal lg:text-4xl text-left lg:w-1/2 leading-tight text-textSecondColor font-bold">
                         Uma solução completa focada na
                         experiência do cliente
                     </h1>

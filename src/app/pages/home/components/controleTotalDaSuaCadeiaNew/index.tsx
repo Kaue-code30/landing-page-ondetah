@@ -89,27 +89,27 @@ export default function ControleTotalDaSuaCadeia() {
             list: [
                 {
                     id: 8,
-                    text: "Engajamento por canal"
+                    text: "Engajamento por canal."
                 },
                 {
                     id: 9,
-                    text: "Nível de serviço por transportadora"
+                    text: "Nível de serviço por transportadora."
                 },
                 {
                     id: 10,
-                    text: "Nível de serviço por transportadora"
+                    text: "Nível de serviço por transportadora."
                 },
                 {
                     id: 11,
-                    text: "Status de pedido"
+                    text: "Status de pedido."
                 },
                 {
                     id: 12,
-                    text: "Nível de serviço por fase"
+                    text: "Nível de serviço por fase."
                 },
                 {
                     id: 13,
-                    text: "Filtros e segmentação"
+                    text: "Filtros e segmentação."
                 },
             ]
         },

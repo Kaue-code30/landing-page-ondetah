@@ -152,7 +152,7 @@ export default function ContactForm({
                 <div className={`lg:max-w-md w-full flex items-start ${isExpanded ? "h-[180px] " : "h-24 "} transition duration-300 rounded-2xl lg:justify-start  lg:w-[90%] mx-auto   `}>
                     <div className={`lg:w-[91%] w-full gap-5 flex flex-col justify-between items-center rounded-2xl p-5 h-full bg-transparent border`}>
                         <div className="w-full flex justify-between items-center">
-                            <div className={`w-1/2 h-full  items-center gap-3 justify-start flex`}>
+                            <div className={`w-3/4 h-full  items-center gap-3 justify-start flex`}>
                                 <div className="w-12 h-12 flex items-center justify-center border rounded-md">
                                     <FaStar fontSize={30} color="#FFF" />
 

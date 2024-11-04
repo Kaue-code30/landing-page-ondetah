@@ -70,14 +70,13 @@ export default function FormularioContratacao() {
             <div className="h-auto bg-primaryColor pt-28  flex lg:w-full w-full flex-col items-center justify-center">
                 <motion.div initial={{ translateX: -100, opacity: 0 }} animate={{ opacity: 1, translateX: 0 }} transition={{ duration: 0.7, ease: "linear" }} className="h-auto scale-95 flex lg:w-full w-[90%] pb-10 flex-col items-center justify-center">
 
-
-                    <h1 className={`text-3xl lg:text-4xl text-left text-white lg:text-center  leading-tight   font-bold`}>
+                    <h1 className={`text-3xl lg:text-4xl text-center  text-white lg:text-center  leading-tight   font-bold`}>
                         Escolha o melhor plano para você
                     </h1>
-                    <h2 className={`pt-3 leading-tight lg:text-center text-white text-left  w-full font-normal text-base`}>
+                    <h2 className={`pt-3 leading-tight text-center text-white   w-full font-normal text-base`}>
                         Nossos planos são do tamanho das necessidades do seu negócio.
                     </h2>
-                    <ContactForm  content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
+                    <ContactForm content={valuesInput} page="Landing-Page-Ondetah" nameForm="LandingPageOndetah" />
                 </motion.div>
             </div>
 
