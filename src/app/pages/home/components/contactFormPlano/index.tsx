@@ -231,7 +231,7 @@ export default function ContactForm({
                     </div>
                     <div className="relative z-0 w-full mb-5 group">
                         <input
-                            type="email"
+                            type="tel"
                             name="floating_telefone"
                             id="floating_telefone"
                             className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
