@@ -18,7 +18,7 @@ export interface ClientDataPlano {
     floating_mediaPedidos:string;
     floating_first_name: string;
     floating_email: string;
-    floating_telefone: string;
+    floating_phone: string;
     floating_company: string;
     floating_cnpj: string;
     floating_site: string;

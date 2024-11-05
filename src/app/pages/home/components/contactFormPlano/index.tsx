@@ -31,7 +31,7 @@ export default function ContactForm({
         floating_plano: `${plano}`,
         floating_mediaPedidos: `${media}`,
         floating_email: "",
-        floating_telefone: "",
+        floating_phone: "",
         floating_site: "",
         floating_company: "",
         floating_cnpj: "",
@@ -103,7 +103,7 @@ export default function ContactForm({
             setFormData({
                 floating_first_name: "",
                 floating_email: "",
-                floating_telefone: "",
+                floating_phone: "",
                 floating_company: "",
                 floating_plano: ``,
                 floating_site: "",
@@ -236,12 +236,12 @@ export default function ContactForm({
                             id="floating_telefone"
                             className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                             placeholder=" "
-                            value={formData.floating_telefone}
+                            value={formData.floating_phone}
                             onChange={handleChange}
                             required
                         />
                         <label
-                            htmlFor="floating_email"
+                            htmlFor="floating_telefone"
                             className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                         >
                             Telefone*

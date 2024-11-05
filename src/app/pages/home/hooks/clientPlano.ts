@@ -22,7 +22,7 @@ const fetchData = async (clientData: ClientDataPlano): Promise<AxiosResponse<Cli
                 conversion_identifier: clientData.conversion_identifier,
                 name: clientData.floating_first_name,
                 email: clientData.floating_email,
-                personal_phone: clientData.floating_email,
+                personal_phone: clientData.floating_phone,
                 company_name: clientData.floating_company,
                 cf_cnpj: clientData.floating_cnpj,
                 cf_comunicacao: clientData.floating_funcoesDeComunicacao,
