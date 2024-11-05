@@ -17,13 +17,13 @@ export default function ContactForm({
     const [showSuccess, setShowSuccess] = useState(false);
     const media = typeof window !== 'undefined' ? localStorage.getItem('media') : null
     const plano = typeof window !== 'undefined' ? localStorage.getItem('plano') : null
-    console.log(plano);
-    
+
+
     const valorPlano = typeof window !== 'undefined' ? localStorage.getItem('valor') : null
     const [isExpanded, setIsExpanded] = useState(false);
 
 
-    console.log(media);
+
 
     const [formData, setFormData] = useState({
 
@@ -31,6 +31,7 @@ export default function ContactForm({
         floating_plano: `${plano}`,
         floating_mediaPedidos: `${media}`,
         floating_email: "",
+        floating_telefone: "",
         floating_site: "",
         floating_company: "",
         floating_cnpj: "",
@@ -102,6 +103,7 @@ export default function ContactForm({
             setFormData({
                 floating_first_name: "",
                 floating_email: "",
+                floating_telefone: "",
                 floating_company: "",
                 floating_plano: ``,
                 floating_site: "",
@@ -133,6 +135,7 @@ export default function ContactForm({
             alert("Você precisa selecionar pelo menos um item no campo 'Quais funções de comunicação gostaria?*'.");
             return;
         }
+        
 
         // Se todas as validações forem passadas, envie os dados do formulário
         mutate(formData);
@@ -155,8 +158,6 @@ export default function ContactForm({
                             <div className={`w-3/4 h-full  items-center gap-3 justify-start flex`}>
                                 <div className="w-12 h-12 flex items-center justify-center border rounded-md">
                                     <FaStar fontSize={30} color="#FFF" />
-
-                                    
                                 </div>
                                 <h1 className="text-xl text-white font-medium">
                                     {plano}
@@ -180,7 +181,7 @@ export default function ContactForm({
                             </div>
                         </div>
                         <Link className={`w-full ${isExpanded ? "flex" : "hidden"}  items-center gap-3 justify-start text-[#BDF5EC]`} href={"/#planos"}>
-                        <FaLongArrowAltLeft fontSize={20}/> Alterar plano
+                            <FaLongArrowAltLeft fontSize={20} /> Alterar plano
                         </Link>
 
                     </div>
@@ -226,6 +227,24 @@ export default function ContactForm({
                             className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                         >
                             E-mail*
+                        </label>
+                    </div>
+                    <div className="relative z-0 w-full mb-5 group">
+                        <input
+                            type="email"
+                            name="floating_telefone"
+                            id="floating_telefone"
+                            className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
+                            placeholder=" "
+                            value={formData.floating_telefone}
+                            onChange={handleChange}
+                            required
+                        />
+                        <label
+                            htmlFor="floating_email"
+                            className="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                        >
+                            Telefone*
                         </label>
                     </div>
                     <div className="relative z-0 w-full mb-5 group">
